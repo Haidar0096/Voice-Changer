@@ -170,7 +170,6 @@ class RecorderServiceImpl implements RecorderService {
       }
       await _recorder.stopRecorder();
       _recorderStateSubject.add(const RecorderState.stopped());
-      //todo check if we should reset the recording details here or maybe emit an object with duration = 0
       return const Right(null);
     } catch (e) {
       _logger.e('error occurred in stopRecorder()', e);

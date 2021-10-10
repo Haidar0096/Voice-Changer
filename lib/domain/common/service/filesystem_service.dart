@@ -69,18 +69,23 @@ class FileSystemService {
     }
   }
 
-  ///[file] : the file to rename
+  ///[file] : the file to rename. The [fileName] must consist of only alphanumeric  and underscore characters.
   Future<Either<Failure, File>> renameFile({
     required File file,
     required String newFileName,
     required String extension,
   }) async {
     try {
+      final r = RegExp(
+          r'^[a-zA-Z0-9_]*$'); //alphanumeric and underscores only for file name
+      if (!r.hasMatch(newFileName)) {
+        throw Exception(
+            '$newFileName is not a valid file name, it must only contain alphanumeric/underscore characters');
+      }
       final path = file.path;
       final lastSeparator = path.lastIndexOf(Platform.pathSeparator);
       final newPath =
           path.substring(0, lastSeparator + 1) + newFileName + '.$extension';
-      print('new path is $newPath');
       final renamedFile = await file.rename(newPath);
       return Right(renamedFile);
     } catch (e) {

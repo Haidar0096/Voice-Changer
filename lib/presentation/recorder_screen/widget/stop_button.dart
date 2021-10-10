@@ -7,19 +7,16 @@ class _StopButton extends StatefulWidget {
 
 class _StopButtonState extends State<_StopButton> {
   late final TextEditingController _fileNameTextController;
-  late final FocusNode _fileNameFocusNode;
 
   @override
   initState() {
     super.initState();
     _fileNameTextController = TextEditingController();
-    _fileNameFocusNode = FocusNode();
   }
 
   @override
   dispose() {
     _fileNameTextController.dispose();
-    _fileNameFocusNode.dispose();
     super.dispose();
   }
 
@@ -45,13 +42,11 @@ class _StopButtonState extends State<_StopButton> {
                       if (snapshot.data!.isRecording) {
                         recorderBloc
                             .add(const RecorderBlocEvent.stopRecording());
-                        _fileNameTextController.text =
-                            recorderBloc.state.recordingFileOption.fold(
-                          () => _fileNameTextController.text,
-                          (file) => file.getName(),
-                        );
-                        _fileNameFocusNode.requestFocus();
-                        await _showDialog(context,recorderBloc);
+                        _fileNameTextController.text = recorderBloc
+                            .state.recordingFileOption
+                            .toNullable()!
+                            .getName();
+                        await _showDialog(context, recorderBloc);
                       }
                     }
                   : null,
@@ -66,7 +61,7 @@ class _StopButtonState extends State<_StopButton> {
                         height: stopButtonOuterSide,
                         color: snapshot.hasData && snapshot.data!.isRecording
                             ? Colors.blue
-                            : Colors.black38,
+                            : Colors.black12,
                       ),
                       FilledRectangle(
                         width: stopButtonInnerSide,
@@ -101,30 +96,57 @@ class _StopButtonState extends State<_StopButton> {
                 textAlign: TextAlign.center,
               ),
               children: [
-                TextField(
-                  controller: _fileNameTextController,
-                  focusNode: _fileNameFocusNode,
-                ), //todo configure the text field
-                TextButton(
-                    child: Text('Save', style: mediumText),
-                    onPressed: () {
+                SimpleDialogOption(
+                  child: TextFormField(
+                    autovalidateMode: AutovalidateMode.always,
+                    autofocus: true,
+                    controller: _fileNameTextController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(4),
+                        ),
+                      ),
+                      errorMaxLines: 4,
+                    ),
+                    validator: (text) {
+                      String errorMessage =
+                          'file name must contain only alphanumeric/underscore characters';
+                      if (text == null ||
+                          (!text.isAlphaNumericWithUnderscores())) {
+                        return errorMessage;
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                SimpleDialogOption(
+                  child: Text('Save',
+                      style: mediumText.copyWith(color: Colors.blue),
+                      textAlign: TextAlign.center),
+                  onPressed: () {
+                    if (_fileNameTextController.text
+                        .isAlphaNumericWithUnderscores()) {
                       recorderBloc.add(RecorderBlocEvent.saveRecording(
                           newRecordingFileName: _fileNameTextController.text));
-                      _fileNameFocusNode.unfocus();
                       Navigator.of(context).pop();
-                    }),
-                TextButton(
-                    child: Text('Delete',
-                        style: mediumText.copyWith(color: Colors.red)),
-                    onPressed: () {
-                      recorderBloc
-                          .add(const RecorderBlocEvent.deleteRecording());
-                      _fileNameFocusNode.unfocus();
-                      Navigator.of(context).pop();
-                    }),
+                    }
+                  },
+                ),
+                SimpleDialogOption(
+                  child: Text(
+                    'Delete',
+                    style: mediumText.copyWith(color: Colors.red),
+                    textAlign: TextAlign.center,
+                  ),
+                  onPressed: () {
+                    recorderBloc.add(const RecorderBlocEvent.deleteRecording());
+                    Navigator.of(context).pop();
+                  },
+                ),
               ],
               shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
+                borderRadius: BorderRadius.all(Radius.circular(15)),
               ),
             ),
           );
