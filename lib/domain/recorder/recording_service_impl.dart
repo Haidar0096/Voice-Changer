@@ -21,7 +21,7 @@ class RecorderServiceImpl implements RecorderService {
   final Logger _logger = serviceLocator.get<Logger>(param1: Level.debug);
 
   final BehaviorSubject<RecorderState> _recorderStateSubject =
-      BehaviorSubject.seeded(RecorderService.initialRecorderState);
+      BehaviorSubject.seeded(const RecorderState.uninitialized());
 
   final StreamController<Duration> _recordingDurationController =
       StreamController<Duration>.broadcast();

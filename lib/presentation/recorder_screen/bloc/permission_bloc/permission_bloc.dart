@@ -26,7 +26,7 @@ class PermissionBloc extends Bloc<PermissionBlocEvent, PermissionBlocState> {
         requestMicrophonePermission: _handleRequestMicrophonePermission,
         openSettingsApp: _handleOpenSettingsApp,
       ));
-      _logger.i('Yielding a new state : $state');
+      _logger.i('Yielding a new state in response to event $event : $state');
     });
   }
 

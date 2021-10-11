@@ -935,17 +935,17 @@ class _$RecorderBlocStateTearOff {
   const _$RecorderBlocStateTearOff();
 
   _RecorderBlocState call(
-      {Stream<RecorderState> recorderStateStream = const Stream.empty(),
-      Stream<Duration> recordingDurationStream = const Stream.empty(),
-      Option<File> recordingFileOption = const None(),
+      {Stream<RecorderState>? recorderStateStream,
+      Stream<Duration>? recordingDurationStream,
+      File? recordingFile,
       bool isError = false,
-      Option<String> errorMessageOption = const None()}) {
+      String? errorMessage}) {
     return _RecorderBlocState(
       recorderStateStream: recorderStateStream,
       recordingDurationStream: recordingDurationStream,
-      recordingFileOption: recordingFileOption,
+      recordingFile: recordingFile,
       isError: isError,
-      errorMessageOption: errorMessageOption,
+      errorMessage: errorMessage,
     );
   }
 }
@@ -955,13 +955,13 @@ const $RecorderBlocState = _$RecorderBlocStateTearOff();
 
 /// @nodoc
 mixin _$RecorderBlocState {
-  Stream<RecorderState> get recorderStateStream =>
+  Stream<RecorderState>? get recorderStateStream =>
       throw _privateConstructorUsedError;
-  Stream<Duration> get recordingDurationStream =>
+  Stream<Duration>? get recordingDurationStream =>
       throw _privateConstructorUsedError;
-  Option<File> get recordingFileOption => throw _privateConstructorUsedError;
+  File? get recordingFile => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
-  Option<String> get errorMessageOption => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RecorderBlocStateCopyWith<RecorderBlocState> get copyWith =>
@@ -974,11 +974,11 @@ abstract class $RecorderBlocStateCopyWith<$Res> {
           RecorderBlocState value, $Res Function(RecorderBlocState) then) =
       _$RecorderBlocStateCopyWithImpl<$Res>;
   $Res call(
-      {Stream<RecorderState> recorderStateStream,
-      Stream<Duration> recordingDurationStream,
-      Option<File> recordingFileOption,
+      {Stream<RecorderState>? recorderStateStream,
+      Stream<Duration>? recordingDurationStream,
+      File? recordingFile,
       bool isError,
-      Option<String> errorMessageOption});
+      String? errorMessage});
 }
 
 /// @nodoc
@@ -994,31 +994,31 @@ class _$RecorderBlocStateCopyWithImpl<$Res>
   $Res call({
     Object? recorderStateStream = freezed,
     Object? recordingDurationStream = freezed,
-    Object? recordingFileOption = freezed,
+    Object? recordingFile = freezed,
     Object? isError = freezed,
-    Object? errorMessageOption = freezed,
+    Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
       recorderStateStream: recorderStateStream == freezed
           ? _value.recorderStateStream
           : recorderStateStream // ignore: cast_nullable_to_non_nullable
-              as Stream<RecorderState>,
+              as Stream<RecorderState>?,
       recordingDurationStream: recordingDurationStream == freezed
           ? _value.recordingDurationStream
           : recordingDurationStream // ignore: cast_nullable_to_non_nullable
-              as Stream<Duration>,
-      recordingFileOption: recordingFileOption == freezed
-          ? _value.recordingFileOption
-          : recordingFileOption // ignore: cast_nullable_to_non_nullable
-              as Option<File>,
+              as Stream<Duration>?,
+      recordingFile: recordingFile == freezed
+          ? _value.recordingFile
+          : recordingFile // ignore: cast_nullable_to_non_nullable
+              as File?,
       isError: isError == freezed
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorMessageOption: errorMessageOption == freezed
-          ? _value.errorMessageOption
-          : errorMessageOption // ignore: cast_nullable_to_non_nullable
-              as Option<String>,
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -1031,11 +1031,11 @@ abstract class _$RecorderBlocStateCopyWith<$Res>
       __$RecorderBlocStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Stream<RecorderState> recorderStateStream,
-      Stream<Duration> recordingDurationStream,
-      Option<File> recordingFileOption,
+      {Stream<RecorderState>? recorderStateStream,
+      Stream<Duration>? recordingDurationStream,
+      File? recordingFile,
       bool isError,
-      Option<String> errorMessageOption});
+      String? errorMessage});
 }
 
 /// @nodoc
@@ -1053,31 +1053,31 @@ class __$RecorderBlocStateCopyWithImpl<$Res>
   $Res call({
     Object? recorderStateStream = freezed,
     Object? recordingDurationStream = freezed,
-    Object? recordingFileOption = freezed,
+    Object? recordingFile = freezed,
     Object? isError = freezed,
-    Object? errorMessageOption = freezed,
+    Object? errorMessage = freezed,
   }) {
     return _then(_RecorderBlocState(
       recorderStateStream: recorderStateStream == freezed
           ? _value.recorderStateStream
           : recorderStateStream // ignore: cast_nullable_to_non_nullable
-              as Stream<RecorderState>,
+              as Stream<RecorderState>?,
       recordingDurationStream: recordingDurationStream == freezed
           ? _value.recordingDurationStream
           : recordingDurationStream // ignore: cast_nullable_to_non_nullable
-              as Stream<Duration>,
-      recordingFileOption: recordingFileOption == freezed
-          ? _value.recordingFileOption
-          : recordingFileOption // ignore: cast_nullable_to_non_nullable
-              as Option<File>,
+              as Stream<Duration>?,
+      recordingFile: recordingFile == freezed
+          ? _value.recordingFile
+          : recordingFile // ignore: cast_nullable_to_non_nullable
+              as File?,
       isError: isError == freezed
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorMessageOption: errorMessageOption == freezed
-          ? _value.errorMessageOption
-          : errorMessageOption // ignore: cast_nullable_to_non_nullable
-              as Option<String>,
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -1086,28 +1086,24 @@ class __$RecorderBlocStateCopyWithImpl<$Res>
 
 class _$_RecorderBlocState extends _RecorderBlocState {
   const _$_RecorderBlocState(
-      {this.recorderStateStream = const Stream.empty(),
-      this.recordingDurationStream = const Stream.empty(),
-      this.recordingFileOption = const None(),
+      {this.recorderStateStream,
+      this.recordingDurationStream,
+      this.recordingFile,
       this.isError = false,
-      this.errorMessageOption = const None()})
+      this.errorMessage})
       : super._();
 
-  @JsonKey(defaultValue: const Stream.empty())
   @override
-  final Stream<RecorderState> recorderStateStream;
-  @JsonKey(defaultValue: const Stream.empty())
+  final Stream<RecorderState>? recorderStateStream;
   @override
-  final Stream<Duration> recordingDurationStream;
-  @JsonKey(defaultValue: const None())
+  final Stream<Duration>? recordingDurationStream;
   @override
-  final Option<File> recordingFileOption;
+  final File? recordingFile;
   @JsonKey(defaultValue: false)
   @override
   final bool isError;
-  @JsonKey(defaultValue: const None())
   @override
-  final Option<String> errorMessageOption;
+  final String? errorMessage;
 
   @override
   bool operator ==(dynamic other) {
@@ -1120,15 +1116,15 @@ class _$_RecorderBlocState extends _RecorderBlocState {
                     other.recordingDurationStream, recordingDurationStream) ||
                 const DeepCollectionEquality().equals(
                     other.recordingDurationStream, recordingDurationStream)) &&
-            (identical(other.recordingFileOption, recordingFileOption) ||
+            (identical(other.recordingFile, recordingFile) ||
                 const DeepCollectionEquality()
-                    .equals(other.recordingFileOption, recordingFileOption)) &&
+                    .equals(other.recordingFile, recordingFile)) &&
             (identical(other.isError, isError) ||
                 const DeepCollectionEquality()
                     .equals(other.isError, isError)) &&
-            (identical(other.errorMessageOption, errorMessageOption) ||
+            (identical(other.errorMessage, errorMessage) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorMessageOption, errorMessageOption)));
+                    .equals(other.errorMessage, errorMessage)));
   }
 
   @override
@@ -1136,9 +1132,9 @@ class _$_RecorderBlocState extends _RecorderBlocState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(recorderStateStream) ^
       const DeepCollectionEquality().hash(recordingDurationStream) ^
-      const DeepCollectionEquality().hash(recordingFileOption) ^
+      const DeepCollectionEquality().hash(recordingFile) ^
       const DeepCollectionEquality().hash(isError) ^
-      const DeepCollectionEquality().hash(errorMessageOption);
+      const DeepCollectionEquality().hash(errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -1148,25 +1144,25 @@ class _$_RecorderBlocState extends _RecorderBlocState {
 
 abstract class _RecorderBlocState extends RecorderBlocState {
   const factory _RecorderBlocState(
-      {Stream<RecorderState> recorderStateStream,
-      Stream<Duration> recordingDurationStream,
-      Option<File> recordingFileOption,
+      {Stream<RecorderState>? recorderStateStream,
+      Stream<Duration>? recordingDurationStream,
+      File? recordingFile,
       bool isError,
-      Option<String> errorMessageOption}) = _$_RecorderBlocState;
+      String? errorMessage}) = _$_RecorderBlocState;
   const _RecorderBlocState._() : super._();
 
   @override
-  Stream<RecorderState> get recorderStateStream =>
+  Stream<RecorderState>? get recorderStateStream =>
       throw _privateConstructorUsedError;
   @override
-  Stream<Duration> get recordingDurationStream =>
+  Stream<Duration>? get recordingDurationStream =>
       throw _privateConstructorUsedError;
   @override
-  Option<File> get recordingFileOption => throw _privateConstructorUsedError;
+  File? get recordingFile => throw _privateConstructorUsedError;
   @override
   bool get isError => throw _privateConstructorUsedError;
   @override
-  Option<String> get errorMessageOption => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$RecorderBlocStateCopyWith<_RecorderBlocState> get copyWith =>

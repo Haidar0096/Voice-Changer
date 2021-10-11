@@ -29,15 +29,15 @@ class FileSystemService {
     }
   }
 
-  ///creates a file which will have a path as "[directoryPath]/[fileName].[extension]", and returns it.
+  ///creates a file which will have a path as "[path]/[fileName].[extension]", and returns it.
   /// If a file already exists in the provided directory, it will be deleted first
   Future<Either<Failure, File>> createFile({
     required String fileName,
     required String extension,
-    required Directory directory,
+    required String path,
   }) async {
     try {
-      File file = File('${directory.path}/$fileName.$extension');
+      File file = File('$path/$fileName.$extension');
       bool exists = await file.exists();
       if (exists) {
         await file.delete();
@@ -69,7 +69,8 @@ class FileSystemService {
     }
   }
 
-  ///[file] : the file to rename. The [fileName] must consist of only alphanumeric  and underscore characters.
+  ///- [file] : The file to rename. The [fileName] must consist of only alphanumeric  and underscore characters.
+  ///- [extension] : The current or new extension for the file
   Future<Either<Failure, File>> renameFile({
     required File file,
     required String newFileName,
@@ -78,7 +79,7 @@ class FileSystemService {
     try {
       final r = RegExp(
           r'^[a-zA-Z0-9_]*$'); //alphanumeric and underscores only for file name
-      if (!r.hasMatch(newFileName)) {
+      if (!r.hasMatch(newFileName) || newFileName.isEmpty) {
         throw Exception(
             '$newFileName is not a valid file name, it must only contain alphanumeric/underscore characters');
       }

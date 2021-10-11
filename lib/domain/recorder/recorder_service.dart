@@ -8,8 +8,7 @@ part 'recorder_service.freezed.dart';
 ///To use the service without errors, you must first call [initRecorder] and when done call [disposeRecorder]. After calling dispose,
 /// the service instance must not be used again or otherwise unknown states might be reached.
 abstract class RecorderService {
-  static const RecorderState initialRecorderState =
-      RecorderState.uninitialized();
+  static const String defaultCodec = 'aac';
 
   ///The latest recorder state emitted
   RecorderState get recorderState;
@@ -44,6 +43,10 @@ abstract class RecorderService {
   ///* the recorder was uninitialized
   ///* the recorder was recording
   ///* the recorder was  paused
+  /// <br></br>
+  /// <br></br>
+  /// By default the codec will be inferred from the file name extension from the path
+  /// provided to this method, but it should be a known codec (aac for example)
   /// <br></br>
   /// <br></br>
   /// Returns an [Either] wrapping:

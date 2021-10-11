@@ -34,9 +34,9 @@ class _RecordButtonState extends State<_RecordButton> {
               onPanDown: (_) => setState(() {
                 _opacity = 1.0;
               }),
-              onPanEnd: (_) => setState(() {
-                if (snapshot.hasData) {
-                  if (!(snapshot.data!.isRecording)) {
+              onPanEnd: (_) => setState(
+                () {
+                  if (snapshot.hasData && !(snapshot.data!.isRecording)) {
                     if (isMicrophonePermissionGranted) {
                       recorderBloc
                           .add(const RecorderBlocEvent.startRecording());
@@ -52,14 +52,16 @@ class _RecordButtonState extends State<_RecordButton> {
                       );
                     }
                   }
-                }
-                _opacity = 0.0;
-              }),
+                  _opacity = 0.0;
+                },
+              ),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   FilledCircle(
-                    color: Colors.grey,
+                    color: snapshot.hasData && snapshot.data!.isRecording
+                        ? buttonEnabledColor
+                        : buttonDisabledColor,
                     radius: r1,
                   ),
                   FilledCircle(
@@ -94,7 +96,7 @@ class _RecordButtonState extends State<_RecordButton> {
           children: [
             Text(
               'Permission Required',
-              style: largeText,
+              style: mediumText,
               textAlign: TextAlign.center,
             ),
             const Divider(thickness: 3),
@@ -103,7 +105,7 @@ class _RecordButtonState extends State<_RecordButton> {
         actionsAlignment: MainAxisAlignment.center,
         content: Text(
           'Please grant the microphone permission to use the recorder.',
-          style: mediumText,
+          style: smallText,
           textAlign: TextAlign.center,
         ),
         actions: [
@@ -119,7 +121,7 @@ class _RecordButtonState extends State<_RecordButton> {
           ),
         ],
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: BorderRadius.all(Radius.circular(18)),
         ),
       ),
     );

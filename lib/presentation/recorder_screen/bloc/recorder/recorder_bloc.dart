@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
@@ -56,8 +55,8 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
         _errorState,
         (directory) async => (await _fileSystemService.createFile(
           fileName: DateTime.now().toPathSuitableString(),
-          extension: 'aac',
-          directory: directory,
+          extension: RecorderService.defaultCodec,
+          path: directory.path,
         ))
             .fold(
           _errorState,
@@ -66,7 +65,7 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
                 .fold(
               _errorState,
               (_) => state.copyWith(
-                recordingFileOption: Some(tempFile),
+                recordingFile: tempFile,
               ),
             );
           },
@@ -82,21 +81,20 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
 
   FutureOr<RecorderBlocState> _handleSaveRecordingEvent(
       _SaveRecordingEvent event) async {
-    if (event.newRecordingFileName ==
-        state.recordingFileOption.toNullable()!.getName()) {
+    if (event.newRecordingFileName == state.recordingFile!.getName()) {
       return state.copyWith(
-        recordingFileOption: const None(),
+        recordingFile: null,
       );
     }
     return (await _fileSystemService.renameFile(
-      file: state.recordingFileOption.toNullable()!,
+      file: state.recordingFile!,
       newFileName: event.newRecordingFileName,
-      extension: 'aac',
+      extension: RecorderService.defaultCodec,
     ))
         .fold(
       _errorState,
       (_) => state.copyWith(
-        recordingFileOption: const None(),
+        recordingFile: null,
       ),
     );
   }
@@ -104,12 +102,12 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
   FutureOr<RecorderBlocState> _handleDeleteRecordingEvent(
       _DeleteRecordingEvent event) async {
     return (await _fileSystemService.deleteFile(
-      state.recordingFileOption.toNullable()!,
+      state.recordingFile!,
     ))
         .fold(
       _errorState,
       (_) => state.copyWith(
-        recordingFileOption: const None(),
+        recordingFile: null,
       ),
     );
   }
@@ -120,12 +118,11 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
       (await _recorderService.stopRecorder()).fold(
         _errorState, //failure in stopRecorder
         (_) async {
-          return (await _fileSystemService
-                  .deleteFile(state.recordingFileOption.toNullable()!))
+          return (await _fileSystemService.deleteFile(state.recordingFile!))
               .fold(
             _errorState,
             (_) => state.copyWith(
-              recordingFileOption: const None(),
+              recordingFile: null,
             ),
           );
         },
@@ -143,6 +140,6 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
 
   FutureOr<RecorderBlocState> _errorState(Failure failure) => RecorderBlocState(
         isError: true,
-        errorMessageOption: Some(failure.message),
+        errorMessage: failure.message,
       );
 }

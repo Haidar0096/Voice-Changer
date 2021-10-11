@@ -18,11 +18,8 @@ class AppWidget extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]); //set mode to portrait only
-    return MaterialApp(
-      home: const SafeArea(child: RecorderScreenWidget()),
-      theme: ThemeData(
-        primaryColor: Colors.deepPurpleAccent,
-      ),
+    return const MaterialApp(
+      home: SafeArea(child: RecorderScreen()),
     );
   }
 }

@@ -5,10 +5,10 @@ class _RecorderIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     final width = mq.size.width;
-    final r1 = width / 1.7; //radius 1
-    final r2 = r1 / 1.04;
-    final r3 = r2 / 1.09;
-    final r4 = r3 / 1.8;
+    final r1 = width / 1.8; //radius 1
+    final r2 = r1 / 1.08;
+    final r3 = r2 / 1.08;
+    final r4 = r3 / 3;
 
     final recorderBloc = BlocProvider.of<RecorderBloc>(context);
 
@@ -19,7 +19,7 @@ class _RecorderIconWidget extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           FilledCircle(
-            color: Colors.blue,
+            color: primaryColor,
             radius: r1,
           ),
           FilledCircle(
@@ -33,15 +33,13 @@ class _RecorderIconWidget extends StatelessWidget {
           StreamBuilder<RecorderState>(
             stream: recorderBloc.state.recorderStateStream,
             builder: (context, recorderStateSnapshot) {
-              Widget micIcon = Icon(
+              final micIcon = Icon(
                 Icons.mic_none_sharp,
                 color: Colors.black38,
                 size: r4,
               );
-              if (!recorderStateSnapshot.hasData) {
-                return micIcon;
-              }
-              if (!recorderStateSnapshot.data!.isRecording) {
+              if (!recorderStateSnapshot.hasData ||
+                  !recorderStateSnapshot.data!.isRecording) {
                 return micIcon;
               }
               return StreamBuilder<Duration>(

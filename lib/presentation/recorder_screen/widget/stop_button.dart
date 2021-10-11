@@ -25,7 +25,7 @@ class _StopButtonState extends State<_StopButton> {
     final mq = MediaQuery.of(context);
     final width = mq.size.width;
     final containerSide = width / 5;
-    final stopButtonOuterSide = containerSide / 2.2;
+    final stopButtonOuterSide = containerSide / 2.5;
     final stopButtonInnerSide = stopButtonOuterSide / 1.2;
 
     final recorderBloc = BlocProvider.of<RecorderBloc>(context);
@@ -37,17 +37,12 @@ class _StopButtonState extends State<_StopButton> {
           stream: recorderBloc.state.recorderStateStream,
           builder: (context, snapshot) {
             return GestureDetector(
-              onTap: snapshot.hasData
+              onTap: snapshot.hasData && snapshot.data!.isRecording
                   ? () async {
-                      if (snapshot.data!.isRecording) {
-                        recorderBloc
-                            .add(const RecorderBlocEvent.stopRecording());
-                        _fileNameTextController.text = recorderBloc
-                            .state.recordingFileOption
-                            .toNullable()!
-                            .getName();
-                        await _showDialog(context, recorderBloc);
-                      }
+                      recorderBloc.add(const RecorderBlocEvent.stopRecording());
+                      _fileNameTextController.text =
+                          recorderBloc.state.recordingFile!.getName();
+                      await _showDialog(context);
                     }
                   : null,
               child: Column(
@@ -60,8 +55,8 @@ class _StopButtonState extends State<_StopButton> {
                         width: stopButtonOuterSide,
                         height: stopButtonOuterSide,
                         color: snapshot.hasData && snapshot.data!.isRecording
-                            ? Colors.blue
-                            : Colors.black12,
+                            ? buttonEnabledColor
+                            : buttonDisabledColor,
                       ),
                       FilledRectangle(
                         width: stopButtonInnerSide,
@@ -81,75 +76,95 @@ class _StopButtonState extends State<_StopButton> {
     );
   }
 
-  _showDialog(BuildContext context, RecorderBloc recorderBloc) async =>
-      showDialog(
-        context: context,
-        builder: (context) {
-          return WillPopScope(
-            onWillPop: () async {
-              return false;
-            },
-            child: SimpleDialog(
-              title: Text(
-                'Save Recording',
-                style: largeText,
-                textAlign: TextAlign.center,
-              ),
-              children: [
-                SimpleDialogOption(
-                  child: TextFormField(
-                    autovalidateMode: AutovalidateMode.always,
-                    autofocus: true,
-                    controller: _fileNameTextController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(4),
-                        ),
-                      ),
-                      errorMaxLines: 4,
-                    ),
-                    validator: (text) {
-                      String errorMessage =
-                          'file name must contain only alphanumeric/underscore characters';
-                      if (text == null ||
-                          (!text.isAlphaNumericWithUnderscores())) {
-                        return errorMessage;
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                SimpleDialogOption(
-                  child: Text('Save',
-                      style: mediumText.copyWith(color: Colors.blue),
-                      textAlign: TextAlign.center),
-                  onPressed: () {
-                    if (_fileNameTextController.text
-                        .isAlphaNumericWithUnderscores()) {
-                      recorderBloc.add(RecorderBlocEvent.saveRecording(
-                          newRecordingFileName: _fileNameTextController.text));
-                      Navigator.of(context).pop();
-                    }
-                  },
-                ),
-                SimpleDialogOption(
-                  child: Text(
-                    'Delete',
-                    style: mediumText.copyWith(color: Colors.red),
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () {
-                    recorderBloc.add(const RecorderBlocEvent.deleteRecording());
-                    Navigator.of(context).pop();
-                  },
-                ),
-              ],
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(15)),
+  _showDialog(BuildContext context) async {
+    final recorderBloc = BlocProvider.of<RecorderBloc>(context);
+    final mq = MediaQuery.of(context);
+    final width = mq.size.width;
+    return showDialog(
+      context: context,
+      builder: (ctx) => Scaffold(
+        backgroundColor: Colors.black12,
+        body: Center(
+          child: Container(
+            width: width / 1.2,
+            height: width / 1.5,
+            decoration: const ShapeDecoration(
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
             ),
-          );
-        },
-      );
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 14.0, bottom: 14),
+                    child: Text(
+                      'Save Recording',
+                      style: mediumText,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const Divider(thickness: 3),
+                  const SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextField(
+                      autofocus: true,
+                      controller: _fileNameTextController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(30),
+                          ),
+                        ),
+                        errorMaxLines: 4,
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    child: Text('Save',
+                        style: mediumText.copyWith(color: Colors.blue)),
+                    onPressed: () {
+                      if (_isValidFileName(_fileNameTextController.text)) {
+                        recorderBloc.add(RecorderBlocEvent.saveRecording(
+                            newRecordingFileName:
+                                _fileNameTextController.text));
+                        Navigator.of(context).pop();
+                      } else {
+                        ScaffoldMessenger.of(ctx).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                                'file name must contain only alphanumeric/underscore characters'
+                                ', and must not be empty'),
+                            duration: Duration(seconds: 1),
+                          ),
+                        );
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  TextButton(
+                    child: Text('Delete',
+                        style: mediumText.copyWith(color: Colors.red)),
+                    onPressed: () {
+                      recorderBloc
+                          .add(const RecorderBlocEvent.deleteRecording());
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  bool _isValidFileName(String? text) =>
+      text != null && text.isAlphaNumericWithUnderscores() && text.isNotEmpty;
 }

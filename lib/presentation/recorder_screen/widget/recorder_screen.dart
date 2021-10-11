@@ -16,24 +16,31 @@ import 'package:voice_changer/presentation/common/filled_circle.dart';
 import 'package:voice_changer/presentation/common/filled_rectangle.dart';
 import 'package:voice_changer/presentation/recorder_screen/bloc/permission_bloc/permission_bloc.dart';
 import 'package:voice_changer/presentation/recorder_screen/bloc/recorder/recorder_bloc.dart';
+import 'package:voice_changer/presentation/recordings_screen/widget/recordings_screen.dart';
 import 'package:voice_changer/presentation/styles/styles.dart';
 
 part 'error_widget.dart';
+
 part 'loading_widget.dart';
+
 part 'record_button.dart';
+
 part 'recorder_icon_widget.dart';
-part 'recorder_widget.dart';
+
+part 'recorder_screen_components.dart';
+
 part 'recordings_button.dart';
+
 part 'stop_button.dart';
 
-class RecorderScreenWidget extends StatefulWidget {
-  const RecorderScreenWidget({Key? key}) : super(key: key);
+class RecorderScreen extends StatefulWidget {
+  const RecorderScreen({Key? key}) : super(key: key);
 
   @override
-  _RecorderScreenWidgetState createState() => _RecorderScreenWidgetState();
+  _RecorderScreenState createState() => _RecorderScreenState();
 }
 
-class _RecorderScreenWidgetState extends State<RecorderScreenWidget>
+class _RecorderScreenState extends State<RecorderScreen>
     with WidgetsBindingObserver {
   final Logger _logger = serviceLocator.get<Logger>(param1: Level.nothing);
 
@@ -83,27 +90,22 @@ class _RecorderScreenWidgetState extends State<RecorderScreenWidget>
         ],
         child: Builder(
           //The builder is to ensure that the blocs are available in the nested widget's context
-          builder: (context) =>
-              BlocBuilder<PermissionBloc, PermissionBlocState>(
-            builder: (context, permissionBlocState) =>
-                BlocBuilder<RecorderBloc, RecorderBlocState>(
-              builder: (context, recorderBlocState) {
-                if (recorderBlocState.isError) {
-                  return _ErrorWidget();
-                } else {
-                  return StreamBuilder<RecorderState>(
-                      stream: recorderBlocState.recorderStateStream,
-                      builder: (context, snapshot) {
-                        if (!snapshot.hasData ||
-                            (snapshot.hasData &&
-                                !snapshot.data!.isInitialized)) {
-                          return const _LoadingWidget();
-                        }
-                        return _RecorderWidget();
-                      });
-                }
-              },
-            ),
+          builder: (context) => BlocBuilder<RecorderBloc, RecorderBlocState>(
+            builder: (context, recorderBlocState) {
+              if (recorderBlocState.isError) {
+                return _ErrorWidget();
+              } else {
+                return StreamBuilder<RecorderState>(
+                  stream: recorderBlocState.recorderStateStream,
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData || !snapshot.data!.isInitialized) {
+                      return const _LoadingWidget();
+                    }
+                    return _RecorderScreenComponents();
+                  },
+                );
+              }
+            },
           ),
         ),
       );
