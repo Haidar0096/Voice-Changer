@@ -937,12 +937,14 @@ class _$RecorderBlocStateTearOff {
   _RecorderBlocState call(
       {Stream<RecorderState>? recorderStateStream,
       Stream<Duration>? recordingDurationStream,
+      Stream<double>? recordingVolumeStream,
       File? recordingFile,
       bool isError = false,
       String? errorMessage}) {
     return _RecorderBlocState(
       recorderStateStream: recorderStateStream,
       recordingDurationStream: recordingDurationStream,
+      recordingVolumeStream: recordingVolumeStream,
       recordingFile: recordingFile,
       isError: isError,
       errorMessage: errorMessage,
@@ -958,6 +960,8 @@ mixin _$RecorderBlocState {
   Stream<RecorderState>? get recorderStateStream =>
       throw _privateConstructorUsedError;
   Stream<Duration>? get recordingDurationStream =>
+      throw _privateConstructorUsedError;
+  Stream<double>? get recordingVolumeStream =>
       throw _privateConstructorUsedError;
   File? get recordingFile => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
@@ -976,6 +980,7 @@ abstract class $RecorderBlocStateCopyWith<$Res> {
   $Res call(
       {Stream<RecorderState>? recorderStateStream,
       Stream<Duration>? recordingDurationStream,
+      Stream<double>? recordingVolumeStream,
       File? recordingFile,
       bool isError,
       String? errorMessage});
@@ -994,6 +999,7 @@ class _$RecorderBlocStateCopyWithImpl<$Res>
   $Res call({
     Object? recorderStateStream = freezed,
     Object? recordingDurationStream = freezed,
+    Object? recordingVolumeStream = freezed,
     Object? recordingFile = freezed,
     Object? isError = freezed,
     Object? errorMessage = freezed,
@@ -1007,6 +1013,10 @@ class _$RecorderBlocStateCopyWithImpl<$Res>
           ? _value.recordingDurationStream
           : recordingDurationStream // ignore: cast_nullable_to_non_nullable
               as Stream<Duration>?,
+      recordingVolumeStream: recordingVolumeStream == freezed
+          ? _value.recordingVolumeStream
+          : recordingVolumeStream // ignore: cast_nullable_to_non_nullable
+              as Stream<double>?,
       recordingFile: recordingFile == freezed
           ? _value.recordingFile
           : recordingFile // ignore: cast_nullable_to_non_nullable
@@ -1033,6 +1043,7 @@ abstract class _$RecorderBlocStateCopyWith<$Res>
   $Res call(
       {Stream<RecorderState>? recorderStateStream,
       Stream<Duration>? recordingDurationStream,
+      Stream<double>? recordingVolumeStream,
       File? recordingFile,
       bool isError,
       String? errorMessage});
@@ -1053,6 +1064,7 @@ class __$RecorderBlocStateCopyWithImpl<$Res>
   $Res call({
     Object? recorderStateStream = freezed,
     Object? recordingDurationStream = freezed,
+    Object? recordingVolumeStream = freezed,
     Object? recordingFile = freezed,
     Object? isError = freezed,
     Object? errorMessage = freezed,
@@ -1066,6 +1078,10 @@ class __$RecorderBlocStateCopyWithImpl<$Res>
           ? _value.recordingDurationStream
           : recordingDurationStream // ignore: cast_nullable_to_non_nullable
               as Stream<Duration>?,
+      recordingVolumeStream: recordingVolumeStream == freezed
+          ? _value.recordingVolumeStream
+          : recordingVolumeStream // ignore: cast_nullable_to_non_nullable
+              as Stream<double>?,
       recordingFile: recordingFile == freezed
           ? _value.recordingFile
           : recordingFile // ignore: cast_nullable_to_non_nullable
@@ -1088,6 +1104,7 @@ class _$_RecorderBlocState extends _RecorderBlocState {
   const _$_RecorderBlocState(
       {this.recorderStateStream,
       this.recordingDurationStream,
+      this.recordingVolumeStream,
       this.recordingFile,
       this.isError = false,
       this.errorMessage})
@@ -1097,6 +1114,8 @@ class _$_RecorderBlocState extends _RecorderBlocState {
   final Stream<RecorderState>? recorderStateStream;
   @override
   final Stream<Duration>? recordingDurationStream;
+  @override
+  final Stream<double>? recordingVolumeStream;
   @override
   final File? recordingFile;
   @JsonKey(defaultValue: false)
@@ -1116,6 +1135,9 @@ class _$_RecorderBlocState extends _RecorderBlocState {
                     other.recordingDurationStream, recordingDurationStream) ||
                 const DeepCollectionEquality().equals(
                     other.recordingDurationStream, recordingDurationStream)) &&
+            (identical(other.recordingVolumeStream, recordingVolumeStream) ||
+                const DeepCollectionEquality().equals(
+                    other.recordingVolumeStream, recordingVolumeStream)) &&
             (identical(other.recordingFile, recordingFile) ||
                 const DeepCollectionEquality()
                     .equals(other.recordingFile, recordingFile)) &&
@@ -1132,6 +1154,7 @@ class _$_RecorderBlocState extends _RecorderBlocState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(recorderStateStream) ^
       const DeepCollectionEquality().hash(recordingDurationStream) ^
+      const DeepCollectionEquality().hash(recordingVolumeStream) ^
       const DeepCollectionEquality().hash(recordingFile) ^
       const DeepCollectionEquality().hash(isError) ^
       const DeepCollectionEquality().hash(errorMessage);
@@ -1146,6 +1169,7 @@ abstract class _RecorderBlocState extends RecorderBlocState {
   const factory _RecorderBlocState(
       {Stream<RecorderState>? recorderStateStream,
       Stream<Duration>? recordingDurationStream,
+      Stream<double>? recordingVolumeStream,
       File? recordingFile,
       bool isError,
       String? errorMessage}) = _$_RecorderBlocState;
@@ -1156,6 +1180,9 @@ abstract class _RecorderBlocState extends RecorderBlocState {
       throw _privateConstructorUsedError;
   @override
   Stream<Duration>? get recordingDurationStream =>
+      throw _privateConstructorUsedError;
+  @override
+  Stream<double>? get recordingVolumeStream =>
       throw _privateConstructorUsedError;
   @override
   File? get recordingFile => throw _privateConstructorUsedError;

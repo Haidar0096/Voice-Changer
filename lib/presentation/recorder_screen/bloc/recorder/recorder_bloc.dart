@@ -46,6 +46,7 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
         (initRecorderResult) async => RecorderBlocState(
           recorderStateStream: initRecorderResult.recorderStateStream,
           recordingDurationStream: initRecorderResult.recordingDurationStream,
+          recordingVolumeStream: initRecorderResult.recordingVolumeStream,
         ),
       );
 

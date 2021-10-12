@@ -26,6 +26,9 @@ class RecorderServiceImpl implements RecorderService {
   final StreamController<Duration> _recordingDurationController =
       StreamController<Duration>.broadcast();
 
+  final StreamController<double> _recordingVolumeController =
+      StreamController<double>.broadcast();
+
   @override
   RecorderState get recorderState => _recorderStateSubject.value;
 
@@ -35,15 +38,22 @@ class RecorderServiceImpl implements RecorderService {
       if (_recorderStateSubject.value.isInitialized) {
         return Right(
           InitRecorderResult(
-              recorderStateStream: _recorderStateSubject.stream,
-              recordingDurationStream: _recordingDurationController.stream),
+            recorderStateStream: _recorderStateSubject.stream,
+            recordingDurationStream: _recordingDurationController.stream,
+            recordingVolumeStream: _recordingVolumeController.stream,
+          ),
         );
       }
       await _recorder.openAudioSession();
-      await _recorder.setSubscriptionDuration(const Duration(milliseconds: 50));
+      await _recorder.setSubscriptionDuration(const Duration(milliseconds: 100));
 
-      _recorder.onProgress
-          ?.listen((data) => _recordingDurationController.add(data.duration));
+      _recorder.onProgress?.listen((data) {
+        _recordingDurationController.add(data.duration);
+        if (data.decibels != null) {
+          //y=100*x/120 where y is the volume on scale 0-->100 and x is dB on scale 0-->120
+          _recordingVolumeController.add(100 * data.decibels! / 120);
+        }
+      });
 
       // if (!_recorderStateController.hasListener) {
       //   throw Exception(
@@ -52,8 +62,10 @@ class RecorderServiceImpl implements RecorderService {
       _recorderStateSubject.add(const RecorderState.stopped());
       return Right(
         InitRecorderResult(
-            recorderStateStream: _recorderStateSubject.stream,
-            recordingDurationStream: _recordingDurationController.stream),
+          recorderStateStream: _recorderStateSubject.stream,
+          recordingDurationStream: _recordingDurationController.stream,
+          recordingVolumeStream: _recordingVolumeController.stream,
+        ),
       );
     } catch (e) {
       _logger.e('error occurred in initRecorder()', e);
@@ -76,6 +88,7 @@ class RecorderServiceImpl implements RecorderService {
       _recorderStateSubject.add(const RecorderState.uninitialized());
       _recorderStateSubject.close();
       _recordingDurationController.close();
+      _recordingVolumeController.close();
       return const Right(null);
     } catch (e) {
       _logger.e('error occurred in disposeRecorder()', e);

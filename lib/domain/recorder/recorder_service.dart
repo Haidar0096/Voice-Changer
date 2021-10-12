@@ -123,11 +123,16 @@ class InitRecorderResult {
   ///Stream of states of the recorder
   final Stream<RecorderState> recorderStateStream;
 
-  ///Stream of durations of the current recording, if there is any
+  ///Stream of durations of the current recording
   final Stream<Duration> recordingDurationStream;
+
+  ///Stream of the volume of the current recording at this point in time
+  ///0 is the minimum value and 100 is the maximum
+  final Stream<double> recordingVolumeStream;
 
   InitRecorderResult({
     required this.recorderStateStream,
     required this.recordingDurationStream,
+    required this.recordingVolumeStream,
   });
 }
