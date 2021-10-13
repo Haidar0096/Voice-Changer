@@ -105,6 +105,10 @@ abstract class PlayerService {
   ///* nothing, in case of success
   ///* [Failure], in case of failure (no change of the state happens in this case)
   Future<Either<Failure, void>> stopPlayer();
+
+  ///Seeks the player to the desired position.
+  ///A failure will happen if player was stopped or uninitialized.
+  Future<Either<Failure, void>> seekToPosition(Duration position);
 }
 
 class InitPlayerResult {

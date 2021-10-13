@@ -4,9 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
-import 'package:voice_changer/domain/player/player_service.dart';
-import 'package:voice_changer/presentation/recordings_screen/bloc/player_bloc.dart';
-import 'package:voice_changer/presentation/recordings_screen/bloc/recordings_bloc.dart';
+import 'package:voice_changer/presentation/recordings_screen/bloc/player_bloc/player_bloc.dart';
+import 'package:voice_changer/presentation/recordings_screen/bloc/recordings_bloc/recordings_bloc.dart';
 import 'package:voice_changer/presentation/styles/styles.dart';
 
 part 'error_widget.dart';
@@ -75,12 +74,12 @@ class _RecordingsScreenState extends State<RecordingsScreen>
               if (playerBlocState.isError || recordingsBlocState.isError) {
                 return _ErrorWidget();
               } else {
-                return StreamBuilder<PlayerState>(
-                  stream: playerBlocState.playerStateStream,
+                return StreamBuilder<PlayerInfo>(
+                  stream: playerBlocState.playerInfoStream,
                   builder: (context, snapshot) {
                     if (snapshot.hasData &&
-                        snapshot.data!.isInitialized &&
-                        !recordingsBlocState.isLoading) {
+                        snapshot.data!.state.isInitialized &&
+                        !recordingsBlocState.isProcessing) {
                       return const _RecordingsScreenComponents();
                     } else {
                       return const _LoadingWidget();

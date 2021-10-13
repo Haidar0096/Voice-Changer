@@ -49,6 +49,8 @@ class ErrorCode with _$ErrorCode {
 
   const factory ErrorCode.stopPlayerError() = _StopPlayerError;
 
+  const factory ErrorCode.seekToPositionError() = _SeekToPositionError;
+
   // const factory ErrorCode.getTrackDetailsError() = _GetTrackDetailsError;
   //
   // const factory ErrorCode.changeTempoError() = _ChangeTempoError;

@@ -20,14 +20,25 @@ class PermissionBloc extends Bloc<PermissionBlocEvent, PermissionBlocState> {
   PermissionBloc(this._permissionHandlerService)
       : super(const PermissionBlocState()) {
     on<PermissionBlocEvent>((event, emit) async {
-      _logger.d('An event has arrived : $event while the state was $state');
       emit(await event.map(
         checkMicrophonePermission: _handleCheckMicrophonePermission,
         requestMicrophonePermission: _handleRequestMicrophonePermission,
         openSettingsApp: _handleOpenSettingsApp,
       ));
-      _logger.i('Yielding a new state in response to event $event : $state');
     });
+  }
+
+  @override
+  void onEvent(event) {
+    super.onEvent(event);
+    _logger.d('An event has arrived : $event while the state was $state');
+  }
+
+  @override
+  void onTransition(transition) {
+    super.onTransition(transition);
+    _logger.i(
+        'Emitting a new state: ${transition.nextState} in response to event ${transition.event}');
   }
 
   FutureOr<PermissionBlocState> _handleCheckMicrophonePermission(

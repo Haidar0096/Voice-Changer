@@ -4,7 +4,7 @@ part of 'recordings_bloc.dart';
 class RecordingsBlocState with _$RecordingsBlocState {
   const factory RecordingsBlocState({
     List<RecordingDetails>? recordings,
-    @Default(false) bool isLoading,
+    @Default(false) bool isProcessing,
     @Default(false) bool isError,
     String? errorMessage,
   }) = _RecordingsBlocState;

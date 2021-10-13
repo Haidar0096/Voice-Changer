@@ -14,15 +14,17 @@ import '../domain/common/service/permission_handler_service_impl.dart' as _i6;
 import '../domain/player/player_service.dart' as _i7;
 import '../domain/player/player_service_impl.dart' as _i8;
 import '../domain/recorder/recorder_service.dart' as _i9;
-import '../domain/recorder/recording_service_impl.dart' as _i10;
+import '../domain/recorder/recorder_service_impl.dart' as _i10;
 import '../domain/recording/recording_details_service.dart' as _i11;
 import '../domain/recording/recording_details_service_impl.dart' as _i12;
 import '../presentation/recorder_screen/bloc/permission_bloc/permission_bloc.dart'
     as _i14;
-import '../presentation/recorder_screen/bloc/recorder/recorder_bloc.dart'
+import '../presentation/recorder_screen/bloc/recorder_bloc/recorder_bloc.dart'
     as _i16;
-import '../presentation/recordings_screen/bloc/player_bloc.dart' as _i15;
-import '../presentation/recordings_screen/bloc/recordings_bloc.dart' as _i13;
+import '../presentation/recordings_screen/bloc/player_bloc/player_bloc.dart'
+    as _i15;
+import '../presentation/recordings_screen/bloc/recordings_bloc/recordings_bloc.dart'
+    as _i13;
 import 'service_locator.dart' as _i17; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars

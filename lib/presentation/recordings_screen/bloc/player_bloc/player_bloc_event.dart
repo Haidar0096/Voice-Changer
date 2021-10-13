@@ -17,6 +17,9 @@ class PlayerBlocEvent with _$PlayerBlocEvent {
 
   const factory PlayerBlocEvent.playbackEnded() = _PlaybackEnded;
 
+  const factory PlayerBlocEvent.seekToPosition(Duration position) =
+      _SeekToPosition;
+
   ///This event is fired when the app goes inactive
   const factory PlayerBlocEvent.appGoInactive() = _AppGoInactiveEvent;
 }

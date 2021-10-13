@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
+import 'package:flutter_sound_lite/flutter_sound.dart';
 import 'package:flutter_sound_lite/public/flutter_sound_recorder.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
@@ -24,11 +25,11 @@ class RecorderServiceImpl implements RecorderService {
   final BehaviorSubject<RecorderState> _recorderStateSubject =
       BehaviorSubject.seeded(const RecorderState.uninitialized());
 
-  final StreamController<Duration> _recordingDurationController =
-      StreamController<Duration>.broadcast();
+  final BehaviorSubject<Duration> _recordingDurationController =
+      BehaviorSubject<Duration>.seeded(Duration.zero);
 
   final StreamController<double> _recordingVolumeController =
-      StreamController<double>.broadcast();
+      BehaviorSubject<double>.seeded(0);
 
   @override
   Stream<RecorderState> get recorderStateStream => _recorderStateSubject.stream;
@@ -36,6 +37,9 @@ class RecorderServiceImpl implements RecorderService {
   @override
   Stream<Duration> get recordingDurationStream =>
       _recordingDurationController.stream;
+
+  @override
+  Stream<double> get recordingVolumeStream => _recordingVolumeController.stream;
 
   @override
   RecorderState get recorderState => _recorderStateSubject.value;
@@ -56,13 +60,17 @@ class RecorderServiceImpl implements RecorderService {
       await _recorder
           .setSubscriptionDuration(const Duration(milliseconds: 100));
 
-      _recorder.onProgress?.listen((data) {
-        _recordingDurationController.add(data.duration);
-        if (data.decibels != null) {
-          //y=100*x/120 where y is the volume on scale 0-->100 and x is dB on scale 0-->120
-          _recordingVolumeController.add(100 * data.decibels! / 120);
-        }
-      });
+      late StreamSubscription<RecordingDisposition> subscription;
+      subscription = _recorder.onProgress!.listen(
+        (data) {
+          _recordingDurationController.add(data.duration);
+          if (data.decibels != null) {
+            //y=100*x/120 where y is the volume on scale 0-->100 and x is dB on scale 0-->120
+            _recordingVolumeController.add(100 * data.decibels! / 120);
+          }
+        },
+        onDone: () => subscription.cancel(),
+      );
 
       // if (!_recorderStateController.hasListener) {
       //   throw Exception(
@@ -117,7 +125,7 @@ class RecorderServiceImpl implements RecorderService {
             'startRecorder() was called from an illegal state: ${_recorderStateSubject.value}');
       }
       // _logger.i('this recording will be saved into $path');
-      await _recorder.startRecorder(toFile: file.path);
+      await _recorder.startRecorder(toFile: file.path,codec: Codec.aacMP4);
       _recorderStateSubject.add(const RecorderState.recording());
       return const Right(null);
     } catch (e) {

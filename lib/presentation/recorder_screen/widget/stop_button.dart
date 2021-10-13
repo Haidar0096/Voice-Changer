@@ -30,14 +30,14 @@ class _StopButtonState extends State<_StopButton> {
 
     final recorderBloc = BlocProvider.of<RecorderBloc>(context);
 
-    return SizedBox(
-      width: containerSide,
-      height: containerSide,
-      child: StreamBuilder<RecorderState>(
-          stream: recorderBloc.state.recorderStateStream,
-          builder: (context, snapshot) {
-            return GestureDetector(
-              onTap: snapshot.hasData && snapshot.data!.isRecording
+    return StreamBuilder<RecorderInfo>(
+        stream: recorderBloc.state.recorderInfoStream,
+        builder: (context, snapshot) {
+          return SizedBox(
+            width: containerSide,
+            height: containerSide,
+            child: GestureDetector(
+              onTap: snapshot.hasData && snapshot.data!.state.isRecording
                   ? () async {
                       recorderBloc.add(const RecorderBlocEvent.stopRecording());
                       _fileNameTextController.text =
@@ -54,9 +54,10 @@ class _StopButtonState extends State<_StopButton> {
                       FilledRectangle(
                         width: stopButtonOuterSide,
                         height: stopButtonOuterSide,
-                        color: snapshot.hasData && snapshot.data!.isRecording
-                            ? buttonEnabledColor
-                            : buttonDisabledColor,
+                        color:
+                            snapshot.hasData && snapshot.data!.state.isRecording
+                                ? Theme.of(context).colorScheme.secondary
+                                : Theme.of(context).disabledColor,
                       ),
                       FilledRectangle(
                         width: stopButtonInnerSide,
@@ -71,9 +72,9 @@ class _StopButtonState extends State<_StopButton> {
                   ),
                 ],
               ),
-            );
-          }),
-    );
+            ),
+          );
+        });
   }
 
   _showDialog(BuildContext context) async {

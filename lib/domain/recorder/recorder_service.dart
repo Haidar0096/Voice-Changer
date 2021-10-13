@@ -10,13 +10,17 @@ part 'recorder_service.freezed.dart';
 ///To use the service without errors, you must first call [initRecorder] and when done call [disposeRecorder]. After calling dispose,
 /// the service instance must not be used again or otherwise unknown states might be reached.
 abstract class RecorderService {
-  static const String defaultCodec = 'aac';
+  static const String defaultCodec = 'mp4';
 
-  ///Stream of the states of the recorder
+  ///Stream of the states of the recorder, it is seeded with value [RecorderState.uninitialized()]
   Stream<RecorderState> get recorderStateStream;
 
-  ///Stream of the durations of the current recording
+  ///Stream of the durations of the current recording, it is seeded with value [Duration.zero]
   Stream<Duration> get recordingDurationStream;
+
+  ///Stream of the volume of the current recording at this point in time
+  ///0 is the minimum value and 100 is the maximum. It is seeded with value 0
+  Stream<double> get recordingVolumeStream;
 
   ///The latest recorder state emitted
   RecorderState get recorderState;

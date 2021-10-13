@@ -20,6 +20,12 @@ class _$RecordingsBlocEventTearOff {
   _Init init() {
     return const _Init();
   }
+
+  _DeleteRecordingEvent deleteRecording(File file) {
+    return _DeleteRecordingEvent(
+      file,
+    );
+  }
 }
 
 /// @nodoc
@@ -30,32 +36,38 @@ mixin _$RecordingsBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
+    required TResult Function(File file) deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function(File file)? deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function(File file)? deleteRecording,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Init value) init,
+    required TResult Function(_DeleteRecordingEvent value) deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Init value)? init,
+    TResult Function(_DeleteRecordingEvent value)? deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Init value)? init,
+    TResult Function(_DeleteRecordingEvent value)? deleteRecording,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +128,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
+    required TResult Function(File file) deleteRecording,
   }) {
     return init();
   }
@@ -124,6 +137,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function(File file)? deleteRecording,
   }) {
     return init?.call();
   }
@@ -132,6 +146,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function(File file)? deleteRecording,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -144,6 +159,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Init value) init,
+    required TResult Function(_DeleteRecordingEvent value) deleteRecording,
   }) {
     return init(this);
   }
@@ -152,6 +168,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Init value)? init,
+    TResult Function(_DeleteRecordingEvent value)? deleteRecording,
   }) {
     return init?.call(this);
   }
@@ -160,6 +177,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Init value)? init,
+    TResult Function(_DeleteRecordingEvent value)? deleteRecording,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -174,17 +192,152 @@ abstract class _Init implements RecordingsBlocEvent {
 }
 
 /// @nodoc
+abstract class _$DeleteRecordingEventCopyWith<$Res> {
+  factory _$DeleteRecordingEventCopyWith(_DeleteRecordingEvent value,
+          $Res Function(_DeleteRecordingEvent) then) =
+      __$DeleteRecordingEventCopyWithImpl<$Res>;
+  $Res call({File file});
+}
+
+/// @nodoc
+class __$DeleteRecordingEventCopyWithImpl<$Res>
+    extends _$RecordingsBlocEventCopyWithImpl<$Res>
+    implements _$DeleteRecordingEventCopyWith<$Res> {
+  __$DeleteRecordingEventCopyWithImpl(
+      _DeleteRecordingEvent _value, $Res Function(_DeleteRecordingEvent) _then)
+      : super(_value, (v) => _then(v as _DeleteRecordingEvent));
+
+  @override
+  _DeleteRecordingEvent get _value => super._value as _DeleteRecordingEvent;
+
+  @override
+  $Res call({
+    Object? file = freezed,
+  }) {
+    return _then(_DeleteRecordingEvent(
+      file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
+  const _$_DeleteRecordingEvent(this.file);
+
+  @override
+  final File file;
+
+  @override
+  String toString() {
+    return 'RecordingsBlocEvent.deleteRecording(file: $file)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DeleteRecordingEvent &&
+            (identical(other.file, file) ||
+                const DeepCollectionEquality().equals(other.file, file)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(file);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DeleteRecordingEventCopyWith<_DeleteRecordingEvent> get copyWith =>
+      __$DeleteRecordingEventCopyWithImpl<_DeleteRecordingEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function(File file) deleteRecording,
+  }) {
+    return deleteRecording(file);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(File file)? deleteRecording,
+  }) {
+    return deleteRecording?.call(file);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function(File file)? deleteRecording,
+    required TResult orElse(),
+  }) {
+    if (deleteRecording != null) {
+      return deleteRecording(file);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) init,
+    required TResult Function(_DeleteRecordingEvent value) deleteRecording,
+  }) {
+    return deleteRecording(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Init value)? init,
+    TResult Function(_DeleteRecordingEvent value)? deleteRecording,
+  }) {
+    return deleteRecording?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? init,
+    TResult Function(_DeleteRecordingEvent value)? deleteRecording,
+    required TResult orElse(),
+  }) {
+    if (deleteRecording != null) {
+      return deleteRecording(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteRecordingEvent implements RecordingsBlocEvent {
+  const factory _DeleteRecordingEvent(File file) = _$_DeleteRecordingEvent;
+
+  File get file => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeleteRecordingEventCopyWith<_DeleteRecordingEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$RecordingsBlocStateTearOff {
   const _$RecordingsBlocStateTearOff();
 
   _RecordingsBlocState call(
       {List<RecordingDetails>? recordings,
-      bool isLoading = false,
+      bool isProcessing = false,
       bool isError = false,
       String? errorMessage}) {
     return _RecordingsBlocState(
       recordings: recordings,
-      isLoading: isLoading,
+      isProcessing: isProcessing,
       isError: isError,
       errorMessage: errorMessage,
     );
@@ -197,7 +350,7 @@ const $RecordingsBlocState = _$RecordingsBlocStateTearOff();
 /// @nodoc
 mixin _$RecordingsBlocState {
   List<RecordingDetails>? get recordings => throw _privateConstructorUsedError;
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isProcessing => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
@@ -213,7 +366,7 @@ abstract class $RecordingsBlocStateCopyWith<$Res> {
       _$RecordingsBlocStateCopyWithImpl<$Res>;
   $Res call(
       {List<RecordingDetails>? recordings,
-      bool isLoading,
+      bool isProcessing,
       bool isError,
       String? errorMessage});
 }
@@ -230,7 +383,7 @@ class _$RecordingsBlocStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? recordings = freezed,
-    Object? isLoading = freezed,
+    Object? isProcessing = freezed,
     Object? isError = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -239,9 +392,9 @@ class _$RecordingsBlocStateCopyWithImpl<$Res>
           ? _value.recordings
           : recordings // ignore: cast_nullable_to_non_nullable
               as List<RecordingDetails>?,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
       isError: isError == freezed
           ? _value.isError
@@ -264,7 +417,7 @@ abstract class _$RecordingsBlocStateCopyWith<$Res>
   @override
   $Res call(
       {List<RecordingDetails>? recordings,
-      bool isLoading,
+      bool isProcessing,
       bool isError,
       String? errorMessage});
 }
@@ -283,7 +436,7 @@ class __$RecordingsBlocStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? recordings = freezed,
-    Object? isLoading = freezed,
+    Object? isProcessing = freezed,
     Object? isError = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -292,9 +445,9 @@ class __$RecordingsBlocStateCopyWithImpl<$Res>
           ? _value.recordings
           : recordings // ignore: cast_nullable_to_non_nullable
               as List<RecordingDetails>?,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
       isError: isError == freezed
           ? _value.isError
@@ -313,7 +466,7 @@ class __$RecordingsBlocStateCopyWithImpl<$Res>
 class _$_RecordingsBlocState implements _RecordingsBlocState {
   const _$_RecordingsBlocState(
       {this.recordings,
-      this.isLoading = false,
+      this.isProcessing = false,
       this.isError = false,
       this.errorMessage});
 
@@ -321,7 +474,7 @@ class _$_RecordingsBlocState implements _RecordingsBlocState {
   final List<RecordingDetails>? recordings;
   @JsonKey(defaultValue: false)
   @override
-  final bool isLoading;
+  final bool isProcessing;
   @JsonKey(defaultValue: false)
   @override
   final bool isError;
@@ -330,7 +483,7 @@ class _$_RecordingsBlocState implements _RecordingsBlocState {
 
   @override
   String toString() {
-    return 'RecordingsBlocState(recordings: $recordings, isLoading: $isLoading, isError: $isError, errorMessage: $errorMessage)';
+    return 'RecordingsBlocState(recordings: $recordings, isProcessing: $isProcessing, isError: $isError, errorMessage: $errorMessage)';
   }
 
   @override
@@ -340,9 +493,9 @@ class _$_RecordingsBlocState implements _RecordingsBlocState {
             (identical(other.recordings, recordings) ||
                 const DeepCollectionEquality()
                     .equals(other.recordings, recordings)) &&
-            (identical(other.isLoading, isLoading) ||
+            (identical(other.isProcessing, isProcessing) ||
                 const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)) &&
+                    .equals(other.isProcessing, isProcessing)) &&
             (identical(other.isError, isError) ||
                 const DeepCollectionEquality()
                     .equals(other.isError, isError)) &&
@@ -355,7 +508,7 @@ class _$_RecordingsBlocState implements _RecordingsBlocState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(recordings) ^
-      const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(isProcessing) ^
       const DeepCollectionEquality().hash(isError) ^
       const DeepCollectionEquality().hash(errorMessage);
 
@@ -369,14 +522,14 @@ class _$_RecordingsBlocState implements _RecordingsBlocState {
 abstract class _RecordingsBlocState implements RecordingsBlocState {
   const factory _RecordingsBlocState(
       {List<RecordingDetails>? recordings,
-      bool isLoading,
+      bool isProcessing,
       bool isError,
       String? errorMessage}) = _$_RecordingsBlocState;
 
   @override
   List<RecordingDetails>? get recordings => throw _privateConstructorUsedError;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isProcessing => throw _privateConstructorUsedError;
   @override
   bool get isError => throw _privateConstructorUsedError;
   @override

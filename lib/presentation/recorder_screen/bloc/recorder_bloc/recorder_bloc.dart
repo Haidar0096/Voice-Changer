@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
 import 'package:meta/meta.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
 import 'package:voice_changer/domain/common/exception/failure.dart';
 import 'package:voice_changer/domain/common/extensions/datetime_extensions.dart';
@@ -14,7 +15,9 @@ import 'package:voice_changer/domain/common/service/filesystem_service.dart';
 import 'package:voice_changer/domain/recorder/recorder_service.dart';
 
 part 'recorder_bloc.freezed.dart';
+
 part 'recorder_bloc_event.dart';
+
 part 'recorder_bloc_state.dart';
 
 @Injectable()
@@ -23,31 +26,62 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
   final FileSystemService _fileSystemService;
   final Logger _logger = serviceLocator.get<Logger>(param1: Level.debug);
 
+  final _recordingInfoSubject = BehaviorSubject<RecorderInfo>();
+
   //the initial state is passed to the super class
   RecorderBloc(this._recorderService, this._fileSystemService)
       : super(const RecorderBlocState()) {
     on<RecorderBlocEvent>((event, emit) async {
-      _logger.d('An event has arrived : $event while the state was $state');
-      emit(await event.map(
-        init: _handleInitEvent,
-        startRecording: _handleStartRecordingEvent,
-        stopRecording: _handleStopRecordingEvent,
-        saveRecording: _handleSaveRecordingEvent,
-        appGoInactive: _handleAppGoInactiveEvent,
-        deleteRecording: _handleDeleteRecordingEvent,
-      ));
-      _logger.i('Yielding a new state in response to event $event : $state');
+      emit(
+        await event.map(
+          init: _handleInitEvent,
+          startRecording: _handleStartRecordingEvent,
+          stopRecording: _handleStopRecordingEvent,
+          saveRecording: _handleSaveRecordingEvent,
+          appGoInactive: _handleAppGoInactiveEvent,
+          deleteRecording: _handleDeleteRecordingEvent,
+        ),
+      );
     });
   }
 
-  FutureOr<RecorderBlocState> _handleInitEvent(_InitEvent event) async =>
+  @override
+  void onEvent(event) {
+    super.onEvent(event);
+    _logger.d('An event has arrived : $event while the state was $state');
+  }
+
+  @override
+  void onTransition(transition) {
+    super.onTransition(transition);
+    _logger.i(
+        'Emitting a new state: ${transition.nextState} in response to event ${transition.event}');
+  }
+
+  FutureOr<RecorderBlocState> _handleInitEvent(_InitEvent _) async =>
       (await _recorderService.initRecorder()).fold(
         _errorState,
-        (initRecorderResult) async => RecorderBlocState(
-          recorderStateStream: initRecorderResult.recorderStateStream,
-          recordingDurationStream: initRecorderResult.recordingDurationStream,
-          recordingVolumeStream: initRecorderResult.recordingVolumeStream,
-        ),
+        (initRecorderResult) async {
+          late final StreamSubscription<RecorderInfo> subscription;
+          subscription =
+              Rx.combineLatest3<RecorderState, Duration, double, RecorderInfo>(
+            initRecorderResult.recorderStateStream,
+            initRecorderResult.recordingDurationStream,
+            initRecorderResult.recordingVolumeStream,
+            (s, d, v) => RecorderInfo(s, d, v),
+          ).listen(
+                  (event) => _recordingInfoSubject.add(
+                        RecorderInfo(
+                          event.state,
+                          event.duration,
+                          event.volume,
+                        ),
+                      ),
+                  onDone: () => subscription.cancel());
+          return RecorderBlocState(
+            recorderInfoStream: _recordingInfoSubject.stream,
+          );
+        },
       );
 
   FutureOr<RecorderBlocState> _handleStartRecordingEvent(
@@ -134,6 +168,7 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
   @override
   Future<void> close() async {
     await _recorderService.disposeRecorder();
+    await _recordingInfoSubject.close();
     _logger.i('disposed recorder bloc');
     super.close();
   }

@@ -10,14 +10,14 @@ class _RecorderScreenComponents extends StatelessWidget {
     final width = mq.size.width;
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: Text('Recorder', style: mediumText),
+        centerTitle: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Stack(
           children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Text('Recorder', style: veryLargeText),
-            ),
             Align(
               alignment: Alignment.center,
               child: _RecorderIconWidget(),

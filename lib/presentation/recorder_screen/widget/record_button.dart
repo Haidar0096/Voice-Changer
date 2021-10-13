@@ -24,13 +24,13 @@ class _RecordButtonState extends State<_RecordButton> {
     final isMicrophonePermissionGranted =
         permissionBloc.state.isMicrophonePermissionGranted;
 
-    return SizedBox(
-      width: r1,
-      height: r1,
-      child: StreamBuilder<RecorderState>(
-          stream: recorderBloc.state.recorderStateStream,
-          builder: (context, snapshot) {
-            return GestureDetector(
+    return StreamBuilder<RecorderInfo>(
+        stream: recorderBloc.state.recorderInfoStream,
+        builder: (context, snapshot) {
+          return SizedBox(
+            width: r1,
+            height: r1,
+            child: GestureDetector(
               onPanDown: (_) => setState(() {
                 _opacity = 1.0;
               }),
@@ -41,7 +41,7 @@ class _RecordButtonState extends State<_RecordButton> {
               ),
               onTap: () {
                 setState(() {
-                  if (snapshot.hasData && !(snapshot.data!.isRecording)) {
+                  if (snapshot.hasData && !snapshot.data!.state.isRecording) {
                     if (isMicrophonePermissionGranted) {
                       recorderBloc
                           .add(const RecorderBlocEvent.startRecording());
@@ -64,9 +64,9 @@ class _RecordButtonState extends State<_RecordButton> {
                 alignment: Alignment.center,
                 children: [
                   FilledCircle(
-                    color: snapshot.hasData && snapshot.data!.isRecording
-                        ? buttonEnabledColor
-                        : buttonDisabledColor,
+                    color: snapshot.hasData && snapshot.data!.state.isRecording
+                        ? Theme.of(context).colorScheme.secondary
+                        : Theme.of(context).disabledColor,
                     radius: r1,
                   ),
                   FilledCircle(
@@ -87,9 +87,9 @@ class _RecordButtonState extends State<_RecordButton> {
                   ),
                 ],
               ),
-            );
-          }),
-    );
+            ),
+          );
+        });
   }
 
   _showPermissionDialog(BuildContext context) async {

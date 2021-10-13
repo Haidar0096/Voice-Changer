@@ -18,11 +18,11 @@ class PLayerServiceImpl implements PlayerService {
   final BehaviorSubject<PlayerState> _playerStateSubject =
       BehaviorSubject<PlayerState>.seeded(const PlayerState.uninitialized());
 
-  final StreamController<Duration> _positionStreamController =
-      StreamController<Duration>.broadcast();
+  final BehaviorSubject<Duration> _positionSubject =
+      BehaviorSubject<Duration>.seeded(Duration.zero);
 
   @override
-  Stream<Duration> get positionStream => _positionStreamController.stream;
+  Stream<Duration> get positionStream => _positionSubject.stream;
 
   @override
   Stream<PlayerState> get playerStateStream => _playerStateSubject.stream;
@@ -34,14 +34,17 @@ class PLayerServiceImpl implements PlayerService {
   Future<Either<Failure, InitPlayerResult>> initPlayer() async {
     try {
       if (!_playerStateSubject.value.isInitialized) {
-        _player.positionStream
-            .listen((duration) => _positionStreamController.add(duration));
+        late StreamSubscription<Duration> subscription;
+        subscription = _player.positionStream.listen(
+          (duration) => _positionSubject.add(duration),
+          onDone: () => subscription.cancel(),
+        );
         _playerStateSubject.add(const PlayerState.stopped());
       }
       return Right(
         InitPlayerResult(
           playerStateStream: _playerStateSubject.stream,
-          positionStream: _positionStreamController.stream,
+          positionStream: _positionSubject.stream,
         ),
       );
     } catch (e) {
@@ -63,7 +66,7 @@ class PLayerServiceImpl implements PlayerService {
       }
       await _player.dispose();
       await _playerStateSubject.close();
-      await _positionStreamController.close();
+      await _positionSubject.close();
       return const Right(null);
     } catch (e) {
       _logger.e('error occurred in disposePlayer()', e);
@@ -179,6 +182,27 @@ class PLayerServiceImpl implements PlayerService {
         Failure(
           Failure.defaultErrorMessage,
           const ErrorCode.stopPlayerError(),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> seekToPosition(Duration position) async {
+    try {
+      if (_playerStateSubject.value.isStopped ||
+          !_playerStateSubject.value.isInitialized) {
+        throw Exception(
+            'seekToPosition() was called from an illegal state: ${_playerStateSubject.value}');
+      }
+      await _player.seek(position);
+      return const Right(null);
+    } catch (e) {
+      _logger.e('error occurred in seekToPosition()', e);
+      return Left(
+        Failure(
+          Failure.defaultErrorMessage,
+          const ErrorCode.seekToPositionError(),
         ),
       );
     }

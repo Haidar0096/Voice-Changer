@@ -12,8 +12,4 @@ TextStyle get largeText => const TextStyle(fontSize: 30);
 TextStyle get veryLargeText => const TextStyle(fontSize: 40);
 
 //App colors
-Color get primaryColor => Colors.blue;
-
-Color get buttonDisabledColor => Colors.black26;
-
-Color get buttonEnabledColor => Colors.blue;
+ColorScheme get colorScheme => const ColorScheme.light();

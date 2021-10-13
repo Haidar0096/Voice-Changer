@@ -65,6 +65,10 @@ class _$ErrorCodeTearOff {
     return const _StopPlayerError();
   }
 
+  _SeekToPositionError seekToPositionError() {
+    return const _SeekToPositionError();
+  }
+
   _CreateFileError createFileError() {
     return const _CreateFileError();
   }
@@ -105,6 +109,7 @@ mixin _$ErrorCode {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -126,6 +131,7 @@ mixin _$ErrorCode {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -147,6 +153,7 @@ mixin _$ErrorCode {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -169,6 +176,7 @@ mixin _$ErrorCode {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -192,6 +200,7 @@ mixin _$ErrorCode {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -214,6 +223,7 @@ mixin _$ErrorCode {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -292,6 +302,7 @@ class _$_InitRecorderError implements _InitRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -316,6 +327,7 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -340,6 +352,7 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -368,6 +381,7 @@ class _$_InitRecorderError implements _InitRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -394,6 +408,7 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -419,6 +434,7 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -490,6 +506,7 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -514,6 +531,7 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -538,6 +556,7 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -566,6 +585,7 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -592,6 +612,7 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -617,6 +638,7 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -688,6 +710,7 @@ class _$_StartRecorderError implements _StartRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -712,6 +735,7 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -736,6 +760,7 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -764,6 +789,7 @@ class _$_StartRecorderError implements _StartRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -790,6 +816,7 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -815,6 +842,7 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -886,6 +914,7 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -910,6 +939,7 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -934,6 +964,7 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -962,6 +993,7 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -988,6 +1020,7 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1013,6 +1046,7 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1084,6 +1118,7 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1108,6 +1143,7 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1132,6 +1168,7 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1160,6 +1197,7 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1186,6 +1224,7 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1211,6 +1250,7 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1282,6 +1322,7 @@ class _$_StopRecorderError implements _StopRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1306,6 +1347,7 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1330,6 +1372,7 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1358,6 +1401,7 @@ class _$_StopRecorderError implements _StopRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1384,6 +1428,7 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1409,6 +1454,7 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1479,6 +1525,7 @@ class _$_InitPlayerError implements _InitPlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1503,6 +1550,7 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1527,6 +1575,7 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1555,6 +1604,7 @@ class _$_InitPlayerError implements _InitPlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1581,6 +1631,7 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1606,6 +1657,7 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1677,6 +1729,7 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1701,6 +1754,7 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1725,6 +1779,7 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1753,6 +1808,7 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1779,6 +1835,7 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1804,6 +1861,7 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1875,6 +1933,7 @@ class _$_StartPlayerError implements _StartPlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1899,6 +1958,7 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1923,6 +1983,7 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1951,6 +2012,7 @@ class _$_StartPlayerError implements _StartPlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1977,6 +2039,7 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2002,6 +2065,7 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2073,6 +2137,7 @@ class _$_PausePlayerError implements _PausePlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2097,6 +2162,7 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2121,6 +2187,7 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2149,6 +2216,7 @@ class _$_PausePlayerError implements _PausePlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2175,6 +2243,7 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2200,6 +2269,7 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2271,6 +2341,7 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2295,6 +2366,7 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2319,6 +2391,7 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2347,6 +2420,7 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2373,6 +2447,7 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2398,6 +2473,7 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2468,6 +2544,7 @@ class _$_StopPlayerError implements _StopPlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2492,6 +2569,7 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2516,6 +2594,7 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2544,6 +2623,7 @@ class _$_StopPlayerError implements _StopPlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2570,6 +2650,7 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2595,6 +2676,7 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2612,6 +2694,210 @@ class _$_StopPlayerError implements _StopPlayerError {
 
 abstract class _StopPlayerError implements ErrorCode {
   const factory _StopPlayerError() = _$_StopPlayerError;
+}
+
+/// @nodoc
+abstract class _$SeekToPositionErrorCopyWith<$Res> {
+  factory _$SeekToPositionErrorCopyWith(_SeekToPositionError value,
+          $Res Function(_SeekToPositionError) then) =
+      __$SeekToPositionErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SeekToPositionErrorCopyWithImpl<$Res>
+    extends _$ErrorCodeCopyWithImpl<$Res>
+    implements _$SeekToPositionErrorCopyWith<$Res> {
+  __$SeekToPositionErrorCopyWithImpl(
+      _SeekToPositionError _value, $Res Function(_SeekToPositionError) _then)
+      : super(_value, (v) => _then(v as _SeekToPositionError));
+
+  @override
+  _SeekToPositionError get _value => super._value as _SeekToPositionError;
+}
+
+/// @nodoc
+
+class _$_SeekToPositionError implements _SeekToPositionError {
+  const _$_SeekToPositionError();
+
+  @override
+  String toString() {
+    return 'ErrorCode.seekToPositionError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SeekToPositionError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initRecorderError,
+    required TResult Function() disposeRecorderError,
+    required TResult Function() startRecorderError,
+    required TResult Function() pauseRecorderError,
+    required TResult Function() resumeRecorderError,
+    required TResult Function() stopRecorderError,
+    required TResult Function() initPlayerError,
+    required TResult Function() disposePlayerError,
+    required TResult Function() startPlayerError,
+    required TResult Function() pausePlayerError,
+    required TResult Function() resumePlayerError,
+    required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
+    required TResult Function() createFileError,
+    required TResult Function() deleteFileError,
+    required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
+  }) {
+    return seekToPositionError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+  }) {
+    return seekToPositionError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (seekToPositionError != null) {
+      return seekToPositionError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitRecorderError value) initRecorderError,
+    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
+    required TResult Function(_StartRecorderError value) startRecorderError,
+    required TResult Function(_PauseRecorderError value) pauseRecorderError,
+    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
+    required TResult Function(_StopRecorderError value) stopRecorderError,
+    required TResult Function(_InitPlayerError value) initPlayerError,
+    required TResult Function(_DisposePlayerError value) disposePlayerError,
+    required TResult Function(_StartPlayerError value) startPlayerError,
+    required TResult Function(_PausePlayerError value) pausePlayerError,
+    required TResult Function(_ResumePlayerError value) resumePlayerError,
+    required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_CreateFileError value) createFileError,
+    required TResult Function(_DeleteFileError value) deleteFileError,
+    required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
+  }) {
+    return seekToPositionError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+  }) {
+    return seekToPositionError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (seekToPositionError != null) {
+      return seekToPositionError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SeekToPositionError implements ErrorCode {
+  const factory _SeekToPositionError() = _$_SeekToPositionError;
 }
 
 /// @nodoc
@@ -2665,6 +2951,7 @@ class _$_CreateFileError implements _CreateFileError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2689,6 +2976,7 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2713,6 +3001,7 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2741,6 +3030,7 @@ class _$_CreateFileError implements _CreateFileError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2767,6 +3057,7 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2792,6 +3083,7 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2862,6 +3154,7 @@ class _$_DeleteFileError implements _DeleteFileError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2886,6 +3179,7 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2910,6 +3204,7 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2938,6 +3233,7 @@ class _$_DeleteFileError implements _DeleteFileError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2964,6 +3260,7 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2989,6 +3286,7 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3059,6 +3357,7 @@ class _$_RenameFileError implements _RenameFileError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -3083,6 +3382,7 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3107,6 +3407,7 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3135,6 +3436,7 @@ class _$_RenameFileError implements _RenameFileError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -3161,6 +3463,7 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3186,6 +3489,7 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3258,6 +3562,7 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -3282,6 +3587,7 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3306,6 +3612,7 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3334,6 +3641,7 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -3360,6 +3668,7 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3385,6 +3694,7 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3461,6 +3771,7 @@ class _$_GetDefaultStorageDirectoryError
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -3485,6 +3796,7 @@ class _$_GetDefaultStorageDirectoryError
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3509,6 +3821,7 @@ class _$_GetDefaultStorageDirectoryError
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3537,6 +3850,7 @@ class _$_GetDefaultStorageDirectoryError
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -3563,6 +3877,7 @@ class _$_GetDefaultStorageDirectoryError
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3588,6 +3903,7 @@ class _$_GetDefaultStorageDirectoryError
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,

@@ -11,33 +11,32 @@ class _RecordingsButton extends StatelessWidget {
     return SizedBox(
       width: containerSide,
       height: containerSide,
-      child: StreamBuilder<RecorderState>(
-        stream: recorderBloc.state.recorderStateStream,
-        builder: (context, snapshot) {
-          return InkWell(
-            onTap: snapshot.hasData && !snapshot.data!.isRecording
-                ? () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const RecordingsScreen(),
-                      ),
-                    )
-                : null,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Icon(
-                  Icons.menu,
-                  size: containerSide / 2.2,
-                  color: snapshot.hasData && snapshot.data!.isRecording
-                      ? buttonDisabledColor
-                      : buttonEnabledColor,
-                ),
-                Text('recordings', style: smallText),
-              ],
-            ),
-          );
-        },
-      ),
+      child: StreamBuilder<RecorderInfo>(
+          stream: recorderBloc.state.recorderInfoStream,
+          builder: (context, snapshot) {
+            return GestureDetector(
+              onTap: snapshot.hasData && !snapshot.data!.state.isRecording
+                  ? () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const RecordingsScreen(),
+                        ),
+                      )
+                  : null,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(
+                    Icons.menu,
+                    size: containerSide / 2.2,
+                    color: snapshot.hasData && snapshot.data!.state.isRecording
+                        ? Theme.of(context).disabledColor
+                        : Theme.of(context).colorScheme.secondary,
+                  ),
+                  Text('recordings', style: smallText),
+                ],
+              ),
+            );
+          }),
     );
   }
 }

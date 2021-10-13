@@ -11,11 +11,10 @@ import 'package:logger/logger.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
 import 'package:voice_changer/domain/common/extensions/file_extensions.dart';
 import 'package:voice_changer/domain/common/extensions/string_extensions.dart';
-import 'package:voice_changer/domain/recorder/recorder_service.dart';
 import 'package:voice_changer/presentation/common/filled_circle.dart';
 import 'package:voice_changer/presentation/common/filled_rectangle.dart';
 import 'package:voice_changer/presentation/recorder_screen/bloc/permission_bloc/permission_bloc.dart';
-import 'package:voice_changer/presentation/recorder_screen/bloc/recorder/recorder_bloc.dart';
+import 'package:voice_changer/presentation/recorder_screen/bloc/recorder_bloc/recorder_bloc.dart';
 import 'package:voice_changer/presentation/recordings_screen/widget/recordings_screen.dart';
 import 'package:voice_changer/presentation/styles/styles.dart';
 
@@ -95,13 +94,14 @@ class _RecorderScreenState extends State<RecorderScreen>
               if (recorderBlocState.isError) {
                 return _ErrorWidget();
               } else {
-                return StreamBuilder<RecorderState>(
-                  stream: recorderBlocState.recorderStateStream,
+                return StreamBuilder<RecorderInfo>(
+                  stream: recorderBlocState.recorderInfoStream,
                   builder: (context, snapshot) {
-                    if (!snapshot.hasData || !snapshot.data!.isInitialized) {
-                      return const _LoadingWidget();
+                    if (snapshot.hasData &&
+                        snapshot.data!.state.isInitialized) {
+                      return _RecorderScreenComponents();
                     }
-                    return _RecorderScreenComponents();
+                    return const _LoadingWidget();
                   },
                 );
               }
