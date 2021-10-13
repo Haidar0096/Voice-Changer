@@ -65,30 +65,6 @@ class _$ErrorCodeTearOff {
     return const _StopPlayerError();
   }
 
-  _GetTrackDetailsError getTrackDetailsError() {
-    return const _GetTrackDetailsError();
-  }
-
-  _ChangeTempoError changeTempoError() {
-    return const _ChangeTempoError();
-  }
-
-  _ChangeDelayError changeDelayError() {
-    return const _ChangeDelayError();
-  }
-
-  _ChangeEchoError changeEchoError() {
-    return const _ChangeEchoError();
-  }
-
-  _ApplyEffectsError applyEffectsError() {
-    return const _ApplyEffectsError();
-  }
-
-  _GetDefaultStorageDirectoryError getDefaultStorageDirectoryError() {
-    return const _GetDefaultStorageDirectoryError();
-  }
-
   _CreateFileError createFileError() {
     return const _CreateFileError();
   }
@@ -99,6 +75,14 @@ class _$ErrorCodeTearOff {
 
   _RenameFileError renameFileError() {
     return const _RenameFileError();
+  }
+
+  _GetRecordingDetailsError getRecordingDetailsError() {
+    return const _GetRecordingDetailsError();
+  }
+
+  _GetDefaultStorageDirectoryError getDefaultStorageDirectoryError() {
+    return const _GetDefaultStorageDirectoryError();
   }
 }
 
@@ -121,15 +105,11 @@ mixin _$ErrorCode {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -146,15 +126,11 @@ mixin _$ErrorCode {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -171,15 +147,11 @@ mixin _$ErrorCode {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -197,16 +169,13 @@ mixin _$ErrorCode {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -223,16 +192,12 @@ mixin _$ErrorCode {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -249,16 +214,12 @@ mixin _$ErrorCode {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -331,15 +292,11 @@ class _$_InitRecorderError implements _InitRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return initRecorderError();
   }
@@ -359,15 +316,11 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return initRecorderError?.call();
   }
@@ -387,15 +340,11 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (initRecorderError != null) {
@@ -419,16 +368,13 @@ class _$_InitRecorderError implements _InitRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return initRecorderError(this);
   }
@@ -448,16 +394,12 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return initRecorderError?.call(this);
   }
@@ -477,16 +419,12 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (initRecorderError != null) {
@@ -552,15 +490,11 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return disposeRecorderError();
   }
@@ -580,15 +514,11 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return disposeRecorderError?.call();
   }
@@ -608,15 +538,11 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (disposeRecorderError != null) {
@@ -640,16 +566,13 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return disposeRecorderError(this);
   }
@@ -669,16 +592,12 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return disposeRecorderError?.call(this);
   }
@@ -698,16 +617,12 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (disposeRecorderError != null) {
@@ -773,15 +688,11 @@ class _$_StartRecorderError implements _StartRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return startRecorderError();
   }
@@ -801,15 +712,11 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return startRecorderError?.call();
   }
@@ -829,15 +736,11 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (startRecorderError != null) {
@@ -861,16 +764,13 @@ class _$_StartRecorderError implements _StartRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return startRecorderError(this);
   }
@@ -890,16 +790,12 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return startRecorderError?.call(this);
   }
@@ -919,16 +815,12 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (startRecorderError != null) {
@@ -994,15 +886,11 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return pauseRecorderError();
   }
@@ -1022,15 +910,11 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return pauseRecorderError?.call();
   }
@@ -1050,15 +934,11 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (pauseRecorderError != null) {
@@ -1082,16 +962,13 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return pauseRecorderError(this);
   }
@@ -1111,16 +988,12 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return pauseRecorderError?.call(this);
   }
@@ -1140,16 +1013,12 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (pauseRecorderError != null) {
@@ -1215,15 +1084,11 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return resumeRecorderError();
   }
@@ -1243,15 +1108,11 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return resumeRecorderError?.call();
   }
@@ -1271,15 +1132,11 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (resumeRecorderError != null) {
@@ -1303,16 +1160,13 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return resumeRecorderError(this);
   }
@@ -1332,16 +1186,12 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return resumeRecorderError?.call(this);
   }
@@ -1361,16 +1211,12 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (resumeRecorderError != null) {
@@ -1436,15 +1282,11 @@ class _$_StopRecorderError implements _StopRecorderError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return stopRecorderError();
   }
@@ -1464,15 +1306,11 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return stopRecorderError?.call();
   }
@@ -1492,15 +1330,11 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (stopRecorderError != null) {
@@ -1524,16 +1358,13 @@ class _$_StopRecorderError implements _StopRecorderError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return stopRecorderError(this);
   }
@@ -1553,16 +1384,12 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return stopRecorderError?.call(this);
   }
@@ -1582,16 +1409,12 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (stopRecorderError != null) {
@@ -1656,15 +1479,11 @@ class _$_InitPlayerError implements _InitPlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return initPlayerError();
   }
@@ -1684,15 +1503,11 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return initPlayerError?.call();
   }
@@ -1712,15 +1527,11 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (initPlayerError != null) {
@@ -1744,16 +1555,13 @@ class _$_InitPlayerError implements _InitPlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return initPlayerError(this);
   }
@@ -1773,16 +1581,12 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return initPlayerError?.call(this);
   }
@@ -1802,16 +1606,12 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (initPlayerError != null) {
@@ -1877,15 +1677,11 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return disposePlayerError();
   }
@@ -1905,15 +1701,11 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return disposePlayerError?.call();
   }
@@ -1933,15 +1725,11 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (disposePlayerError != null) {
@@ -1965,16 +1753,13 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return disposePlayerError(this);
   }
@@ -1994,16 +1779,12 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return disposePlayerError?.call(this);
   }
@@ -2023,16 +1804,12 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (disposePlayerError != null) {
@@ -2098,15 +1875,11 @@ class _$_StartPlayerError implements _StartPlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return startPlayerError();
   }
@@ -2126,15 +1899,11 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return startPlayerError?.call();
   }
@@ -2154,15 +1923,11 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (startPlayerError != null) {
@@ -2186,16 +1951,13 @@ class _$_StartPlayerError implements _StartPlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return startPlayerError(this);
   }
@@ -2215,16 +1977,12 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return startPlayerError?.call(this);
   }
@@ -2244,16 +2002,12 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (startPlayerError != null) {
@@ -2319,15 +2073,11 @@ class _$_PausePlayerError implements _PausePlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return pausePlayerError();
   }
@@ -2347,15 +2097,11 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return pausePlayerError?.call();
   }
@@ -2375,15 +2121,11 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (pausePlayerError != null) {
@@ -2407,16 +2149,13 @@ class _$_PausePlayerError implements _PausePlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return pausePlayerError(this);
   }
@@ -2436,16 +2175,12 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return pausePlayerError?.call(this);
   }
@@ -2465,16 +2200,12 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (pausePlayerError != null) {
@@ -2540,15 +2271,11 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return resumePlayerError();
   }
@@ -2568,15 +2295,11 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return resumePlayerError?.call();
   }
@@ -2596,15 +2319,11 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (resumePlayerError != null) {
@@ -2628,16 +2347,13 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return resumePlayerError(this);
   }
@@ -2657,16 +2373,12 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return resumePlayerError?.call(this);
   }
@@ -2686,16 +2398,12 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (resumePlayerError != null) {
@@ -2760,15 +2468,11 @@ class _$_StopPlayerError implements _StopPlayerError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return stopPlayerError();
   }
@@ -2788,15 +2492,11 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return stopPlayerError?.call();
   }
@@ -2816,15 +2516,11 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (stopPlayerError != null) {
@@ -2848,16 +2544,13 @@ class _$_StopPlayerError implements _StopPlayerError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return stopPlayerError(this);
   }
@@ -2877,16 +2570,12 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return stopPlayerError?.call(this);
   }
@@ -2906,16 +2595,12 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (stopPlayerError != null) {
@@ -2927,1337 +2612,6 @@ class _$_StopPlayerError implements _StopPlayerError {
 
 abstract class _StopPlayerError implements ErrorCode {
   const factory _StopPlayerError() = _$_StopPlayerError;
-}
-
-/// @nodoc
-abstract class _$GetTrackDetailsErrorCopyWith<$Res> {
-  factory _$GetTrackDetailsErrorCopyWith(_GetTrackDetailsError value,
-          $Res Function(_GetTrackDetailsError) then) =
-      __$GetTrackDetailsErrorCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$GetTrackDetailsErrorCopyWithImpl<$Res>
-    extends _$ErrorCodeCopyWithImpl<$Res>
-    implements _$GetTrackDetailsErrorCopyWith<$Res> {
-  __$GetTrackDetailsErrorCopyWithImpl(
-      _GetTrackDetailsError _value, $Res Function(_GetTrackDetailsError) _then)
-      : super(_value, (v) => _then(v as _GetTrackDetailsError));
-
-  @override
-  _GetTrackDetailsError get _value => super._value as _GetTrackDetailsError;
-}
-
-/// @nodoc
-
-class _$_GetTrackDetailsError implements _GetTrackDetailsError {
-  const _$_GetTrackDetailsError();
-
-  @override
-  String toString() {
-    return 'ErrorCode.getTrackDetailsError()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetTrackDetailsError);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initRecorderError,
-    required TResult Function() disposeRecorderError,
-    required TResult Function() startRecorderError,
-    required TResult Function() pauseRecorderError,
-    required TResult Function() resumeRecorderError,
-    required TResult Function() stopRecorderError,
-    required TResult Function() initPlayerError,
-    required TResult Function() disposePlayerError,
-    required TResult Function() startPlayerError,
-    required TResult Function() pausePlayerError,
-    required TResult Function() resumePlayerError,
-    required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
-    required TResult Function() createFileError,
-    required TResult Function() deleteFileError,
-    required TResult Function() renameFileError,
-  }) {
-    return getTrackDetailsError();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-  }) {
-    return getTrackDetailsError?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (getTrackDetailsError != null) {
-      return getTrackDetailsError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitRecorderError value) initRecorderError,
-    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
-    required TResult Function(_StartRecorderError value) startRecorderError,
-    required TResult Function(_PauseRecorderError value) pauseRecorderError,
-    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
-    required TResult Function(_StopRecorderError value) stopRecorderError,
-    required TResult Function(_InitPlayerError value) initPlayerError,
-    required TResult Function(_DisposePlayerError value) disposePlayerError,
-    required TResult Function(_StartPlayerError value) startPlayerError,
-    required TResult Function(_PausePlayerError value) pausePlayerError,
-    required TResult Function(_ResumePlayerError value) resumePlayerError,
-    required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
-    required TResult Function(_CreateFileError value) createFileError,
-    required TResult Function(_DeleteFileError value) deleteFileError,
-    required TResult Function(_RenameFileError value) renameFileError,
-  }) {
-    return getTrackDetailsError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-  }) {
-    return getTrackDetailsError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (getTrackDetailsError != null) {
-      return getTrackDetailsError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetTrackDetailsError implements ErrorCode {
-  const factory _GetTrackDetailsError() = _$_GetTrackDetailsError;
-}
-
-/// @nodoc
-abstract class _$ChangeTempoErrorCopyWith<$Res> {
-  factory _$ChangeTempoErrorCopyWith(
-          _ChangeTempoError value, $Res Function(_ChangeTempoError) then) =
-      __$ChangeTempoErrorCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ChangeTempoErrorCopyWithImpl<$Res>
-    extends _$ErrorCodeCopyWithImpl<$Res>
-    implements _$ChangeTempoErrorCopyWith<$Res> {
-  __$ChangeTempoErrorCopyWithImpl(
-      _ChangeTempoError _value, $Res Function(_ChangeTempoError) _then)
-      : super(_value, (v) => _then(v as _ChangeTempoError));
-
-  @override
-  _ChangeTempoError get _value => super._value as _ChangeTempoError;
-}
-
-/// @nodoc
-
-class _$_ChangeTempoError implements _ChangeTempoError {
-  const _$_ChangeTempoError();
-
-  @override
-  String toString() {
-    return 'ErrorCode.changeTempoError()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ChangeTempoError);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initRecorderError,
-    required TResult Function() disposeRecorderError,
-    required TResult Function() startRecorderError,
-    required TResult Function() pauseRecorderError,
-    required TResult Function() resumeRecorderError,
-    required TResult Function() stopRecorderError,
-    required TResult Function() initPlayerError,
-    required TResult Function() disposePlayerError,
-    required TResult Function() startPlayerError,
-    required TResult Function() pausePlayerError,
-    required TResult Function() resumePlayerError,
-    required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
-    required TResult Function() createFileError,
-    required TResult Function() deleteFileError,
-    required TResult Function() renameFileError,
-  }) {
-    return changeTempoError();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-  }) {
-    return changeTempoError?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (changeTempoError != null) {
-      return changeTempoError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitRecorderError value) initRecorderError,
-    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
-    required TResult Function(_StartRecorderError value) startRecorderError,
-    required TResult Function(_PauseRecorderError value) pauseRecorderError,
-    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
-    required TResult Function(_StopRecorderError value) stopRecorderError,
-    required TResult Function(_InitPlayerError value) initPlayerError,
-    required TResult Function(_DisposePlayerError value) disposePlayerError,
-    required TResult Function(_StartPlayerError value) startPlayerError,
-    required TResult Function(_PausePlayerError value) pausePlayerError,
-    required TResult Function(_ResumePlayerError value) resumePlayerError,
-    required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
-    required TResult Function(_CreateFileError value) createFileError,
-    required TResult Function(_DeleteFileError value) deleteFileError,
-    required TResult Function(_RenameFileError value) renameFileError,
-  }) {
-    return changeTempoError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-  }) {
-    return changeTempoError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (changeTempoError != null) {
-      return changeTempoError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ChangeTempoError implements ErrorCode {
-  const factory _ChangeTempoError() = _$_ChangeTempoError;
-}
-
-/// @nodoc
-abstract class _$ChangeDelayErrorCopyWith<$Res> {
-  factory _$ChangeDelayErrorCopyWith(
-          _ChangeDelayError value, $Res Function(_ChangeDelayError) then) =
-      __$ChangeDelayErrorCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ChangeDelayErrorCopyWithImpl<$Res>
-    extends _$ErrorCodeCopyWithImpl<$Res>
-    implements _$ChangeDelayErrorCopyWith<$Res> {
-  __$ChangeDelayErrorCopyWithImpl(
-      _ChangeDelayError _value, $Res Function(_ChangeDelayError) _then)
-      : super(_value, (v) => _then(v as _ChangeDelayError));
-
-  @override
-  _ChangeDelayError get _value => super._value as _ChangeDelayError;
-}
-
-/// @nodoc
-
-class _$_ChangeDelayError implements _ChangeDelayError {
-  const _$_ChangeDelayError();
-
-  @override
-  String toString() {
-    return 'ErrorCode.changeDelayError()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ChangeDelayError);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initRecorderError,
-    required TResult Function() disposeRecorderError,
-    required TResult Function() startRecorderError,
-    required TResult Function() pauseRecorderError,
-    required TResult Function() resumeRecorderError,
-    required TResult Function() stopRecorderError,
-    required TResult Function() initPlayerError,
-    required TResult Function() disposePlayerError,
-    required TResult Function() startPlayerError,
-    required TResult Function() pausePlayerError,
-    required TResult Function() resumePlayerError,
-    required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
-    required TResult Function() createFileError,
-    required TResult Function() deleteFileError,
-    required TResult Function() renameFileError,
-  }) {
-    return changeDelayError();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-  }) {
-    return changeDelayError?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (changeDelayError != null) {
-      return changeDelayError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitRecorderError value) initRecorderError,
-    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
-    required TResult Function(_StartRecorderError value) startRecorderError,
-    required TResult Function(_PauseRecorderError value) pauseRecorderError,
-    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
-    required TResult Function(_StopRecorderError value) stopRecorderError,
-    required TResult Function(_InitPlayerError value) initPlayerError,
-    required TResult Function(_DisposePlayerError value) disposePlayerError,
-    required TResult Function(_StartPlayerError value) startPlayerError,
-    required TResult Function(_PausePlayerError value) pausePlayerError,
-    required TResult Function(_ResumePlayerError value) resumePlayerError,
-    required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
-    required TResult Function(_CreateFileError value) createFileError,
-    required TResult Function(_DeleteFileError value) deleteFileError,
-    required TResult Function(_RenameFileError value) renameFileError,
-  }) {
-    return changeDelayError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-  }) {
-    return changeDelayError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (changeDelayError != null) {
-      return changeDelayError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ChangeDelayError implements ErrorCode {
-  const factory _ChangeDelayError() = _$_ChangeDelayError;
-}
-
-/// @nodoc
-abstract class _$ChangeEchoErrorCopyWith<$Res> {
-  factory _$ChangeEchoErrorCopyWith(
-          _ChangeEchoError value, $Res Function(_ChangeEchoError) then) =
-      __$ChangeEchoErrorCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ChangeEchoErrorCopyWithImpl<$Res> extends _$ErrorCodeCopyWithImpl<$Res>
-    implements _$ChangeEchoErrorCopyWith<$Res> {
-  __$ChangeEchoErrorCopyWithImpl(
-      _ChangeEchoError _value, $Res Function(_ChangeEchoError) _then)
-      : super(_value, (v) => _then(v as _ChangeEchoError));
-
-  @override
-  _ChangeEchoError get _value => super._value as _ChangeEchoError;
-}
-
-/// @nodoc
-
-class _$_ChangeEchoError implements _ChangeEchoError {
-  const _$_ChangeEchoError();
-
-  @override
-  String toString() {
-    return 'ErrorCode.changeEchoError()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ChangeEchoError);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initRecorderError,
-    required TResult Function() disposeRecorderError,
-    required TResult Function() startRecorderError,
-    required TResult Function() pauseRecorderError,
-    required TResult Function() resumeRecorderError,
-    required TResult Function() stopRecorderError,
-    required TResult Function() initPlayerError,
-    required TResult Function() disposePlayerError,
-    required TResult Function() startPlayerError,
-    required TResult Function() pausePlayerError,
-    required TResult Function() resumePlayerError,
-    required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
-    required TResult Function() createFileError,
-    required TResult Function() deleteFileError,
-    required TResult Function() renameFileError,
-  }) {
-    return changeEchoError();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-  }) {
-    return changeEchoError?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (changeEchoError != null) {
-      return changeEchoError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitRecorderError value) initRecorderError,
-    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
-    required TResult Function(_StartRecorderError value) startRecorderError,
-    required TResult Function(_PauseRecorderError value) pauseRecorderError,
-    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
-    required TResult Function(_StopRecorderError value) stopRecorderError,
-    required TResult Function(_InitPlayerError value) initPlayerError,
-    required TResult Function(_DisposePlayerError value) disposePlayerError,
-    required TResult Function(_StartPlayerError value) startPlayerError,
-    required TResult Function(_PausePlayerError value) pausePlayerError,
-    required TResult Function(_ResumePlayerError value) resumePlayerError,
-    required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
-    required TResult Function(_CreateFileError value) createFileError,
-    required TResult Function(_DeleteFileError value) deleteFileError,
-    required TResult Function(_RenameFileError value) renameFileError,
-  }) {
-    return changeEchoError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-  }) {
-    return changeEchoError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (changeEchoError != null) {
-      return changeEchoError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ChangeEchoError implements ErrorCode {
-  const factory _ChangeEchoError() = _$_ChangeEchoError;
-}
-
-/// @nodoc
-abstract class _$ApplyEffectsErrorCopyWith<$Res> {
-  factory _$ApplyEffectsErrorCopyWith(
-          _ApplyEffectsError value, $Res Function(_ApplyEffectsError) then) =
-      __$ApplyEffectsErrorCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ApplyEffectsErrorCopyWithImpl<$Res>
-    extends _$ErrorCodeCopyWithImpl<$Res>
-    implements _$ApplyEffectsErrorCopyWith<$Res> {
-  __$ApplyEffectsErrorCopyWithImpl(
-      _ApplyEffectsError _value, $Res Function(_ApplyEffectsError) _then)
-      : super(_value, (v) => _then(v as _ApplyEffectsError));
-
-  @override
-  _ApplyEffectsError get _value => super._value as _ApplyEffectsError;
-}
-
-/// @nodoc
-
-class _$_ApplyEffectsError implements _ApplyEffectsError {
-  const _$_ApplyEffectsError();
-
-  @override
-  String toString() {
-    return 'ErrorCode.applyEffectsError()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ApplyEffectsError);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initRecorderError,
-    required TResult Function() disposeRecorderError,
-    required TResult Function() startRecorderError,
-    required TResult Function() pauseRecorderError,
-    required TResult Function() resumeRecorderError,
-    required TResult Function() stopRecorderError,
-    required TResult Function() initPlayerError,
-    required TResult Function() disposePlayerError,
-    required TResult Function() startPlayerError,
-    required TResult Function() pausePlayerError,
-    required TResult Function() resumePlayerError,
-    required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
-    required TResult Function() createFileError,
-    required TResult Function() deleteFileError,
-    required TResult Function() renameFileError,
-  }) {
-    return applyEffectsError();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-  }) {
-    return applyEffectsError?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (applyEffectsError != null) {
-      return applyEffectsError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitRecorderError value) initRecorderError,
-    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
-    required TResult Function(_StartRecorderError value) startRecorderError,
-    required TResult Function(_PauseRecorderError value) pauseRecorderError,
-    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
-    required TResult Function(_StopRecorderError value) stopRecorderError,
-    required TResult Function(_InitPlayerError value) initPlayerError,
-    required TResult Function(_DisposePlayerError value) disposePlayerError,
-    required TResult Function(_StartPlayerError value) startPlayerError,
-    required TResult Function(_PausePlayerError value) pausePlayerError,
-    required TResult Function(_ResumePlayerError value) resumePlayerError,
-    required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
-    required TResult Function(_CreateFileError value) createFileError,
-    required TResult Function(_DeleteFileError value) deleteFileError,
-    required TResult Function(_RenameFileError value) renameFileError,
-  }) {
-    return applyEffectsError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-  }) {
-    return applyEffectsError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (applyEffectsError != null) {
-      return applyEffectsError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ApplyEffectsError implements ErrorCode {
-  const factory _ApplyEffectsError() = _$_ApplyEffectsError;
-}
-
-/// @nodoc
-abstract class _$GetDefaultStorageDirectoryErrorCopyWith<$Res> {
-  factory _$GetDefaultStorageDirectoryErrorCopyWith(
-          _GetDefaultStorageDirectoryError value,
-          $Res Function(_GetDefaultStorageDirectoryError) then) =
-      __$GetDefaultStorageDirectoryErrorCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$GetDefaultStorageDirectoryErrorCopyWithImpl<$Res>
-    extends _$ErrorCodeCopyWithImpl<$Res>
-    implements _$GetDefaultStorageDirectoryErrorCopyWith<$Res> {
-  __$GetDefaultStorageDirectoryErrorCopyWithImpl(
-      _GetDefaultStorageDirectoryError _value,
-      $Res Function(_GetDefaultStorageDirectoryError) _then)
-      : super(_value, (v) => _then(v as _GetDefaultStorageDirectoryError));
-
-  @override
-  _GetDefaultStorageDirectoryError get _value =>
-      super._value as _GetDefaultStorageDirectoryError;
-}
-
-/// @nodoc
-
-class _$_GetDefaultStorageDirectoryError
-    implements _GetDefaultStorageDirectoryError {
-  const _$_GetDefaultStorageDirectoryError();
-
-  @override
-  String toString() {
-    return 'ErrorCode.getDefaultStorageDirectoryError()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _GetDefaultStorageDirectoryError);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initRecorderError,
-    required TResult Function() disposeRecorderError,
-    required TResult Function() startRecorderError,
-    required TResult Function() pauseRecorderError,
-    required TResult Function() resumeRecorderError,
-    required TResult Function() stopRecorderError,
-    required TResult Function() initPlayerError,
-    required TResult Function() disposePlayerError,
-    required TResult Function() startPlayerError,
-    required TResult Function() pausePlayerError,
-    required TResult Function() resumePlayerError,
-    required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
-    required TResult Function() createFileError,
-    required TResult Function() deleteFileError,
-    required TResult Function() renameFileError,
-  }) {
-    return getDefaultStorageDirectoryError();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-  }) {
-    return getDefaultStorageDirectoryError?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initRecorderError,
-    TResult Function()? disposeRecorderError,
-    TResult Function()? startRecorderError,
-    TResult Function()? pauseRecorderError,
-    TResult Function()? resumeRecorderError,
-    TResult Function()? stopRecorderError,
-    TResult Function()? initPlayerError,
-    TResult Function()? disposePlayerError,
-    TResult Function()? startPlayerError,
-    TResult Function()? pausePlayerError,
-    TResult Function()? resumePlayerError,
-    TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
-    TResult Function()? createFileError,
-    TResult Function()? deleteFileError,
-    TResult Function()? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (getDefaultStorageDirectoryError != null) {
-      return getDefaultStorageDirectoryError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitRecorderError value) initRecorderError,
-    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
-    required TResult Function(_StartRecorderError value) startRecorderError,
-    required TResult Function(_PauseRecorderError value) pauseRecorderError,
-    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
-    required TResult Function(_StopRecorderError value) stopRecorderError,
-    required TResult Function(_InitPlayerError value) initPlayerError,
-    required TResult Function(_DisposePlayerError value) disposePlayerError,
-    required TResult Function(_StartPlayerError value) startPlayerError,
-    required TResult Function(_PausePlayerError value) pausePlayerError,
-    required TResult Function(_ResumePlayerError value) resumePlayerError,
-    required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
-    required TResult Function(_CreateFileError value) createFileError,
-    required TResult Function(_DeleteFileError value) deleteFileError,
-    required TResult Function(_RenameFileError value) renameFileError,
-  }) {
-    return getDefaultStorageDirectoryError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-  }) {
-    return getDefaultStorageDirectoryError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitRecorderError value)? initRecorderError,
-    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
-    TResult Function(_StartRecorderError value)? startRecorderError,
-    TResult Function(_PauseRecorderError value)? pauseRecorderError,
-    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
-    TResult Function(_StopRecorderError value)? stopRecorderError,
-    TResult Function(_InitPlayerError value)? initPlayerError,
-    TResult Function(_DisposePlayerError value)? disposePlayerError,
-    TResult Function(_StartPlayerError value)? startPlayerError,
-    TResult Function(_PausePlayerError value)? pausePlayerError,
-    TResult Function(_ResumePlayerError value)? resumePlayerError,
-    TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
-    TResult Function(_CreateFileError value)? createFileError,
-    TResult Function(_DeleteFileError value)? deleteFileError,
-    TResult Function(_RenameFileError value)? renameFileError,
-    required TResult orElse(),
-  }) {
-    if (getDefaultStorageDirectoryError != null) {
-      return getDefaultStorageDirectoryError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetDefaultStorageDirectoryError implements ErrorCode {
-  const factory _GetDefaultStorageDirectoryError() =
-      _$_GetDefaultStorageDirectoryError;
 }
 
 /// @nodoc
@@ -4311,15 +2665,11 @@ class _$_CreateFileError implements _CreateFileError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return createFileError();
   }
@@ -4339,15 +2689,11 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return createFileError?.call();
   }
@@ -4367,15 +2713,11 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (createFileError != null) {
@@ -4399,16 +2741,13 @@ class _$_CreateFileError implements _CreateFileError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return createFileError(this);
   }
@@ -4428,16 +2767,12 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return createFileError?.call(this);
   }
@@ -4457,16 +2792,12 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (createFileError != null) {
@@ -4531,15 +2862,11 @@ class _$_DeleteFileError implements _DeleteFileError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return deleteFileError();
   }
@@ -4559,15 +2886,11 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return deleteFileError?.call();
   }
@@ -4587,15 +2910,11 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (deleteFileError != null) {
@@ -4619,16 +2938,13 @@ class _$_DeleteFileError implements _DeleteFileError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return deleteFileError(this);
   }
@@ -4648,16 +2964,12 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return deleteFileError?.call(this);
   }
@@ -4677,16 +2989,12 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (deleteFileError != null) {
@@ -4751,15 +3059,11 @@ class _$_RenameFileError implements _RenameFileError {
     required TResult Function() pausePlayerError,
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
-    required TResult Function() getTrackDetailsError,
-    required TResult Function() changeTempoError,
-    required TResult Function() changeDelayError,
-    required TResult Function() changeEchoError,
-    required TResult Function() applyEffectsError,
-    required TResult Function() getDefaultStorageDirectoryError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
   }) {
     return renameFileError();
   }
@@ -4779,15 +3083,11 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
   }) {
     return renameFileError?.call();
   }
@@ -4807,15 +3107,11 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function()? pausePlayerError,
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
-    TResult Function()? getTrackDetailsError,
-    TResult Function()? changeTempoError,
-    TResult Function()? changeDelayError,
-    TResult Function()? changeEchoError,
-    TResult Function()? applyEffectsError,
-    TResult Function()? getDefaultStorageDirectoryError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (renameFileError != null) {
@@ -4839,16 +3135,13 @@ class _$_RenameFileError implements _RenameFileError {
     required TResult Function(_PausePlayerError value) pausePlayerError,
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
-    required TResult Function(_GetTrackDetailsError value) getTrackDetailsError,
-    required TResult Function(_ChangeTempoError value) changeTempoError,
-    required TResult Function(_ChangeDelayError value) changeDelayError,
-    required TResult Function(_ChangeEchoError value) changeEchoError,
-    required TResult Function(_ApplyEffectsError value) applyEffectsError,
-    required TResult Function(_GetDefaultStorageDirectoryError value)
-        getDefaultStorageDirectoryError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
   }) {
     return renameFileError(this);
   }
@@ -4868,16 +3161,12 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
   }) {
     return renameFileError?.call(this);
   }
@@ -4897,16 +3186,12 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function(_PausePlayerError value)? pausePlayerError,
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
-    TResult Function(_GetTrackDetailsError value)? getTrackDetailsError,
-    TResult Function(_ChangeTempoError value)? changeTempoError,
-    TResult Function(_ChangeDelayError value)? changeDelayError,
-    TResult Function(_ChangeEchoError value)? changeEchoError,
-    TResult Function(_ApplyEffectsError value)? applyEffectsError,
-    TResult Function(_GetDefaultStorageDirectoryError value)?
-        getDefaultStorageDirectoryError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
     required TResult orElse(),
   }) {
     if (renameFileError != null) {
@@ -4918,4 +3203,407 @@ class _$_RenameFileError implements _RenameFileError {
 
 abstract class _RenameFileError implements ErrorCode {
   const factory _RenameFileError() = _$_RenameFileError;
+}
+
+/// @nodoc
+abstract class _$GetRecordingDetailsErrorCopyWith<$Res> {
+  factory _$GetRecordingDetailsErrorCopyWith(_GetRecordingDetailsError value,
+          $Res Function(_GetRecordingDetailsError) then) =
+      __$GetRecordingDetailsErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$GetRecordingDetailsErrorCopyWithImpl<$Res>
+    extends _$ErrorCodeCopyWithImpl<$Res>
+    implements _$GetRecordingDetailsErrorCopyWith<$Res> {
+  __$GetRecordingDetailsErrorCopyWithImpl(_GetRecordingDetailsError _value,
+      $Res Function(_GetRecordingDetailsError) _then)
+      : super(_value, (v) => _then(v as _GetRecordingDetailsError));
+
+  @override
+  _GetRecordingDetailsError get _value =>
+      super._value as _GetRecordingDetailsError;
+}
+
+/// @nodoc
+
+class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
+  const _$_GetRecordingDetailsError();
+
+  @override
+  String toString() {
+    return 'ErrorCode.getRecordingDetailsError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _GetRecordingDetailsError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initRecorderError,
+    required TResult Function() disposeRecorderError,
+    required TResult Function() startRecorderError,
+    required TResult Function() pauseRecorderError,
+    required TResult Function() resumeRecorderError,
+    required TResult Function() stopRecorderError,
+    required TResult Function() initPlayerError,
+    required TResult Function() disposePlayerError,
+    required TResult Function() startPlayerError,
+    required TResult Function() pausePlayerError,
+    required TResult Function() resumePlayerError,
+    required TResult Function() stopPlayerError,
+    required TResult Function() createFileError,
+    required TResult Function() deleteFileError,
+    required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
+  }) {
+    return getRecordingDetailsError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+  }) {
+    return getRecordingDetailsError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (getRecordingDetailsError != null) {
+      return getRecordingDetailsError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitRecorderError value) initRecorderError,
+    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
+    required TResult Function(_StartRecorderError value) startRecorderError,
+    required TResult Function(_PauseRecorderError value) pauseRecorderError,
+    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
+    required TResult Function(_StopRecorderError value) stopRecorderError,
+    required TResult Function(_InitPlayerError value) initPlayerError,
+    required TResult Function(_DisposePlayerError value) disposePlayerError,
+    required TResult Function(_StartPlayerError value) startPlayerError,
+    required TResult Function(_PausePlayerError value) pausePlayerError,
+    required TResult Function(_ResumePlayerError value) resumePlayerError,
+    required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_CreateFileError value) createFileError,
+    required TResult Function(_DeleteFileError value) deleteFileError,
+    required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
+  }) {
+    return getRecordingDetailsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+  }) {
+    return getRecordingDetailsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (getRecordingDetailsError != null) {
+      return getRecordingDetailsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetRecordingDetailsError implements ErrorCode {
+  const factory _GetRecordingDetailsError() = _$_GetRecordingDetailsError;
+}
+
+/// @nodoc
+abstract class _$GetDefaultStorageDirectoryErrorCopyWith<$Res> {
+  factory _$GetDefaultStorageDirectoryErrorCopyWith(
+          _GetDefaultStorageDirectoryError value,
+          $Res Function(_GetDefaultStorageDirectoryError) then) =
+      __$GetDefaultStorageDirectoryErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$GetDefaultStorageDirectoryErrorCopyWithImpl<$Res>
+    extends _$ErrorCodeCopyWithImpl<$Res>
+    implements _$GetDefaultStorageDirectoryErrorCopyWith<$Res> {
+  __$GetDefaultStorageDirectoryErrorCopyWithImpl(
+      _GetDefaultStorageDirectoryError _value,
+      $Res Function(_GetDefaultStorageDirectoryError) _then)
+      : super(_value, (v) => _then(v as _GetDefaultStorageDirectoryError));
+
+  @override
+  _GetDefaultStorageDirectoryError get _value =>
+      super._value as _GetDefaultStorageDirectoryError;
+}
+
+/// @nodoc
+
+class _$_GetDefaultStorageDirectoryError
+    implements _GetDefaultStorageDirectoryError {
+  const _$_GetDefaultStorageDirectoryError();
+
+  @override
+  String toString() {
+    return 'ErrorCode.getDefaultStorageDirectoryError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GetDefaultStorageDirectoryError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initRecorderError,
+    required TResult Function() disposeRecorderError,
+    required TResult Function() startRecorderError,
+    required TResult Function() pauseRecorderError,
+    required TResult Function() resumeRecorderError,
+    required TResult Function() stopRecorderError,
+    required TResult Function() initPlayerError,
+    required TResult Function() disposePlayerError,
+    required TResult Function() startPlayerError,
+    required TResult Function() pausePlayerError,
+    required TResult Function() resumePlayerError,
+    required TResult Function() stopPlayerError,
+    required TResult Function() createFileError,
+    required TResult Function() deleteFileError,
+    required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
+  }) {
+    return getDefaultStorageDirectoryError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+  }) {
+    return getDefaultStorageDirectoryError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (getDefaultStorageDirectoryError != null) {
+      return getDefaultStorageDirectoryError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitRecorderError value) initRecorderError,
+    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
+    required TResult Function(_StartRecorderError value) startRecorderError,
+    required TResult Function(_PauseRecorderError value) pauseRecorderError,
+    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
+    required TResult Function(_StopRecorderError value) stopRecorderError,
+    required TResult Function(_InitPlayerError value) initPlayerError,
+    required TResult Function(_DisposePlayerError value) disposePlayerError,
+    required TResult Function(_StartPlayerError value) startPlayerError,
+    required TResult Function(_PausePlayerError value) pausePlayerError,
+    required TResult Function(_ResumePlayerError value) resumePlayerError,
+    required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_CreateFileError value) createFileError,
+    required TResult Function(_DeleteFileError value) deleteFileError,
+    required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
+  }) {
+    return getDefaultStorageDirectoryError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+  }) {
+    return getDefaultStorageDirectoryError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (getDefaultStorageDirectoryError != null) {
+      return getDefaultStorageDirectoryError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetDefaultStorageDirectoryError implements ErrorCode {
+  const factory _GetDefaultStorageDirectoryError() =
+      _$_GetDefaultStorageDirectoryError;
 }

@@ -62,8 +62,7 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
             .fold(
           _errorState,
           (tempFile) async {
-            return (await _recorderService.startRecorder(path: tempFile.path))
-                .fold(
+            return (await _recorderService.startRecorder(file: tempFile)).fold(
               _errorState,
               (_) => state.copyWith(
                 recordingFile: tempFile,

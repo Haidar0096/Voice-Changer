@@ -16,6 +16,11 @@ class Failure {
   final ErrorCode errorCode;
 
   Failure(this.message, this.errorCode);
+
+  @override
+  String toString() {
+    return 'Failure{message: $message, errorCode: $errorCode}';
+  }
 }
 
 @freezed
@@ -44,22 +49,28 @@ class ErrorCode with _$ErrorCode {
 
   const factory ErrorCode.stopPlayerError() = _StopPlayerError;
 
-  const factory ErrorCode.getTrackDetailsError() = _GetTrackDetailsError;
-
-  const factory ErrorCode.changeTempoError() = _ChangeTempoError;
-
-  const factory ErrorCode.changeDelayError() = _ChangeDelayError;
-
-  const factory ErrorCode.changeEchoError() = _ChangeEchoError;
-
-  const factory ErrorCode.applyEffectsError() = _ApplyEffectsError;
-
-  const factory ErrorCode.getDefaultStorageDirectoryError() =
-      _GetDefaultStorageDirectoryError;
+  // const factory ErrorCode.getTrackDetailsError() = _GetTrackDetailsError;
+  //
+  // const factory ErrorCode.changeTempoError() = _ChangeTempoError;
+  //
+  // const factory ErrorCode.changeDelayError() = _ChangeDelayError;
+  //
+  // const factory ErrorCode.changeEchoError() = _ChangeEchoError;
+  //
+  // const factory ErrorCode.applyEffectsError() = _ApplyEffectsError;
+  //
+  // const factory ErrorCode.getDefaultStorageDirectoryError() =
+  //     _GetDefaultStorageDirectoryError;
 
   const factory ErrorCode.createFileError() = _CreateFileError;
 
   const factory ErrorCode.deleteFileError() = _DeleteFileError;
 
   const factory ErrorCode.renameFileError() = _RenameFileError;
+
+  const factory ErrorCode.getRecordingDetailsError() =
+      _GetRecordingDetailsError;
+
+  const factory ErrorCode.getDefaultStorageDirectoryError() =
+      _GetDefaultStorageDirectoryError;
 }

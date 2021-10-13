@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_sound_lite/public/flutter_sound_recorder.dart';
@@ -30,6 +31,13 @@ class RecorderServiceImpl implements RecorderService {
       StreamController<double>.broadcast();
 
   @override
+  Stream<RecorderState> get recorderStateStream => _recorderStateSubject.stream;
+
+  @override
+  Stream<Duration> get recordingDurationStream =>
+      _recordingDurationController.stream;
+
+  @override
   RecorderState get recorderState => _recorderStateSubject.value;
 
   @override
@@ -45,7 +53,8 @@ class RecorderServiceImpl implements RecorderService {
         );
       }
       await _recorder.openAudioSession();
-      await _recorder.setSubscriptionDuration(const Duration(milliseconds: 100));
+      await _recorder
+          .setSubscriptionDuration(const Duration(milliseconds: 100));
 
       _recorder.onProgress?.listen((data) {
         _recordingDurationController.add(data.duration);
@@ -85,7 +94,6 @@ class RecorderServiceImpl implements RecorderService {
     }
     try {
       await _recorder.closeAudioSession();
-      _recorderStateSubject.add(const RecorderState.uninitialized());
       _recorderStateSubject.close();
       _recordingDurationController.close();
       _recordingVolumeController.close();
@@ -102,14 +110,14 @@ class RecorderServiceImpl implements RecorderService {
   }
 
   @override
-  Future<Either<Failure, void>> startRecorder({required String path}) async {
+  Future<Either<Failure, void>> startRecorder({required File file}) async {
     try {
       if (!_recorderStateSubject.value.isStopped) {
         throw Exception(
             'startRecorder() was called from an illegal state: ${_recorderStateSubject.value}');
       }
       // _logger.i('this recording will be saved into $path');
-      await _recorder.startRecorder(toFile: path);
+      await _recorder.startRecorder(toFile: file.path);
       _recorderStateSubject.add(const RecorderState.recording());
       return const Right(null);
     } catch (e) {

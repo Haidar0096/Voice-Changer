@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:voice_changer/domain/common/exception/failure.dart';
@@ -9,6 +11,12 @@ part 'recorder_service.freezed.dart';
 /// the service instance must not be used again or otherwise unknown states might be reached.
 abstract class RecorderService {
   static const String defaultCodec = 'aac';
+
+  ///Stream of the states of the recorder
+  Stream<RecorderState> get recorderStateStream;
+
+  ///Stream of the durations of the current recording
+  Stream<Duration> get recordingDurationStream;
 
   ///The latest recorder state emitted
   RecorderState get recorderState;
@@ -52,7 +60,7 @@ abstract class RecorderService {
   /// Returns an [Either] wrapping:
   ///* nothing, in case of success
   ///* [Failure], in case of failure (no change of the state happens in this case)
-  Future<Either<Failure, void>> startRecorder({required String path});
+  Future<Either<Failure, void>> startRecorder({required File file});
 
   /// Pauses the recorder.
   /// It is allowed to call this method if the recorder was paused, in which case the same current state is maintained.

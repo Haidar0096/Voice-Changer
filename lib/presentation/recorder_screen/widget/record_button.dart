@@ -36,6 +36,11 @@ class _RecordButtonState extends State<_RecordButton> {
               }),
               onPanEnd: (_) => setState(
                 () {
+                  _opacity = 0.0;
+                },
+              ),
+              onTap: () {
+                setState(() {
                   if (snapshot.hasData && !(snapshot.data!.isRecording)) {
                     if (isMicrophonePermissionGranted) {
                       recorderBloc
@@ -53,8 +58,8 @@ class _RecordButtonState extends State<_RecordButton> {
                     }
                   }
                   _opacity = 0.0;
-                },
-              ),
+                });
+              },
               child: Stack(
                 alignment: Alignment.center,
                 children: [
