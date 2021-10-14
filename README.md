@@ -19,8 +19,8 @@ flutter run
 
 Here are some screenshots:
 
-- ![sound_changer](screenshots/Screenshot from 2021-10-14 18-53-27.png?raw=true "sound_changer")
-- ![sound_changer](screenshots/Screenshot from 2021-10-14 18-53-41.png?raw=true "sound_changer")
-- ![sound_changer](screenshots/Screenshot from 2021-10-14 18-53-52.png?raw=true "sound_changer")
-- ![sound_changer](screenshots/Screenshot from 2021-10-14 18-54-20.png?raw=true "sound_changer")
-- ![sound_changer](screenshots/Screenshot from 2021-10-14 18-54-28.png?raw=true "sound_changer")
+- ![sound_changer](./screenshots/Screenshot from 2021-10-14 18-53-27.png?raw=true "sound_changer")
+- ![sound_changer](./screenshots/Screenshot from 2021-10-14 18-53-41.png?raw=true "sound_changer")
+- ![sound_changer](./screenshots/Screenshot from 2021-10-14 18-53-52.png?raw=true "sound_changer")
+- ![sound_changer](./screenshots/Screenshot from 2021-10-14 18-54-20.png?raw=true "sound_changer")
+- ![sound_changer](./screenshots/Screenshot from 2021-10-14 18-54-28.png?raw=true "sound_changer")
