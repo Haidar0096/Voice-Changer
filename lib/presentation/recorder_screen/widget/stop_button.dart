@@ -91,7 +91,7 @@ class _StopButtonState extends State<_StopButton> {
           body: Center(
             child: Container(
               width: width / 1.2,
-              height: height / 2.5,
+              height: height / 2.2,
               decoration: const ShapeDecoration(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(

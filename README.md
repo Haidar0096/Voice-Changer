@@ -19,8 +19,8 @@ Just clone the repo and run:
 
 Here are some screenshots:
 
-- ![alt text](./screenshots/Screenshot from 2021-10-14 18-53-27.png?raw=true "sound_changer")
-- ![alt text](./screenshots/Screenshot from 2021-10-14 18-53-41.png?raw=true "sound_changer")
-- ![alt text](./screenshots/Screenshot from 2021-10-14 18-53-52.png?raw=true "sound_changer")
-- ![alt text](./screenshots/Screenshot from 2021-10-14 18-54-20.png?raw=true "sound_changer")
-- ![alt text](./screenshots/Screenshot from 2021-10-14 18-54-28.png?raw=true "sound_changer")
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-53-27.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-53-41.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-53-52.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-54-20.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-54-28.png?raw=true)
