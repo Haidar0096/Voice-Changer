@@ -4,6 +4,6 @@ part of 'recordings_bloc.dart';
 class RecordingsBlocEvent with _$RecordingsBlocEvent {
   const factory RecordingsBlocEvent.init() = _Init;
 
-  const factory RecordingsBlocEvent.deleteRecording(File file) =
+  const factory RecordingsBlocEvent.deleteRecording(String path) =
       _DeleteRecordingEvent;
 }

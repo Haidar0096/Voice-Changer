@@ -5,7 +5,7 @@ class PlayerBlocEvent with _$PlayerBlocEvent {
   const factory PlayerBlocEvent.init() = _Init;
 
   const factory PlayerBlocEvent.start({
-    required File file,
+    required RecordingDetails recording,
     Function? onDone,
   }) = _Start;
 

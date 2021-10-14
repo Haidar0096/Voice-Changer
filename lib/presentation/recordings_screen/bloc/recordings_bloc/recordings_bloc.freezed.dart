@@ -21,9 +21,9 @@ class _$RecordingsBlocEventTearOff {
     return const _Init();
   }
 
-  _DeleteRecordingEvent deleteRecording(File file) {
+  _DeleteRecordingEvent deleteRecording(String path) {
     return _DeleteRecordingEvent(
-      file,
+      path,
     );
   }
 }
@@ -36,19 +36,19 @@ mixin _$RecordingsBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file) deleteRecording,
+    required TResult Function(String path) deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file)? deleteRecording,
+    TResult Function(String path)? deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file)? deleteRecording,
+    TResult Function(String path)? deleteRecording,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,7 +128,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file) deleteRecording,
+    required TResult Function(String path) deleteRecording,
   }) {
     return init();
   }
@@ -137,7 +137,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file)? deleteRecording,
+    TResult Function(String path)? deleteRecording,
   }) {
     return init?.call();
   }
@@ -146,7 +146,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file)? deleteRecording,
+    TResult Function(String path)? deleteRecording,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -196,7 +196,7 @@ abstract class _$DeleteRecordingEventCopyWith<$Res> {
   factory _$DeleteRecordingEventCopyWith(_DeleteRecordingEvent value,
           $Res Function(_DeleteRecordingEvent) then) =
       __$DeleteRecordingEventCopyWithImpl<$Res>;
-  $Res call({File file});
+  $Res call({String path});
 }
 
 /// @nodoc
@@ -212,13 +212,13 @@ class __$DeleteRecordingEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? file = freezed,
+    Object? path = freezed,
   }) {
     return _then(_DeleteRecordingEvent(
-      file == freezed
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as File,
+      path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -226,27 +226,27 @@ class __$DeleteRecordingEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
-  const _$_DeleteRecordingEvent(this.file);
+  const _$_DeleteRecordingEvent(this.path);
 
   @override
-  final File file;
+  final String path;
 
   @override
   String toString() {
-    return 'RecordingsBlocEvent.deleteRecording(file: $file)';
+    return 'RecordingsBlocEvent.deleteRecording(path: $path)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _DeleteRecordingEvent &&
-            (identical(other.file, file) ||
-                const DeepCollectionEquality().equals(other.file, file)));
+            (identical(other.path, path) ||
+                const DeepCollectionEquality().equals(other.path, path)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(file);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(path);
 
   @JsonKey(ignore: true)
   @override
@@ -258,29 +258,29 @@ class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file) deleteRecording,
+    required TResult Function(String path) deleteRecording,
   }) {
-    return deleteRecording(file);
+    return deleteRecording(path);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file)? deleteRecording,
+    TResult Function(String path)? deleteRecording,
   }) {
-    return deleteRecording?.call(file);
+    return deleteRecording?.call(path);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file)? deleteRecording,
+    TResult Function(String path)? deleteRecording,
     required TResult orElse(),
   }) {
     if (deleteRecording != null) {
-      return deleteRecording(file);
+      return deleteRecording(path);
     }
     return orElse();
   }
@@ -318,9 +318,9 @@ class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
 }
 
 abstract class _DeleteRecordingEvent implements RecordingsBlocEvent {
-  const factory _DeleteRecordingEvent(File file) = _$_DeleteRecordingEvent;
+  const factory _DeleteRecordingEvent(String path) = _$_DeleteRecordingEvent;
 
-  File get file => throw _privateConstructorUsedError;
+  String get path => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$DeleteRecordingEventCopyWith<_DeleteRecordingEvent> get copyWith =>
       throw _privateConstructorUsedError;

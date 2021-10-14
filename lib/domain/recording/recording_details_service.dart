@@ -26,4 +26,16 @@ class RecordingDetails {
   String toString() {
     return 'RecordingDetails{name: $name, path: $path, duration: $duration}';
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RecordingDetails &&
+          runtimeType == other.runtimeType &&
+          name == other.name &&
+          path == other.path &&
+          duration == other.duration;
+
+  @override
+  int get hashCode => name.hashCode ^ path.hashCode ^ duration.hashCode;
 }

@@ -1,11 +1,11 @@
 part of 'player_bloc.dart';
 
-///[playingFile] : the file being played
+///[recording] : the recording being played
 @freezed
 class PlayerBlocState with _$PlayerBlocState {
   const factory PlayerBlocState({
     Stream<PlayerInfo>? playerInfoStream,
-    File? playingFile,
+    RecordingDetails? recording,
     @Default(false) bool isError,
     String? errorMessage,
   }) = _PlayerBlocState;

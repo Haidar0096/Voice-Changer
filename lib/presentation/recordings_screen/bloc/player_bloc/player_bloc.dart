@@ -9,6 +9,7 @@ import 'package:rxdart/rxdart.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
 import 'package:voice_changer/domain/common/exception/failure.dart';
 import 'package:voice_changer/domain/player/player_service.dart';
+import 'package:voice_changer/domain/recording/recording_details_service.dart';
 
 part 'player_bloc.freezed.dart';
 
@@ -57,9 +58,10 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
         (initPlayerResult) {
           late StreamSubscription<PlayerInfo> subscription;
           subscription = Rx.combineLatest2<PlayerState, Duration, PlayerInfo>(
-              initPlayerResult.playerStateStream,
-              initPlayerResult.positionStream,
-              (s, p) => PlayerInfo(s, p)).listen(
+            initPlayerResult.playerStateStream,
+            initPlayerResult.positionStream,
+            (s, p) => PlayerInfo(s, p),
+          ).listen(
             (event) => _playerInfoSubject.add(
               PlayerInfo(
                 event.state,
@@ -75,10 +77,15 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
       );
 
   FutureOr<PlayerBlocState> _handleStartEvent(_Start event) async =>
-      (await _playerService.startPlayer(file: event.file, onDone: event.onDone))
+      (await _playerService.startPlayer(
+        file: File(event.recording.path),
+        onDone: event.onDone,
+      ))
           .fold(
         _errorState,
-        (_) => state.copyWith(playingFile: event.file),
+        (_) => state.copyWith(
+          recording: event.recording,
+        ),
       );
 
   FutureOr<PlayerBlocState> _handlePauseEvent(_Pause event) async =>
@@ -97,7 +104,7 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
       (await _playerService.stopPlayer()).fold(
         _errorState,
         (_) => state.copyWith(
-          playingFile: null,
+          recording: null,
         ),
       );
 
@@ -106,14 +113,16 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
       (await _playerService.stopPlayer()).fold(
         _errorState,
         (_) => state.copyWith(
-          playingFile: null,
+          recording: null,
         ),
       );
 
   FutureOr<PlayerBlocState> _handleSeekToPositionEvent(
           _SeekToPosition event) async =>
-      (await _playerService.seekToPosition(event.position))
-          .fold(_errorState, (_) => state);
+      (await _playerService.seekToPosition(event.position)).fold(
+        _errorState,
+        (_) => state,
+      );
 
   FutureOr<PlayerBlocState> _handleAppGoInactiveEvent(
       _AppGoInactiveEvent event) async {
@@ -121,7 +130,7 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
         _playerService.playerState.isPaused) {
       return (await _playerService.stopPlayer()).fold(
         _errorState,
-        (_) => state.copyWith(playingFile: null),
+        (_) => state.copyWith(recording: null),
       );
     }
     return state;

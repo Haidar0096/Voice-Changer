@@ -1,15 +1,7 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
-import 'package:voice_changer/domain/common/extensions/file_extensions.dart';
 import 'package:voice_changer/domain/common/extensions/string_extensions.dart';
 import 'package:voice_changer/presentation/common/filled_circle.dart';
 import 'package:voice_changer/presentation/common/filled_rectangle.dart';

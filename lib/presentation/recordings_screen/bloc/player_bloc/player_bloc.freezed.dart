@@ -21,9 +21,9 @@ class _$PlayerBlocEventTearOff {
     return const _Init();
   }
 
-  _Start start({required File file, Function? onDone}) {
+  _Start start({required RecordingDetails recording, Function? onDone}) {
     return _Start(
-      file: file,
+      recording: recording,
       onDone: onDone,
     );
   }
@@ -63,7 +63,8 @@ mixin _$PlayerBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file, Function? onDone) start,
+    required TResult Function(RecordingDetails recording, Function? onDone)
+        start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function() stop,
@@ -75,7 +76,7 @@ mixin _$PlayerBlocEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -87,7 +88,7 @@ mixin _$PlayerBlocEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -191,7 +192,8 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file, Function? onDone) start,
+    required TResult Function(RecordingDetails recording, Function? onDone)
+        start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function() stop,
@@ -206,7 +208,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -221,7 +223,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -294,7 +296,7 @@ abstract class _Init implements PlayerBlocEvent {
 abstract class _$StartCopyWith<$Res> {
   factory _$StartCopyWith(_Start value, $Res Function(_Start) then) =
       __$StartCopyWithImpl<$Res>;
-  $Res call({File file, Function? onDone});
+  $Res call({RecordingDetails recording, Function? onDone});
 }
 
 /// @nodoc
@@ -308,14 +310,14 @@ class __$StartCopyWithImpl<$Res> extends _$PlayerBlocEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? file = freezed,
+    Object? recording = freezed,
     Object? onDone = freezed,
   }) {
     return _then(_Start(
-      file: file == freezed
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as File,
+      recording: recording == freezed
+          ? _value.recording
+          : recording // ignore: cast_nullable_to_non_nullable
+              as RecordingDetails,
       onDone: onDone == freezed
           ? _value.onDone
           : onDone // ignore: cast_nullable_to_non_nullable
@@ -327,24 +329,25 @@ class __$StartCopyWithImpl<$Res> extends _$PlayerBlocEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Start implements _Start {
-  const _$_Start({required this.file, this.onDone});
+  const _$_Start({required this.recording, this.onDone});
 
   @override
-  final File file;
+  final RecordingDetails recording;
   @override
   final Function? onDone;
 
   @override
   String toString() {
-    return 'PlayerBlocEvent.start(file: $file, onDone: $onDone)';
+    return 'PlayerBlocEvent.start(recording: $recording, onDone: $onDone)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Start &&
-            (identical(other.file, file) ||
-                const DeepCollectionEquality().equals(other.file, file)) &&
+            (identical(other.recording, recording) ||
+                const DeepCollectionEquality()
+                    .equals(other.recording, recording)) &&
             (identical(other.onDone, onDone) ||
                 const DeepCollectionEquality().equals(other.onDone, onDone)));
   }
@@ -352,7 +355,7 @@ class _$_Start implements _Start {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(file) ^
+      const DeepCollectionEquality().hash(recording) ^
       const DeepCollectionEquality().hash(onDone);
 
   @JsonKey(ignore: true)
@@ -364,7 +367,8 @@ class _$_Start implements _Start {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file, Function? onDone) start,
+    required TResult Function(RecordingDetails recording, Function? onDone)
+        start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function() stop,
@@ -372,14 +376,14 @@ class _$_Start implements _Start {
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) {
-    return start(file, onDone);
+    return start(recording, onDone);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -387,14 +391,14 @@ class _$_Start implements _Start {
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) {
-    return start?.call(file, onDone);
+    return start?.call(recording, onDone);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -404,7 +408,7 @@ class _$_Start implements _Start {
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(file, onDone);
+      return start(recording, onDone);
     }
     return orElse();
   }
@@ -460,9 +464,10 @@ class _$_Start implements _Start {
 }
 
 abstract class _Start implements PlayerBlocEvent {
-  const factory _Start({required File file, Function? onDone}) = _$_Start;
+  const factory _Start(
+      {required RecordingDetails recording, Function? onDone}) = _$_Start;
 
-  File get file => throw _privateConstructorUsedError;
+  RecordingDetails get recording => throw _privateConstructorUsedError;
   Function? get onDone => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$StartCopyWith<_Start> get copyWith => throw _privateConstructorUsedError;
@@ -506,7 +511,8 @@ class _$_Pause implements _Pause {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file, Function? onDone) start,
+    required TResult Function(RecordingDetails recording, Function? onDone)
+        start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function() stop,
@@ -521,7 +527,7 @@ class _$_Pause implements _Pause {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -536,7 +542,7 @@ class _$_Pause implements _Pause {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -643,7 +649,8 @@ class _$_Resume implements _Resume {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file, Function? onDone) start,
+    required TResult Function(RecordingDetails recording, Function? onDone)
+        start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function() stop,
@@ -658,7 +665,7 @@ class _$_Resume implements _Resume {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -673,7 +680,7 @@ class _$_Resume implements _Resume {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -780,7 +787,8 @@ class _$_Stop implements _Stop {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file, Function? onDone) start,
+    required TResult Function(RecordingDetails recording, Function? onDone)
+        start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function() stop,
@@ -795,7 +803,7 @@ class _$_Stop implements _Stop {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -810,7 +818,7 @@ class _$_Stop implements _Stop {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -920,7 +928,8 @@ class _$_PlaybackEnded implements _PlaybackEnded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file, Function? onDone) start,
+    required TResult Function(RecordingDetails recording, Function? onDone)
+        start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function() stop,
@@ -935,7 +944,7 @@ class _$_PlaybackEnded implements _PlaybackEnded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -950,7 +959,7 @@ class _$_PlaybackEnded implements _PlaybackEnded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -1086,7 +1095,8 @@ class _$_SeekToPosition implements _SeekToPosition {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file, Function? onDone) start,
+    required TResult Function(RecordingDetails recording, Function? onDone)
+        start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function() stop,
@@ -1101,7 +1111,7 @@ class _$_SeekToPosition implements _SeekToPosition {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -1116,7 +1126,7 @@ class _$_SeekToPosition implements _SeekToPosition {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -1231,7 +1241,8 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(File file, Function? onDone) start,
+    required TResult Function(RecordingDetails recording, Function? onDone)
+        start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function() stop,
@@ -1246,7 +1257,7 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -1261,7 +1272,7 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(File file, Function? onDone)? start,
+    TResult Function(RecordingDetails recording, Function? onDone)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function()? stop,
@@ -1336,12 +1347,12 @@ class _$PlayerBlocStateTearOff {
 
   _PlayerBlocState call(
       {Stream<PlayerInfo>? playerInfoStream,
-      File? playingFile,
+      RecordingDetails? recording,
       bool isError = false,
       String? errorMessage}) {
     return _PlayerBlocState(
       playerInfoStream: playerInfoStream,
-      playingFile: playingFile,
+      recording: recording,
       isError: isError,
       errorMessage: errorMessage,
     );
@@ -1355,7 +1366,7 @@ const $PlayerBlocState = _$PlayerBlocStateTearOff();
 mixin _$PlayerBlocState {
   Stream<PlayerInfo>? get playerInfoStream =>
       throw _privateConstructorUsedError;
-  File? get playingFile => throw _privateConstructorUsedError;
+  RecordingDetails? get recording => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
@@ -1371,7 +1382,7 @@ abstract class $PlayerBlocStateCopyWith<$Res> {
       _$PlayerBlocStateCopyWithImpl<$Res>;
   $Res call(
       {Stream<PlayerInfo>? playerInfoStream,
-      File? playingFile,
+      RecordingDetails? recording,
       bool isError,
       String? errorMessage});
 }
@@ -1388,7 +1399,7 @@ class _$PlayerBlocStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? playerInfoStream = freezed,
-    Object? playingFile = freezed,
+    Object? recording = freezed,
     Object? isError = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -1397,10 +1408,10 @@ class _$PlayerBlocStateCopyWithImpl<$Res>
           ? _value.playerInfoStream
           : playerInfoStream // ignore: cast_nullable_to_non_nullable
               as Stream<PlayerInfo>?,
-      playingFile: playingFile == freezed
-          ? _value.playingFile
-          : playingFile // ignore: cast_nullable_to_non_nullable
-              as File?,
+      recording: recording == freezed
+          ? _value.recording
+          : recording // ignore: cast_nullable_to_non_nullable
+              as RecordingDetails?,
       isError: isError == freezed
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
@@ -1422,7 +1433,7 @@ abstract class _$PlayerBlocStateCopyWith<$Res>
   @override
   $Res call(
       {Stream<PlayerInfo>? playerInfoStream,
-      File? playingFile,
+      RecordingDetails? recording,
       bool isError,
       String? errorMessage});
 }
@@ -1441,7 +1452,7 @@ class __$PlayerBlocStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? playerInfoStream = freezed,
-    Object? playingFile = freezed,
+    Object? recording = freezed,
     Object? isError = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -1450,10 +1461,10 @@ class __$PlayerBlocStateCopyWithImpl<$Res>
           ? _value.playerInfoStream
           : playerInfoStream // ignore: cast_nullable_to_non_nullable
               as Stream<PlayerInfo>?,
-      playingFile: playingFile == freezed
-          ? _value.playingFile
-          : playingFile // ignore: cast_nullable_to_non_nullable
-              as File?,
+      recording: recording == freezed
+          ? _value.recording
+          : recording // ignore: cast_nullable_to_non_nullable
+              as RecordingDetails?,
       isError: isError == freezed
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
@@ -1471,14 +1482,14 @@ class __$PlayerBlocStateCopyWithImpl<$Res>
 class _$_PlayerBlocState implements _PlayerBlocState {
   const _$_PlayerBlocState(
       {this.playerInfoStream,
-      this.playingFile,
+      this.recording,
       this.isError = false,
       this.errorMessage});
 
   @override
   final Stream<PlayerInfo>? playerInfoStream;
   @override
-  final File? playingFile;
+  final RecordingDetails? recording;
   @JsonKey(defaultValue: false)
   @override
   final bool isError;
@@ -1487,7 +1498,7 @@ class _$_PlayerBlocState implements _PlayerBlocState {
 
   @override
   String toString() {
-    return 'PlayerBlocState(playerInfoStream: $playerInfoStream, playingFile: $playingFile, isError: $isError, errorMessage: $errorMessage)';
+    return 'PlayerBlocState(playerInfoStream: $playerInfoStream, recording: $recording, isError: $isError, errorMessage: $errorMessage)';
   }
 
   @override
@@ -1497,9 +1508,9 @@ class _$_PlayerBlocState implements _PlayerBlocState {
             (identical(other.playerInfoStream, playerInfoStream) ||
                 const DeepCollectionEquality()
                     .equals(other.playerInfoStream, playerInfoStream)) &&
-            (identical(other.playingFile, playingFile) ||
+            (identical(other.recording, recording) ||
                 const DeepCollectionEquality()
-                    .equals(other.playingFile, playingFile)) &&
+                    .equals(other.recording, recording)) &&
             (identical(other.isError, isError) ||
                 const DeepCollectionEquality()
                     .equals(other.isError, isError)) &&
@@ -1512,7 +1523,7 @@ class _$_PlayerBlocState implements _PlayerBlocState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(playerInfoStream) ^
-      const DeepCollectionEquality().hash(playingFile) ^
+      const DeepCollectionEquality().hash(recording) ^
       const DeepCollectionEquality().hash(isError) ^
       const DeepCollectionEquality().hash(errorMessage);
 
@@ -1525,7 +1536,7 @@ class _$_PlayerBlocState implements _PlayerBlocState {
 abstract class _PlayerBlocState implements PlayerBlocState {
   const factory _PlayerBlocState(
       {Stream<PlayerInfo>? playerInfoStream,
-      File? playingFile,
+      RecordingDetails? recording,
       bool isError,
       String? errorMessage}) = _$_PlayerBlocState;
 
@@ -1533,7 +1544,7 @@ abstract class _PlayerBlocState implements PlayerBlocState {
   Stream<PlayerInfo>? get playerInfoStream =>
       throw _privateConstructorUsedError;
   @override
-  File? get playingFile => throw _privateConstructorUsedError;
+  RecordingDetails? get recording => throw _privateConstructorUsedError;
   @override
   bool get isError => throw _privateConstructorUsedError;
   @override

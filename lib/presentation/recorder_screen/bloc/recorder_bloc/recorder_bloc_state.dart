@@ -6,7 +6,7 @@ class RecorderBlocState with _$RecorderBlocState {
 
   const factory RecorderBlocState({
     Stream<RecorderInfo>? recorderInfoStream,
-    File? recordingFile,
+    RecordingDetails? recording,
     @Default(false) bool isError,
     String? errorMessage,
   }) = _RecorderBlocState;
@@ -15,7 +15,7 @@ class RecorderBlocState with _$RecorderBlocState {
   String toString() {
     return '\nRecorderBlocState{\n'
         'recorderInfoStream: $recorderInfoStream,\n'
-        'recordingFile: $recordingFile,\n'
+        'recording: $recording,\n'
         'isError: $isError,\n'
         'errorMessage: $errorMessage,\n'
         '}\n';

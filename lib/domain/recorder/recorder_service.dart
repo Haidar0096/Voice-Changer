@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:voice_changer/domain/common/exception/failure.dart';
@@ -61,10 +59,13 @@ abstract class RecorderService {
   /// provided to this method, but it should be a known codec (aac for example)
   /// <br></br>
   /// <br></br>
+  /// - [path]: the path to record into
+  /// <br></br>
+  /// <br></br>
   /// Returns an [Either] wrapping:
   ///* nothing, in case of success
   ///* [Failure], in case of failure (no change of the state happens in this case)
-  Future<Either<Failure, void>> startRecorder({required File file});
+  Future<Either<Failure, void>> startRecorder({required String path});
 
   /// Pauses the recorder.
   /// It is allowed to call this method if the recorder was paused, in which case the same current state is maintained.

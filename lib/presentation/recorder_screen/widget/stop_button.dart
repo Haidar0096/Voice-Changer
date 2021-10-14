@@ -41,7 +41,7 @@ class _StopButtonState extends State<_StopButton> {
                   ? () async {
                       recorderBloc.add(const RecorderBlocEvent.stopRecording());
                       _fileNameTextController.text =
-                          recorderBloc.state.recordingFile!.getName();
+                          recorderBloc.state.recording!.name;
                       await _showDialog(context);
                     }
                   : null,
@@ -91,7 +91,7 @@ class _StopButtonState extends State<_StopButton> {
           body: Center(
             child: Container(
               width: width / 1.2,
-              height: height / 2.2,
+              height: height / 2.5,
               decoration: const ShapeDecoration(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -114,7 +114,10 @@ class _StopButtonState extends State<_StopButton> {
                     const Divider(thickness: 3),
                     const SizedBox(height: 10),
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 10.0,
+                        horizontal: 30,
+                      ),
                       child: TextField(
                         autofocus: true,
                         controller: _fileNameTextController,
@@ -159,7 +162,6 @@ class _StopButtonState extends State<_StopButton> {
                         Navigator.of(context).pop();
                       },
                     ),
-                    const SizedBox(height: 10),
                   ],
                 ),
               ),

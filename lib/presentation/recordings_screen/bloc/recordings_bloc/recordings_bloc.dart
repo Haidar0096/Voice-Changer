@@ -13,7 +13,9 @@ import 'package:voice_changer/domain/recorder/recorder_service.dart';
 import 'package:voice_changer/domain/recording/recording_details_service.dart';
 
 part 'recordings_bloc.freezed.dart';
+
 part 'recordings_bloc_event.dart';
+
 part 'recordings_bloc_state.dart';
 
 @Injectable()
@@ -74,10 +76,10 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
 
   FutureOr<RecordingsBlocState> _handleDeleteRecordingEvent(
           _DeleteRecordingEvent event) async =>
-      (await _fileSystemService.deleteFile(event.file)).fold(
+      (await _fileSystemService.deleteFile(File(event.path))).fold(
         _errorState,
         (_) {
-          state.recordings!.removeWhere((rec) => rec.path == event.file.path);
+          state.recordings!.removeWhere((rec) => rec.path == event.path);
           return state;
         },
       );

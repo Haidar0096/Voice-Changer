@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
@@ -118,14 +117,14 @@ class RecorderServiceImpl implements RecorderService {
   }
 
   @override
-  Future<Either<Failure, void>> startRecorder({required File file}) async {
+  Future<Either<Failure, void>> startRecorder({required String path}) async {
     try {
       if (!_recorderStateSubject.value.isStopped) {
         throw Exception(
             'startRecorder() was called from an illegal state: ${_recorderStateSubject.value}');
       }
       // _logger.i('this recording will be saved into $path');
-      await _recorder.startRecorder(toFile: file.path,codec: Codec.aacMP4);
+      await _recorder.startRecorder(toFile: path, codec: Codec.aacMP4);
       _recorderStateSubject.add(const RecorderState.recording());
       return const Right(null);
     } catch (e) {

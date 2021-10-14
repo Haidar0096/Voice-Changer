@@ -13,11 +13,10 @@ import 'package:voice_changer/domain/common/extensions/datetime_extensions.dart'
 import 'package:voice_changer/domain/common/extensions/file_extensions.dart';
 import 'package:voice_changer/domain/common/service/filesystem_service.dart';
 import 'package:voice_changer/domain/recorder/recorder_service.dart';
+import 'package:voice_changer/domain/recording/recording_details_service.dart';
 
 part 'recorder_bloc.freezed.dart';
-
 part 'recorder_bloc_event.dart';
-
 part 'recorder_bloc_state.dart';
 
 @Injectable()
@@ -70,14 +69,15 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
             initRecorderResult.recordingVolumeStream,
             (s, d, v) => RecorderInfo(s, d, v),
           ).listen(
-                  (event) => _recordingInfoSubject.add(
-                        RecorderInfo(
-                          event.state,
-                          event.duration,
-                          event.volume,
-                        ),
-                      ),
-                  onDone: () => subscription.cancel());
+            (event) => _recordingInfoSubject.add(
+              RecorderInfo(
+                event.state,
+                event.duration,
+                event.volume,
+              ),
+            ),
+            onDone: () => subscription.cancel(),
+          );
           return RecorderBlocState(
             recorderInfoStream: _recordingInfoSubject.stream,
           );
@@ -89,17 +89,21 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
       (await _fileSystemService.getDefaultStorageDirectory()).fold(
         _errorState,
         (directory) async => (await _fileSystemService.createFile(
-          fileName: DateTime.now().toPathSuitableString(),
+          fileName: 'rec_${DateTime.now().toPathSuitableString()}',
           extension: RecorderService.defaultCodec,
           path: directory.path,
         ))
             .fold(
           _errorState,
-          (tempFile) async {
-            return (await _recorderService.startRecorder(file: tempFile)).fold(
+          (file) async {
+            return (await _recorderService.startRecorder(path: file.path)).fold(
               _errorState,
               (_) => state.copyWith(
-                recordingFile: tempFile,
+                recording: RecordingDetails(
+                  name: file.getName(),
+                  path: file.path,
+                  duration: null,
+                ),
               ),
             );
           },
@@ -115,20 +119,20 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
 
   FutureOr<RecorderBlocState> _handleSaveRecordingEvent(
       _SaveRecordingEvent event) async {
-    if (event.newRecordingFileName == state.recordingFile!.getName()) {
+    if (event.newRecordingFileName == state.recording!.name) {
       return state.copyWith(
-        recordingFile: null,
+        recording: null,
       );
     }
     return (await _fileSystemService.renameFile(
-      file: state.recordingFile!,
+      file: File(state.recording!.path),
       newFileName: event.newRecordingFileName,
       extension: RecorderService.defaultCodec,
     ))
         .fold(
       _errorState,
       (_) => state.copyWith(
-        recordingFile: null,
+        recording: null,
       ),
     );
   }
@@ -136,12 +140,12 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
   FutureOr<RecorderBlocState> _handleDeleteRecordingEvent(
       _DeleteRecordingEvent event) async {
     return (await _fileSystemService.deleteFile(
-      state.recordingFile!,
+      File(state.recording!.path),
     ))
         .fold(
       _errorState,
       (_) => state.copyWith(
-        recordingFile: null,
+        recording: null,
       ),
     );
   }
@@ -152,11 +156,12 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
       (await _recorderService.stopRecorder()).fold(
         _errorState, //failure in stopRecorder
         (_) async {
-          return (await _fileSystemService.deleteFile(state.recordingFile!))
+          return (await _fileSystemService
+                  .deleteFile(File(state.recording!.path)))
               .fold(
             _errorState,
             (_) => state.copyWith(
-              recordingFile: null,
+              recording: null,
             ),
           );
         },

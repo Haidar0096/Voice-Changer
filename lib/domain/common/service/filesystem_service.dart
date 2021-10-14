@@ -70,7 +70,7 @@ class FileSystemService {
   }
 
   ///- [file] : The file to rename. The [fileName] must consist of only alphanumeric  and underscore characters.
-  ///- [extension] : The current or new extension for the file
+  ///- [extension] : The extension for the new file
   Future<Either<Failure, File>> renameFile({
     required File file,
     required String newFileName,
