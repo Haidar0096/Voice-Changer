@@ -6,14 +6,12 @@ import 'package:voice_changer/presentation/recordings_screen/bloc/player_bloc/pl
 import 'package:voice_changer/presentation/recordings_screen/bloc/recordings_bloc/recordings_bloc.dart';
 import 'package:voice_changer/presentation/styles/styles.dart';
 
-part 'error_widget.dart';
-
-part 'loading_widget.dart';
-
-part 'recordings_screen_components.dart';
-part 'recording_card.dart';
 part 'dismissible_tile.dart';
+part 'error_widget.dart';
+part 'loading_widget.dart';
+part 'recording_card.dart';
 part 'recording_tile_contents.dart';
+part 'recordings_screen_components.dart';
 
 class RecordingsScreen extends StatefulWidget {
   const RecordingsScreen({Key? key}) : super(key: key);

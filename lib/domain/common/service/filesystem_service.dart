@@ -29,8 +29,8 @@ class FileSystemService {
     }
   }
 
-  ///creates a file which will have a path as "[path]/[fileName].[extension]", and returns it.
-  /// If a file already exists in the provided directory, it will be deleted first
+  ///creates a file object which will have a path as "[path]/[fileName].[extension]", and returns it.
+  /// If file point to path of a file which already exists in the provided directory, it will be deleted first
   Future<Either<Failure, File>> createFile({
     required String fileName,
     required String extension,

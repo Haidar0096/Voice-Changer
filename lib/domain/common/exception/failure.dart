@@ -51,18 +51,23 @@ class ErrorCode with _$ErrorCode {
 
   const factory ErrorCode.seekToPositionError() = _SeekToPositionError;
 
+  const factory ErrorCode.addEchoError() = _AddEchoError;
+
+  const factory ErrorCode.changeTempoError() = _ChangeTempoError;
+
+  const factory ErrorCode.reverseAudioError() = _ReverseAudioError;
+
+  const factory ErrorCode.setSampleRateError() = _SetSampleRateError;
+
+  const factory ErrorCode.setVolumeError() = _SetVolumeError;
+
+  const factory ErrorCode.trimSoundError() = _TrimSoundError;
+
   // const factory ErrorCode.getTrackDetailsError() = _GetTrackDetailsError;
-  //
-  // const factory ErrorCode.changeTempoError() = _ChangeTempoError;
-  //
   // const factory ErrorCode.changeDelayError() = _ChangeDelayError;
-  //
   // const factory ErrorCode.changeEchoError() = _ChangeEchoError;
-  //
   // const factory ErrorCode.applyEffectsError() = _ApplyEffectsError;
-  //
-  // const factory ErrorCode.getDefaultStorageDirectoryError() =
-  //     _GetDefaultStorageDirectoryError;
+  // const factory ErrorCode.getDefaultStorageDirectoryError() = _GetDefaultStorageDirectoryError;
 
   const factory ErrorCode.createFileError() = _CreateFileError;
 

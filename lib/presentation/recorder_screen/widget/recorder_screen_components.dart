@@ -8,6 +8,7 @@ class _RecorderScreenComponents extends StatelessWidget {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     final width = mq.size.width;
+    final height = mq.size.height;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -18,9 +19,12 @@ class _RecorderScreenComponents extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Stack(
           children: [
-            Align(
-              alignment: Alignment.center,
-              child: _RecorderIconWidget(),
+            Positioned(
+              width: width - 40,
+              height: width - 40,
+              top: height / 17,
+              left: 0,
+              child: _RecorderIconWidget(width - 40),
             ),
             Positioned(
               bottom: 0,

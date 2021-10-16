@@ -69,6 +69,30 @@ class _$ErrorCodeTearOff {
     return const _SeekToPositionError();
   }
 
+  _AddEchoError addEchoError() {
+    return const _AddEchoError();
+  }
+
+  _ChangeTempoError changeTempoError() {
+    return const _ChangeTempoError();
+  }
+
+  _ReverseAudioError reverseAudioError() {
+    return const _ReverseAudioError();
+  }
+
+  _SetSampleRateError setSampleRateError() {
+    return const _SetSampleRateError();
+  }
+
+  _SetVolumeError setVolumeError() {
+    return const _SetVolumeError();
+  }
+
+  _TrimSoundError trimSoundError() {
+    return const _TrimSoundError();
+  }
+
   _CreateFileError createFileError() {
     return const _CreateFileError();
   }
@@ -110,6 +134,12 @@ mixin _$ErrorCode {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -132,6 +162,12 @@ mixin _$ErrorCode {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -154,6 +190,12 @@ mixin _$ErrorCode {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -177,6 +219,12 @@ mixin _$ErrorCode {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -201,6 +249,12 @@ mixin _$ErrorCode {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -224,6 +278,12 @@ mixin _$ErrorCode {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -303,6 +363,12 @@ class _$_InitRecorderError implements _InitRecorderError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -328,6 +394,12 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -353,6 +425,12 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -382,6 +460,12 @@ class _$_InitRecorderError implements _InitRecorderError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -409,6 +493,12 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -435,6 +525,12 @@ class _$_InitRecorderError implements _InitRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -507,6 +603,12 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -532,6 +634,12 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -557,6 +665,12 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -586,6 +700,12 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -613,6 +733,12 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -639,6 +765,12 @@ class _$_DisposeRecorderError implements _DisposeRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -711,6 +843,12 @@ class _$_StartRecorderError implements _StartRecorderError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -736,6 +874,12 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -761,6 +905,12 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -790,6 +940,12 @@ class _$_StartRecorderError implements _StartRecorderError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -817,6 +973,12 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -843,6 +1005,12 @@ class _$_StartRecorderError implements _StartRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -915,6 +1083,12 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -940,6 +1114,12 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -965,6 +1145,12 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -994,6 +1180,12 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1021,6 +1213,12 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1047,6 +1245,12 @@ class _$_PauseRecorderError implements _PauseRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1119,6 +1323,12 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1144,6 +1354,12 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1169,6 +1385,12 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1198,6 +1420,12 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1225,6 +1453,12 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1251,6 +1485,12 @@ class _$_ResumeRecorderError implements _ResumeRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1323,6 +1563,12 @@ class _$_StopRecorderError implements _StopRecorderError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1348,6 +1594,12 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1373,6 +1625,12 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1402,6 +1660,12 @@ class _$_StopRecorderError implements _StopRecorderError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1429,6 +1693,12 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1455,6 +1725,12 @@ class _$_StopRecorderError implements _StopRecorderError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1526,6 +1802,12 @@ class _$_InitPlayerError implements _InitPlayerError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1551,6 +1833,12 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1576,6 +1864,12 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1605,6 +1899,12 @@ class _$_InitPlayerError implements _InitPlayerError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1632,6 +1932,12 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1658,6 +1964,12 @@ class _$_InitPlayerError implements _InitPlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1730,6 +2042,12 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1755,6 +2073,12 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1780,6 +2104,12 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1809,6 +2139,12 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -1836,6 +2172,12 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1862,6 +2204,12 @@ class _$_DisposePlayerError implements _DisposePlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -1934,6 +2282,12 @@ class _$_StartPlayerError implements _StartPlayerError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -1959,6 +2313,12 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -1984,6 +2344,12 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2013,6 +2379,12 @@ class _$_StartPlayerError implements _StartPlayerError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2040,6 +2412,12 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2066,6 +2444,12 @@ class _$_StartPlayerError implements _StartPlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2138,6 +2522,12 @@ class _$_PausePlayerError implements _PausePlayerError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2163,6 +2553,12 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2188,6 +2584,12 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2217,6 +2619,12 @@ class _$_PausePlayerError implements _PausePlayerError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2244,6 +2652,12 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2270,6 +2684,12 @@ class _$_PausePlayerError implements _PausePlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2342,6 +2762,12 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2367,6 +2793,12 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2392,6 +2824,12 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2421,6 +2859,12 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2448,6 +2892,12 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2474,6 +2924,12 @@ class _$_ResumePlayerError implements _ResumePlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2545,6 +3001,12 @@ class _$_StopPlayerError implements _StopPlayerError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2570,6 +3032,12 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2595,6 +3063,12 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2624,6 +3098,12 @@ class _$_StopPlayerError implements _StopPlayerError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2651,6 +3131,12 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2677,6 +3163,12 @@ class _$_StopPlayerError implements _StopPlayerError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2749,6 +3241,12 @@ class _$_SeekToPositionError implements _SeekToPositionError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2774,6 +3272,12 @@ class _$_SeekToPositionError implements _SeekToPositionError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2799,6 +3303,12 @@ class _$_SeekToPositionError implements _SeekToPositionError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -2828,6 +3338,12 @@ class _$_SeekToPositionError implements _SeekToPositionError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -2855,6 +3371,12 @@ class _$_SeekToPositionError implements _SeekToPositionError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2881,6 +3403,12 @@ class _$_SeekToPositionError implements _SeekToPositionError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -2898,6 +3426,1443 @@ class _$_SeekToPositionError implements _SeekToPositionError {
 
 abstract class _SeekToPositionError implements ErrorCode {
   const factory _SeekToPositionError() = _$_SeekToPositionError;
+}
+
+/// @nodoc
+abstract class _$AddEchoErrorCopyWith<$Res> {
+  factory _$AddEchoErrorCopyWith(
+          _AddEchoError value, $Res Function(_AddEchoError) then) =
+      __$AddEchoErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$AddEchoErrorCopyWithImpl<$Res> extends _$ErrorCodeCopyWithImpl<$Res>
+    implements _$AddEchoErrorCopyWith<$Res> {
+  __$AddEchoErrorCopyWithImpl(
+      _AddEchoError _value, $Res Function(_AddEchoError) _then)
+      : super(_value, (v) => _then(v as _AddEchoError));
+
+  @override
+  _AddEchoError get _value => super._value as _AddEchoError;
+}
+
+/// @nodoc
+
+class _$_AddEchoError implements _AddEchoError {
+  const _$_AddEchoError();
+
+  @override
+  String toString() {
+    return 'ErrorCode.addEchoError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _AddEchoError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initRecorderError,
+    required TResult Function() disposeRecorderError,
+    required TResult Function() startRecorderError,
+    required TResult Function() pauseRecorderError,
+    required TResult Function() resumeRecorderError,
+    required TResult Function() stopRecorderError,
+    required TResult Function() initPlayerError,
+    required TResult Function() disposePlayerError,
+    required TResult Function() startPlayerError,
+    required TResult Function() pausePlayerError,
+    required TResult Function() resumePlayerError,
+    required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
+    required TResult Function() createFileError,
+    required TResult Function() deleteFileError,
+    required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
+  }) {
+    return addEchoError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+  }) {
+    return addEchoError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (addEchoError != null) {
+      return addEchoError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitRecorderError value) initRecorderError,
+    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
+    required TResult Function(_StartRecorderError value) startRecorderError,
+    required TResult Function(_PauseRecorderError value) pauseRecorderError,
+    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
+    required TResult Function(_StopRecorderError value) stopRecorderError,
+    required TResult Function(_InitPlayerError value) initPlayerError,
+    required TResult Function(_DisposePlayerError value) disposePlayerError,
+    required TResult Function(_StartPlayerError value) startPlayerError,
+    required TResult Function(_PausePlayerError value) pausePlayerError,
+    required TResult Function(_ResumePlayerError value) resumePlayerError,
+    required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
+    required TResult Function(_CreateFileError value) createFileError,
+    required TResult Function(_DeleteFileError value) deleteFileError,
+    required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
+  }) {
+    return addEchoError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+  }) {
+    return addEchoError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (addEchoError != null) {
+      return addEchoError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddEchoError implements ErrorCode {
+  const factory _AddEchoError() = _$_AddEchoError;
+}
+
+/// @nodoc
+abstract class _$ChangeTempoErrorCopyWith<$Res> {
+  factory _$ChangeTempoErrorCopyWith(
+          _ChangeTempoError value, $Res Function(_ChangeTempoError) then) =
+      __$ChangeTempoErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ChangeTempoErrorCopyWithImpl<$Res>
+    extends _$ErrorCodeCopyWithImpl<$Res>
+    implements _$ChangeTempoErrorCopyWith<$Res> {
+  __$ChangeTempoErrorCopyWithImpl(
+      _ChangeTempoError _value, $Res Function(_ChangeTempoError) _then)
+      : super(_value, (v) => _then(v as _ChangeTempoError));
+
+  @override
+  _ChangeTempoError get _value => super._value as _ChangeTempoError;
+}
+
+/// @nodoc
+
+class _$_ChangeTempoError implements _ChangeTempoError {
+  const _$_ChangeTempoError();
+
+  @override
+  String toString() {
+    return 'ErrorCode.changeTempoError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ChangeTempoError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initRecorderError,
+    required TResult Function() disposeRecorderError,
+    required TResult Function() startRecorderError,
+    required TResult Function() pauseRecorderError,
+    required TResult Function() resumeRecorderError,
+    required TResult Function() stopRecorderError,
+    required TResult Function() initPlayerError,
+    required TResult Function() disposePlayerError,
+    required TResult Function() startPlayerError,
+    required TResult Function() pausePlayerError,
+    required TResult Function() resumePlayerError,
+    required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
+    required TResult Function() createFileError,
+    required TResult Function() deleteFileError,
+    required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
+  }) {
+    return changeTempoError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+  }) {
+    return changeTempoError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (changeTempoError != null) {
+      return changeTempoError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitRecorderError value) initRecorderError,
+    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
+    required TResult Function(_StartRecorderError value) startRecorderError,
+    required TResult Function(_PauseRecorderError value) pauseRecorderError,
+    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
+    required TResult Function(_StopRecorderError value) stopRecorderError,
+    required TResult Function(_InitPlayerError value) initPlayerError,
+    required TResult Function(_DisposePlayerError value) disposePlayerError,
+    required TResult Function(_StartPlayerError value) startPlayerError,
+    required TResult Function(_PausePlayerError value) pausePlayerError,
+    required TResult Function(_ResumePlayerError value) resumePlayerError,
+    required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
+    required TResult Function(_CreateFileError value) createFileError,
+    required TResult Function(_DeleteFileError value) deleteFileError,
+    required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
+  }) {
+    return changeTempoError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+  }) {
+    return changeTempoError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (changeTempoError != null) {
+      return changeTempoError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeTempoError implements ErrorCode {
+  const factory _ChangeTempoError() = _$_ChangeTempoError;
+}
+
+/// @nodoc
+abstract class _$ReverseAudioErrorCopyWith<$Res> {
+  factory _$ReverseAudioErrorCopyWith(
+          _ReverseAudioError value, $Res Function(_ReverseAudioError) then) =
+      __$ReverseAudioErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ReverseAudioErrorCopyWithImpl<$Res>
+    extends _$ErrorCodeCopyWithImpl<$Res>
+    implements _$ReverseAudioErrorCopyWith<$Res> {
+  __$ReverseAudioErrorCopyWithImpl(
+      _ReverseAudioError _value, $Res Function(_ReverseAudioError) _then)
+      : super(_value, (v) => _then(v as _ReverseAudioError));
+
+  @override
+  _ReverseAudioError get _value => super._value as _ReverseAudioError;
+}
+
+/// @nodoc
+
+class _$_ReverseAudioError implements _ReverseAudioError {
+  const _$_ReverseAudioError();
+
+  @override
+  String toString() {
+    return 'ErrorCode.reverseAudioError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ReverseAudioError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initRecorderError,
+    required TResult Function() disposeRecorderError,
+    required TResult Function() startRecorderError,
+    required TResult Function() pauseRecorderError,
+    required TResult Function() resumeRecorderError,
+    required TResult Function() stopRecorderError,
+    required TResult Function() initPlayerError,
+    required TResult Function() disposePlayerError,
+    required TResult Function() startPlayerError,
+    required TResult Function() pausePlayerError,
+    required TResult Function() resumePlayerError,
+    required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
+    required TResult Function() createFileError,
+    required TResult Function() deleteFileError,
+    required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
+  }) {
+    return reverseAudioError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+  }) {
+    return reverseAudioError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (reverseAudioError != null) {
+      return reverseAudioError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitRecorderError value) initRecorderError,
+    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
+    required TResult Function(_StartRecorderError value) startRecorderError,
+    required TResult Function(_PauseRecorderError value) pauseRecorderError,
+    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
+    required TResult Function(_StopRecorderError value) stopRecorderError,
+    required TResult Function(_InitPlayerError value) initPlayerError,
+    required TResult Function(_DisposePlayerError value) disposePlayerError,
+    required TResult Function(_StartPlayerError value) startPlayerError,
+    required TResult Function(_PausePlayerError value) pausePlayerError,
+    required TResult Function(_ResumePlayerError value) resumePlayerError,
+    required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
+    required TResult Function(_CreateFileError value) createFileError,
+    required TResult Function(_DeleteFileError value) deleteFileError,
+    required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
+  }) {
+    return reverseAudioError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+  }) {
+    return reverseAudioError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (reverseAudioError != null) {
+      return reverseAudioError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ReverseAudioError implements ErrorCode {
+  const factory _ReverseAudioError() = _$_ReverseAudioError;
+}
+
+/// @nodoc
+abstract class _$SetSampleRateErrorCopyWith<$Res> {
+  factory _$SetSampleRateErrorCopyWith(
+          _SetSampleRateError value, $Res Function(_SetSampleRateError) then) =
+      __$SetSampleRateErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SetSampleRateErrorCopyWithImpl<$Res>
+    extends _$ErrorCodeCopyWithImpl<$Res>
+    implements _$SetSampleRateErrorCopyWith<$Res> {
+  __$SetSampleRateErrorCopyWithImpl(
+      _SetSampleRateError _value, $Res Function(_SetSampleRateError) _then)
+      : super(_value, (v) => _then(v as _SetSampleRateError));
+
+  @override
+  _SetSampleRateError get _value => super._value as _SetSampleRateError;
+}
+
+/// @nodoc
+
+class _$_SetSampleRateError implements _SetSampleRateError {
+  const _$_SetSampleRateError();
+
+  @override
+  String toString() {
+    return 'ErrorCode.setSampleRateError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SetSampleRateError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initRecorderError,
+    required TResult Function() disposeRecorderError,
+    required TResult Function() startRecorderError,
+    required TResult Function() pauseRecorderError,
+    required TResult Function() resumeRecorderError,
+    required TResult Function() stopRecorderError,
+    required TResult Function() initPlayerError,
+    required TResult Function() disposePlayerError,
+    required TResult Function() startPlayerError,
+    required TResult Function() pausePlayerError,
+    required TResult Function() resumePlayerError,
+    required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
+    required TResult Function() createFileError,
+    required TResult Function() deleteFileError,
+    required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
+  }) {
+    return setSampleRateError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+  }) {
+    return setSampleRateError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (setSampleRateError != null) {
+      return setSampleRateError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitRecorderError value) initRecorderError,
+    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
+    required TResult Function(_StartRecorderError value) startRecorderError,
+    required TResult Function(_PauseRecorderError value) pauseRecorderError,
+    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
+    required TResult Function(_StopRecorderError value) stopRecorderError,
+    required TResult Function(_InitPlayerError value) initPlayerError,
+    required TResult Function(_DisposePlayerError value) disposePlayerError,
+    required TResult Function(_StartPlayerError value) startPlayerError,
+    required TResult Function(_PausePlayerError value) pausePlayerError,
+    required TResult Function(_ResumePlayerError value) resumePlayerError,
+    required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
+    required TResult Function(_CreateFileError value) createFileError,
+    required TResult Function(_DeleteFileError value) deleteFileError,
+    required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
+  }) {
+    return setSampleRateError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+  }) {
+    return setSampleRateError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (setSampleRateError != null) {
+      return setSampleRateError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetSampleRateError implements ErrorCode {
+  const factory _SetSampleRateError() = _$_SetSampleRateError;
+}
+
+/// @nodoc
+abstract class _$SetVolumeErrorCopyWith<$Res> {
+  factory _$SetVolumeErrorCopyWith(
+          _SetVolumeError value, $Res Function(_SetVolumeError) then) =
+      __$SetVolumeErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SetVolumeErrorCopyWithImpl<$Res> extends _$ErrorCodeCopyWithImpl<$Res>
+    implements _$SetVolumeErrorCopyWith<$Res> {
+  __$SetVolumeErrorCopyWithImpl(
+      _SetVolumeError _value, $Res Function(_SetVolumeError) _then)
+      : super(_value, (v) => _then(v as _SetVolumeError));
+
+  @override
+  _SetVolumeError get _value => super._value as _SetVolumeError;
+}
+
+/// @nodoc
+
+class _$_SetVolumeError implements _SetVolumeError {
+  const _$_SetVolumeError();
+
+  @override
+  String toString() {
+    return 'ErrorCode.setVolumeError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _SetVolumeError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initRecorderError,
+    required TResult Function() disposeRecorderError,
+    required TResult Function() startRecorderError,
+    required TResult Function() pauseRecorderError,
+    required TResult Function() resumeRecorderError,
+    required TResult Function() stopRecorderError,
+    required TResult Function() initPlayerError,
+    required TResult Function() disposePlayerError,
+    required TResult Function() startPlayerError,
+    required TResult Function() pausePlayerError,
+    required TResult Function() resumePlayerError,
+    required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
+    required TResult Function() createFileError,
+    required TResult Function() deleteFileError,
+    required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
+  }) {
+    return setVolumeError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+  }) {
+    return setVolumeError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (setVolumeError != null) {
+      return setVolumeError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitRecorderError value) initRecorderError,
+    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
+    required TResult Function(_StartRecorderError value) startRecorderError,
+    required TResult Function(_PauseRecorderError value) pauseRecorderError,
+    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
+    required TResult Function(_StopRecorderError value) stopRecorderError,
+    required TResult Function(_InitPlayerError value) initPlayerError,
+    required TResult Function(_DisposePlayerError value) disposePlayerError,
+    required TResult Function(_StartPlayerError value) startPlayerError,
+    required TResult Function(_PausePlayerError value) pausePlayerError,
+    required TResult Function(_ResumePlayerError value) resumePlayerError,
+    required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
+    required TResult Function(_CreateFileError value) createFileError,
+    required TResult Function(_DeleteFileError value) deleteFileError,
+    required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
+  }) {
+    return setVolumeError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+  }) {
+    return setVolumeError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (setVolumeError != null) {
+      return setVolumeError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetVolumeError implements ErrorCode {
+  const factory _SetVolumeError() = _$_SetVolumeError;
+}
+
+/// @nodoc
+abstract class _$TrimSoundErrorCopyWith<$Res> {
+  factory _$TrimSoundErrorCopyWith(
+          _TrimSoundError value, $Res Function(_TrimSoundError) then) =
+      __$TrimSoundErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$TrimSoundErrorCopyWithImpl<$Res> extends _$ErrorCodeCopyWithImpl<$Res>
+    implements _$TrimSoundErrorCopyWith<$Res> {
+  __$TrimSoundErrorCopyWithImpl(
+      _TrimSoundError _value, $Res Function(_TrimSoundError) _then)
+      : super(_value, (v) => _then(v as _TrimSoundError));
+
+  @override
+  _TrimSoundError get _value => super._value as _TrimSoundError;
+}
+
+/// @nodoc
+
+class _$_TrimSoundError implements _TrimSoundError {
+  const _$_TrimSoundError();
+
+  @override
+  String toString() {
+    return 'ErrorCode.trimSoundError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _TrimSoundError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initRecorderError,
+    required TResult Function() disposeRecorderError,
+    required TResult Function() startRecorderError,
+    required TResult Function() pauseRecorderError,
+    required TResult Function() resumeRecorderError,
+    required TResult Function() stopRecorderError,
+    required TResult Function() initPlayerError,
+    required TResult Function() disposePlayerError,
+    required TResult Function() startPlayerError,
+    required TResult Function() pausePlayerError,
+    required TResult Function() resumePlayerError,
+    required TResult Function() stopPlayerError,
+    required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
+    required TResult Function() createFileError,
+    required TResult Function() deleteFileError,
+    required TResult Function() renameFileError,
+    required TResult Function() getRecordingDetailsError,
+    required TResult Function() getDefaultStorageDirectoryError,
+  }) {
+    return trimSoundError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+  }) {
+    return trimSoundError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initRecorderError,
+    TResult Function()? disposeRecorderError,
+    TResult Function()? startRecorderError,
+    TResult Function()? pauseRecorderError,
+    TResult Function()? resumeRecorderError,
+    TResult Function()? stopRecorderError,
+    TResult Function()? initPlayerError,
+    TResult Function()? disposePlayerError,
+    TResult Function()? startPlayerError,
+    TResult Function()? pausePlayerError,
+    TResult Function()? resumePlayerError,
+    TResult Function()? stopPlayerError,
+    TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
+    TResult Function()? createFileError,
+    TResult Function()? deleteFileError,
+    TResult Function()? renameFileError,
+    TResult Function()? getRecordingDetailsError,
+    TResult Function()? getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (trimSoundError != null) {
+      return trimSoundError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitRecorderError value) initRecorderError,
+    required TResult Function(_DisposeRecorderError value) disposeRecorderError,
+    required TResult Function(_StartRecorderError value) startRecorderError,
+    required TResult Function(_PauseRecorderError value) pauseRecorderError,
+    required TResult Function(_ResumeRecorderError value) resumeRecorderError,
+    required TResult Function(_StopRecorderError value) stopRecorderError,
+    required TResult Function(_InitPlayerError value) initPlayerError,
+    required TResult Function(_DisposePlayerError value) disposePlayerError,
+    required TResult Function(_StartPlayerError value) startPlayerError,
+    required TResult Function(_PausePlayerError value) pausePlayerError,
+    required TResult Function(_ResumePlayerError value) resumePlayerError,
+    required TResult Function(_StopPlayerError value) stopPlayerError,
+    required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
+    required TResult Function(_CreateFileError value) createFileError,
+    required TResult Function(_DeleteFileError value) deleteFileError,
+    required TResult Function(_RenameFileError value) renameFileError,
+    required TResult Function(_GetRecordingDetailsError value)
+        getRecordingDetailsError,
+    required TResult Function(_GetDefaultStorageDirectoryError value)
+        getDefaultStorageDirectoryError,
+  }) {
+    return trimSoundError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+  }) {
+    return trimSoundError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitRecorderError value)? initRecorderError,
+    TResult Function(_DisposeRecorderError value)? disposeRecorderError,
+    TResult Function(_StartRecorderError value)? startRecorderError,
+    TResult Function(_PauseRecorderError value)? pauseRecorderError,
+    TResult Function(_ResumeRecorderError value)? resumeRecorderError,
+    TResult Function(_StopRecorderError value)? stopRecorderError,
+    TResult Function(_InitPlayerError value)? initPlayerError,
+    TResult Function(_DisposePlayerError value)? disposePlayerError,
+    TResult Function(_StartPlayerError value)? startPlayerError,
+    TResult Function(_PausePlayerError value)? pausePlayerError,
+    TResult Function(_ResumePlayerError value)? resumePlayerError,
+    TResult Function(_StopPlayerError value)? stopPlayerError,
+    TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
+    TResult Function(_CreateFileError value)? createFileError,
+    TResult Function(_DeleteFileError value)? deleteFileError,
+    TResult Function(_RenameFileError value)? renameFileError,
+    TResult Function(_GetRecordingDetailsError value)? getRecordingDetailsError,
+    TResult Function(_GetDefaultStorageDirectoryError value)?
+        getDefaultStorageDirectoryError,
+    required TResult orElse(),
+  }) {
+    if (trimSoundError != null) {
+      return trimSoundError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TrimSoundError implements ErrorCode {
+  const factory _TrimSoundError() = _$_TrimSoundError;
 }
 
 /// @nodoc
@@ -2952,6 +4917,12 @@ class _$_CreateFileError implements _CreateFileError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -2977,6 +4948,12 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3002,6 +4979,12 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3031,6 +5014,12 @@ class _$_CreateFileError implements _CreateFileError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -3058,6 +5047,12 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3084,6 +5079,12 @@ class _$_CreateFileError implements _CreateFileError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3155,6 +5156,12 @@ class _$_DeleteFileError implements _DeleteFileError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -3180,6 +5187,12 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3205,6 +5218,12 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3234,6 +5253,12 @@ class _$_DeleteFileError implements _DeleteFileError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -3261,6 +5286,12 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3287,6 +5318,12 @@ class _$_DeleteFileError implements _DeleteFileError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3358,6 +5395,12 @@ class _$_RenameFileError implements _RenameFileError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -3383,6 +5426,12 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3408,6 +5457,12 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3437,6 +5492,12 @@ class _$_RenameFileError implements _RenameFileError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -3464,6 +5525,12 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3490,6 +5557,12 @@ class _$_RenameFileError implements _RenameFileError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3563,6 +5636,12 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -3588,6 +5667,12 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3613,6 +5698,12 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3642,6 +5733,12 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -3669,6 +5766,12 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3695,6 +5798,12 @@ class _$_GetRecordingDetailsError implements _GetRecordingDetailsError {
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3772,6 +5881,12 @@ class _$_GetDefaultStorageDirectoryError
     required TResult Function() resumePlayerError,
     required TResult Function() stopPlayerError,
     required TResult Function() seekToPositionError,
+    required TResult Function() addEchoError,
+    required TResult Function() changeTempoError,
+    required TResult Function() reverseAudioError,
+    required TResult Function() setSampleRateError,
+    required TResult Function() setVolumeError,
+    required TResult Function() trimSoundError,
     required TResult Function() createFileError,
     required TResult Function() deleteFileError,
     required TResult Function() renameFileError,
@@ -3797,6 +5912,12 @@ class _$_GetDefaultStorageDirectoryError
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3822,6 +5943,12 @@ class _$_GetDefaultStorageDirectoryError
     TResult Function()? resumePlayerError,
     TResult Function()? stopPlayerError,
     TResult Function()? seekToPositionError,
+    TResult Function()? addEchoError,
+    TResult Function()? changeTempoError,
+    TResult Function()? reverseAudioError,
+    TResult Function()? setSampleRateError,
+    TResult Function()? setVolumeError,
+    TResult Function()? trimSoundError,
     TResult Function()? createFileError,
     TResult Function()? deleteFileError,
     TResult Function()? renameFileError,
@@ -3851,6 +5978,12 @@ class _$_GetDefaultStorageDirectoryError
     required TResult Function(_ResumePlayerError value) resumePlayerError,
     required TResult Function(_StopPlayerError value) stopPlayerError,
     required TResult Function(_SeekToPositionError value) seekToPositionError,
+    required TResult Function(_AddEchoError value) addEchoError,
+    required TResult Function(_ChangeTempoError value) changeTempoError,
+    required TResult Function(_ReverseAudioError value) reverseAudioError,
+    required TResult Function(_SetSampleRateError value) setSampleRateError,
+    required TResult Function(_SetVolumeError value) setVolumeError,
+    required TResult Function(_TrimSoundError value) trimSoundError,
     required TResult Function(_CreateFileError value) createFileError,
     required TResult Function(_DeleteFileError value) deleteFileError,
     required TResult Function(_RenameFileError value) renameFileError,
@@ -3878,6 +6011,12 @@ class _$_GetDefaultStorageDirectoryError
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,
@@ -3904,6 +6043,12 @@ class _$_GetDefaultStorageDirectoryError
     TResult Function(_ResumePlayerError value)? resumePlayerError,
     TResult Function(_StopPlayerError value)? stopPlayerError,
     TResult Function(_SeekToPositionError value)? seekToPositionError,
+    TResult Function(_AddEchoError value)? addEchoError,
+    TResult Function(_ChangeTempoError value)? changeTempoError,
+    TResult Function(_ReverseAudioError value)? reverseAudioError,
+    TResult Function(_SetSampleRateError value)? setSampleRateError,
+    TResult Function(_SetVolumeError value)? setVolumeError,
+    TResult Function(_TrimSoundError value)? trimSoundError,
     TResult Function(_CreateFileError value)? createFileError,
     TResult Function(_DeleteFileError value)? deleteFileError,
     TResult Function(_RenameFileError value)? renameFileError,

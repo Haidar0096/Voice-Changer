@@ -15,17 +15,20 @@ import '../domain/player/player_service.dart' as _i7;
 import '../domain/player/player_service_impl.dart' as _i8;
 import '../domain/recorder/recorder_service.dart' as _i9;
 import '../domain/recorder/recorder_service_impl.dart' as _i10;
-import '../domain/recording/recording_details_service.dart' as _i11;
-import '../domain/recording/recording_details_service_impl.dart' as _i12;
+import '../domain/recording_details/recording_details_service.dart' as _i11;
+import '../domain/recording_details/recording_details_service_impl.dart'
+    as _i12;
+import '../domain/sound_changer/sound_changer_service.dart' as _i14;
+import '../domain/sound_changer/sound_changer_service_impl.dart' as _i15;
 import '../presentation/recorder_screen/bloc/permission_bloc/permission_bloc.dart'
-    as _i14;
-import '../presentation/recorder_screen/bloc/recorder_bloc/recorder_bloc.dart'
     as _i16;
+import '../presentation/recorder_screen/bloc/recorder_bloc/recorder_bloc.dart'
+    as _i18;
 import '../presentation/recordings_screen/bloc/player_bloc/player_bloc.dart'
-    as _i15;
+    as _i17;
 import '../presentation/recordings_screen/bloc/recordings_bloc/recordings_bloc.dart'
     as _i13;
-import 'service_locator.dart' as _i17; // ignore_for_file: unnecessary_lambdas
+import 'service_locator.dart' as _i19; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -44,12 +47,13 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i12.RecordingDetailsServiceImpl());
   gh.factory<_i13.RecordingsBloc>(() => _i13.RecordingsBloc(
       get<_i3.FileSystemService>(), get<_i11.RecordingDetailsService>()));
-  gh.factory<_i14.PermissionBloc>(
-      () => _i14.PermissionBloc(get<_i5.PermissionHandlerService>()));
-  gh.factory<_i15.PlayerBloc>(() => _i15.PlayerBloc(get<_i7.PlayerService>()));
-  gh.factory<_i16.RecorderBloc>(() => _i16.RecorderBloc(
+  gh.factory<_i14.SoundChangerService>(() => _i15.SoundChangerServiceImpl());
+  gh.factory<_i16.PermissionBloc>(
+      () => _i16.PermissionBloc(get<_i5.PermissionHandlerService>()));
+  gh.factory<_i17.PlayerBloc>(() => _i17.PlayerBloc(get<_i7.PlayerService>()));
+  gh.factory<_i18.RecorderBloc>(() => _i18.RecorderBloc(
       get<_i9.RecorderService>(), get<_i3.FileSystemService>()));
   return get;
 }
 
-class _$RegisterModule extends _i17.RegisterModule {}
+class _$RegisterModule extends _i19.RegisterModule {}

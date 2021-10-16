@@ -10,8 +10,8 @@ extension DirectoryExtension on Directory {
     List<FileSystemEntity> fileSystemEntities = listSync(recursive: false)
       ..removeWhere((element) => element is! File);
     if (extension != null) {
-      fileSystemEntities.removeWhere(
-          (element) => (element as File).getExtension() != extension);
+      fileSystemEntities.removeWhere((element) =>
+          FileExtension.getExtension((element as File).path) != extension);
     }
     return fileSystemEntities.map((element) => File(element.path)).toList();
   }

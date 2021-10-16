@@ -9,7 +9,7 @@ import 'package:rxdart/rxdart.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
 import 'package:voice_changer/domain/common/exception/failure.dart';
 import 'package:voice_changer/domain/player/player_service.dart';
-import 'package:voice_changer/domain/recording/recording_details_service.dart';
+import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 part 'player_bloc.freezed.dart';
 

@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:io';
+import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
@@ -64,8 +66,9 @@ class RecorderServiceImpl implements RecorderService {
         (data) {
           _recordingDurationController.add(data.duration);
           if (data.decibels != null) {
-            //y=100*x/120 where y is the volume on scale 0-->100 and x is dB on scale 0-->120
-            _recordingVolumeController.add(100 * data.decibels! / 120);
+            //emitted value from _recordingVolumeController is 10^(decibels/20) % 100
+            _recordingVolumeController
+                .add((pow(10, data.decibels! / 20) % 100).toDouble());
           }
         },
         onDone: () => subscription.cancel(),
@@ -117,14 +120,14 @@ class RecorderServiceImpl implements RecorderService {
   }
 
   @override
-  Future<Either<Failure, void>> startRecorder({required String path}) async {
+  Future<Either<Failure, void>> startRecorder({required File file}) async {
     try {
       if (!_recorderStateSubject.value.isStopped) {
         throw Exception(
             'startRecorder() was called from an illegal state: ${_recorderStateSubject.value}');
       }
       // _logger.i('this recording will be saved into $path');
-      await _recorder.startRecorder(toFile: path, codec: Codec.aacMP4);
+      await _recorder.startRecorder(toFile: file.path, codec: Codec.aacMP4);
       _recorderStateSubject.add(const RecorderState.recording());
       return const Right(null);
     } catch (e) {

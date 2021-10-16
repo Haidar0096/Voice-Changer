@@ -10,7 +10,7 @@ import 'package:voice_changer/domain/common/exception/failure.dart';
 import 'package:voice_changer/domain/common/extensions/directory_extensions.dart';
 import 'package:voice_changer/domain/common/service/filesystem_service.dart';
 import 'package:voice_changer/domain/recorder/recorder_service.dart';
-import 'package:voice_changer/domain/recording/recording_details_service.dart';
+import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 part 'recordings_bloc.freezed.dart';
 

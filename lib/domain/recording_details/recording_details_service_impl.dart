@@ -7,7 +7,7 @@ import 'package:logger/logger.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
 import 'package:voice_changer/domain/common/exception/failure.dart';
 import 'package:voice_changer/domain/common/extensions/file_extensions.dart';
-import 'package:voice_changer/domain/recording/recording_details_service.dart';
+import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 @Injectable(as: RecordingDetailsService)
 class RecordingDetailsServiceImpl implements RecordingDetailsService {
@@ -27,7 +27,7 @@ class RecordingDetailsServiceImpl implements RecordingDetailsService {
       return Right(
         RecordingDetails(
           path: recordingFile.path,
-          name: recordingFile.getName(),
+          name: FileExtension.getName(recordingFile.path),
           duration: duration,
         ),
       );

@@ -13,7 +13,7 @@ import 'package:voice_changer/domain/common/extensions/datetime_extensions.dart'
 import 'package:voice_changer/domain/common/extensions/file_extensions.dart';
 import 'package:voice_changer/domain/common/service/filesystem_service.dart';
 import 'package:voice_changer/domain/recorder/recorder_service.dart';
-import 'package:voice_changer/domain/recording/recording_details_service.dart';
+import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 part 'recorder_bloc.freezed.dart';
 part 'recorder_bloc_event.dart';
@@ -96,11 +96,11 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
             .fold(
           _errorState,
           (file) async {
-            return (await _recorderService.startRecorder(path: file.path)).fold(
+            return (await _recorderService.startRecorder(file: file)).fold(
               _errorState,
               (_) => state.copyWith(
                 recording: RecordingDetails(
-                  name: file.getName(),
+                  name: FileExtension.getName(file.path),
                   path: file.path,
                   duration: null,
                 ),

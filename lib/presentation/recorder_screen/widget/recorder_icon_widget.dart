@@ -1,12 +1,12 @@
 part of 'recorder_screen.dart';
 
 class _RecorderIconWidget extends StatelessWidget {
+  final double _containerSide;
+
+  const _RecorderIconWidget(this._containerSide);
+
   @override
   Widget build(BuildContext context) {
-    final mq = MediaQuery.of(context);
-    final width = mq.size.width;
-    final containerSide = width;
-
     final recorderBlocState = BlocProvider.of<RecorderBloc>(context).state;
 
     return StreamBuilder<RecorderInfo>(
@@ -14,11 +14,11 @@ class _RecorderIconWidget extends StatelessWidget {
       builder: (context, snapshot) {
         double sizeFactor =
             (snapshot.hasData && snapshot.data!.state.isRecording
-                ? 1 + snapshot.data!.volume / 100
+                ? (1 + snapshot.data!.volume / 100)
                 : 1);
-        //line below is to make sure the circle does not get bigger than the container
-        sizeFactor %= 2;
-        final r1 = containerSide / 2 * sizeFactor;
+        sizeFactor %= 2; //to ensure r1<_containerSide
+
+        final r1 = _containerSide / 2;
         final r2 = r1 / 1.08;
         final r3 = r2 / 1.08;
         final r4 = r3 / 3;
@@ -30,11 +30,22 @@ class _RecorderIconWidget extends StatelessWidget {
         );
 
         return SizedBox(
-          width: containerSide,
-          height: containerSide,
+          width: _containerSide,
+          height: _containerSide,
           child: Stack(
             alignment: Alignment.center,
             children: [
+              Opacity(
+                opacity: 0.2,
+                child: AnimatedScale(
+                  duration: const Duration(milliseconds: 200),
+                  scale: sizeFactor,
+                  child: FilledCircle(
+                    radius: r1,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                ),
+              ),
               FilledCircle(
                 color: Theme.of(context).colorScheme.primary,
                 radius: r1,
@@ -47,12 +58,19 @@ class _RecorderIconWidget extends StatelessWidget {
                 color: Colors.white,
                 radius: r3,
               ),
-              if ((!snapshot.hasData) || (!snapshot.data!.state.isRecording))
-                micIcon
-              else
-                Text(
-                  snapshot.data!.duration.toString(),
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                child:
+                    ((!snapshot.hasData) || (!snapshot.data!.state.isRecording))
+                        ? micIcon
+                        : Text(
+                            snapshot.data!.duration.toString(),
+                          ),
+                transitionBuilder: (child, animation) => ScaleTransition(
+                  child: child,
+                  scale: animation,
                 ),
+              ),
             ],
           ),
         );
