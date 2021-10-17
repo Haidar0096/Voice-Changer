@@ -463,12 +463,13 @@ class __$RecordingsBlocStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RecordingsBlocState implements _RecordingsBlocState {
+class _$_RecordingsBlocState extends _RecordingsBlocState {
   const _$_RecordingsBlocState(
       {this.recordings,
       this.isProcessing = false,
       this.isError = false,
-      this.errorMessage});
+      this.errorMessage})
+      : super._();
 
   @override
   final List<RecordingDetails>? recordings;
@@ -480,11 +481,6 @@ class _$_RecordingsBlocState implements _RecordingsBlocState {
   final bool isError;
   @override
   final String? errorMessage;
-
-  @override
-  String toString() {
-    return 'RecordingsBlocState(recordings: $recordings, isProcessing: $isProcessing, isError: $isError, errorMessage: $errorMessage)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -519,12 +515,13 @@ class _$_RecordingsBlocState implements _RecordingsBlocState {
           this, _$identity);
 }
 
-abstract class _RecordingsBlocState implements RecordingsBlocState {
+abstract class _RecordingsBlocState extends RecordingsBlocState {
   const factory _RecordingsBlocState(
       {List<RecordingDetails>? recordings,
       bool isProcessing,
       bool isError,
       String? errorMessage}) = _$_RecordingsBlocState;
+  const _RecordingsBlocState._() : super._();
 
   @override
   List<RecordingDetails>? get recordings => throw _privateConstructorUsedError;

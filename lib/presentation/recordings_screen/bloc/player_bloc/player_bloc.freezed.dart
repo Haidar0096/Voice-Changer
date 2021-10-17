@@ -1479,12 +1479,13 @@ class __$PlayerBlocStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PlayerBlocState implements _PlayerBlocState {
+class _$_PlayerBlocState extends _PlayerBlocState {
   const _$_PlayerBlocState(
       {this.playerInfoStream,
       this.recording,
       this.isError = false,
-      this.errorMessage});
+      this.errorMessage})
+      : super._();
 
   @override
   final Stream<PlayerInfo>? playerInfoStream;
@@ -1495,11 +1496,6 @@ class _$_PlayerBlocState implements _PlayerBlocState {
   final bool isError;
   @override
   final String? errorMessage;
-
-  @override
-  String toString() {
-    return 'PlayerBlocState(playerInfoStream: $playerInfoStream, recording: $recording, isError: $isError, errorMessage: $errorMessage)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -1533,12 +1529,13 @@ class _$_PlayerBlocState implements _PlayerBlocState {
       __$PlayerBlocStateCopyWithImpl<_PlayerBlocState>(this, _$identity);
 }
 
-abstract class _PlayerBlocState implements PlayerBlocState {
+abstract class _PlayerBlocState extends PlayerBlocState {
   const factory _PlayerBlocState(
       {Stream<PlayerInfo>? playerInfoStream,
       RecordingDetails? recording,
       bool isError,
       String? errorMessage}) = _$_PlayerBlocState;
+  const _PlayerBlocState._() : super._();
 
   @override
   Stream<PlayerInfo>? get playerInfoStream =>
