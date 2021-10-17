@@ -70,7 +70,7 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
           }
           return failure != null
               ? _errorState(failure!)
-              : RecordingsBlocState(recordings: recordings);
+              : state.copyWith(recordings: recordings);
         },
       );
 

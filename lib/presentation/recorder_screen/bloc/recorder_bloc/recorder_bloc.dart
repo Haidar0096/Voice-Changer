@@ -25,7 +25,8 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
   final FileSystemService _fileSystemService;
   final Logger _logger = serviceLocator.get<Logger>(param1: Level.debug);
 
-  final _recordingInfoSubject = BehaviorSubject<RecorderInfo>();
+  final BehaviorSubject<RecorderInfo> _recordingInfoSubject =
+      BehaviorSubject<RecorderInfo>();
 
   //the initial state is passed to the super class
   RecorderBloc(this._recorderService, this._fileSystemService)

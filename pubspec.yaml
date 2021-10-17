@@ -53,16 +53,14 @@ dependencies:
   injectable: ^1.5.0
   #this dependency is for logging
   logger: ^1.1.0
-  #this dependency is to access shared preferences
-  shared_preferences: ^2.0.8
   #this dependency is for using functional programming patterns and objects
   dartz: ^0.10.0
   #this dependency is for manipulating the audio files
   flutter_ffmpeg: ^0.4.2
-  #this dependency is for providing objects to the nested widgets
-  provider: ^6.0.1
   #this dependency is for using [BehaviourSubject]s
   rxdart: ^0.27.2
+  #this dependency is for using custom popup menu
+  custom_pop_up_menu: ^1.2.2
 
 dev_dependencies:
   flutter_test:

@@ -23,8 +23,13 @@ class RecorderBlocState with _$RecorderBlocState {
 }
 
 class RecorderInfo {
+  ///The current state of the recorder.
   final RecorderState state;
+
+  ///The duration of the current recording, if there is any.
   final Duration duration;
+
+  ///The volume of the current recording, if there is any
   final double volume;
 
   RecorderInfo(this.state, this.duration, this.volume);

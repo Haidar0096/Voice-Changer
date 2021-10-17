@@ -59,7 +59,7 @@ class RecorderServiceImpl implements RecorderService {
       }
       await _recorder.openAudioSession();
       await _recorder
-          .setSubscriptionDuration(const Duration(milliseconds: 100));
+          .setSubscriptionDuration(const Duration(milliseconds: 50));
 
       late StreamSubscription<RecordingDisposition> subscription;
       subscription = _recorder.onProgress!.listen(
