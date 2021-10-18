@@ -25,71 +25,71 @@ class _RecordButtonState extends State<_RecordButton> {
         permissionBloc.state.isMicrophonePermissionGranted;
 
     return StreamBuilder<RecorderInfo>(
-        stream: recorderBloc.state.recorderInfoStream,
-        builder: (context, snapshot) {
-          return SizedBox(
-            width: r1,
-            height: r1,
-            child: GestureDetector(
-              onPanDown: (_) => setState(() {
-                _opacity = 1.0;
-              }),
-              onPanEnd: (_) => setState(
-                () {
-                  _opacity = 0.0;
-                },
-              ),
-              onTap: () {
-                setState(() {
-                  if (snapshot.hasData && !snapshot.data!.state.isRecording) {
-                    if (isMicrophonePermissionGranted) {
-                      recorderBloc
-                          .add(const RecorderBlocEvent.startRecording());
-                    } else {
-                      permissionBloc.add(
-                        PermissionBlocEvent.requestMicrophonePermission(
-                          onPermanentlyDenied: () async {
-                            await _showPermissionDialog(context);
-                          },
-                          onGranted: () => recorderBloc
-                              .add(const RecorderBlocEvent.startRecording()),
-                        ),
-                      );
-                    }
-                  }
-                  _opacity = 0.0;
-                });
+      stream: recorderBloc.state.recorderInfoStream,
+      builder: (context, snapshot) {
+        return SizedBox(
+          width: r1,
+          height: r1,
+          child: GestureDetector(
+            onPanDown: (_) => setState(() {
+              _opacity = 1.0;
+            }),
+            onPanEnd: (_) => setState(
+              () {
+                _opacity = 0.0;
               },
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  FilledCircle(
-                    color: snapshot.hasData && snapshot.data!.state.isRecording
-                        ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).disabledColor,
+            ),
+            onTap: () {
+              setState(() {
+                if (snapshot.hasData && !snapshot.data!.state.isRecording) {
+                  if (isMicrophonePermissionGranted) {
+                    recorderBloc.add(const RecorderBlocEvent.startRecording());
+                  } else {
+                    permissionBloc.add(
+                      PermissionBlocEvent.requestMicrophonePermission(
+                        onPermanentlyDenied: () async {
+                          await _showPermissionDialog(context);
+                        },
+                        onGranted: () => recorderBloc
+                            .add(const RecorderBlocEvent.startRecording()),
+                      ),
+                    );
+                  }
+                }
+                _opacity = 0.0;
+              });
+            },
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                FilledCircle(
+                  color: snapshot.hasData && snapshot.data!.state.isRecording
+                      ? Theme.of(context).colorScheme.secondary
+                      : Theme.of(context).disabledColor,
+                  radius: r1,
+                ),
+                FilledCircle(
+                  color: Colors.white,
+                  radius: r2,
+                ),
+                FilledCircle(
+                  color: Colors.red,
+                  radius: r3,
+                ),
+                AnimatedOpacity(
+                  duration: const Duration(milliseconds: 150),
+                  opacity: _opacity,
+                  child: FilledCircle(
+                    color: Colors.black12,
                     radius: r1,
                   ),
-                  FilledCircle(
-                    color: Colors.white,
-                    radius: r2,
-                  ),
-                  FilledCircle(
-                    color: Colors.red,
-                    radius: r3,
-                  ),
-                  AnimatedOpacity(
-                    duration: const Duration(milliseconds: 150),
-                    opacity: _opacity,
-                    child: FilledCircle(
-                      color: Colors.black12,
-                      radius: r1,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 
   _showPermissionDialog(BuildContext context) async {

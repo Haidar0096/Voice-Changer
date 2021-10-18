@@ -31,50 +31,51 @@ class _StopButtonState extends State<_StopButton> {
     final recorderBloc = BlocProvider.of<RecorderBloc>(context);
 
     return StreamBuilder<RecorderInfo>(
-        stream: recorderBloc.state.recorderInfoStream,
-        builder: (context, snapshot) {
-          return SizedBox(
-            width: containerSide,
-            height: containerSide,
-            child: GestureDetector(
-              onTap: snapshot.hasData && snapshot.data!.state.isRecording
-                  ? () async {
-                      recorderBloc.add(const RecorderBlocEvent.stopRecording());
-                      _fileNameTextController.text =
-                          recorderBloc.state.recording!.name;
-                      await _showDialog(context);
-                    }
-                  : null,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      FilledRectangle(
-                        width: stopButtonOuterSide,
-                        height: stopButtonOuterSide,
-                        color:
-                            snapshot.hasData && snapshot.data!.state.isRecording
-                                ? Theme.of(context).colorScheme.secondary
-                                : Theme.of(context).disabledColor,
-                      ),
-                      FilledRectangle(
-                        width: stopButtonInnerSide,
-                        height: stopButtonInnerSide,
-                        color: Colors.white,
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(2.0),
-                    child: Text('Stop', style: smallText),
-                  ),
-                ],
-              ),
+      stream: recorderBloc.state.recorderInfoStream,
+      builder: (context, snapshot) {
+        return SizedBox(
+          width: containerSide,
+          height: containerSide,
+          child: GestureDetector(
+            onTap: snapshot.hasData && snapshot.data!.state.isRecording
+                ? () async {
+                    recorderBloc.add(const RecorderBlocEvent.stopRecording());
+                    _fileNameTextController.text =
+                        recorderBloc.state.recording!.name;
+                    await _showDialog(context);
+                  }
+                : null,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    FilledRectangle(
+                      width: stopButtonOuterSide,
+                      height: stopButtonOuterSide,
+                      color:
+                          snapshot.hasData && snapshot.data!.state.isRecording
+                              ? Theme.of(context).colorScheme.secondary
+                              : Theme.of(context).disabledColor,
+                    ),
+                    FilledRectangle(
+                      width: stopButtonInnerSide,
+                      height: stopButtonInnerSide,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: Text('Stop', style: smallText),
+                ),
+              ],
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 
   _showDialog(BuildContext context) async {
