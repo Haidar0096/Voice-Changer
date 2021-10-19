@@ -26,10 +26,10 @@ class RecorderServiceImpl implements RecorderService {
   final BehaviorSubject<RecorderState> _recorderStateSubject =
       BehaviorSubject.seeded(const RecorderState.uninitialized());
 
-  final BehaviorSubject<Duration> _recordingDurationController =
+  final BehaviorSubject<Duration> _recordingDurationSubject =
       BehaviorSubject<Duration>.seeded(Duration.zero);
 
-  final BehaviorSubject<double> _recordingVolumeController =
+  final BehaviorSubject<double> _recordingVolumeSubject =
       BehaviorSubject<double>.seeded(0);
 
   @override
@@ -37,10 +37,10 @@ class RecorderServiceImpl implements RecorderService {
 
   @override
   Stream<Duration> get recordingDurationStream =>
-      _recordingDurationController.stream;
+      _recordingDurationSubject.stream;
 
   @override
-  Stream<double> get recordingVolumeStream => _recordingVolumeController.stream;
+  Stream<double> get recordingVolumeStream => _recordingVolumeSubject.stream;
 
   @override
   RecorderState get recorderState => _recorderStateSubject.value;
@@ -52,8 +52,8 @@ class RecorderServiceImpl implements RecorderService {
         return Right(
           InitRecorderResult(
             recorderStateStream: _recorderStateSubject.stream,
-            recordingDurationStream: _recordingDurationController.stream,
-            recordingVolumeStream: _recordingVolumeController.stream,
+            recordingDurationStream: _recordingDurationSubject.stream,
+            recordingVolumeStream: _recordingVolumeSubject.stream,
           ),
         );
       }
@@ -63,10 +63,10 @@ class RecorderServiceImpl implements RecorderService {
       late StreamSubscription<RecordingDisposition> subscription;
       subscription = _recorder.onProgress!.listen(
         (data) {
-          _recordingDurationController.add(data.duration);
+          _recordingDurationSubject.add(data.duration);
           if (data.decibels != null) {
             //emitted value from _recordingVolumeController is 10^(decibels/20) % 100
-            _recordingVolumeController
+            _recordingVolumeSubject
                 .add((pow(10, data.decibels! / 20) % 100).toDouble());
           }
         },
@@ -78,11 +78,13 @@ class RecorderServiceImpl implements RecorderService {
       //       'There must exist a listener to the recorderStateStream when calling initRecorder()');
       // }
       _recorderStateSubject.add(const RecorderState.stopped());
+      _recordingVolumeSubject.add(0);
+      _recordingDurationSubject.add(Duration.zero);
       return Right(
         InitRecorderResult(
           recorderStateStream: _recorderStateSubject.stream,
-          recordingDurationStream: _recordingDurationController.stream,
-          recordingVolumeStream: _recordingVolumeController.stream,
+          recordingDurationStream: _recordingDurationSubject.stream,
+          recordingVolumeStream: _recordingVolumeSubject.stream,
         ),
       );
     } catch (e) {
@@ -104,8 +106,8 @@ class RecorderServiceImpl implements RecorderService {
     try {
       await _recorder.closeAudioSession();
       _recorderStateSubject.close();
-      _recordingDurationController.close();
-      _recordingVolumeController.close();
+      _recordingDurationSubject.close();
+      _recordingVolumeSubject.close();
       return const Right(null);
     } catch (e) {
       _logger.e('error occurred in disposeRecorder()', e);
