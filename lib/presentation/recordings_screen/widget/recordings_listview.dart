@@ -45,7 +45,6 @@ class _RecordingsListView extends StatelessWidget {
                       recordingsBlocState.recordings[index].path,
                     ),
                   );
-                  return;
                 },
                 child: _RecordingTileContents(index),
               ),

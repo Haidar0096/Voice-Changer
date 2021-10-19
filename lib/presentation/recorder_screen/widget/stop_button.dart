@@ -130,8 +130,7 @@ class _StopButtonState extends State<_StopButton> {
                       ),
                     ),
                     TextButton(
-                      child: Text('Save',
-                          style: mediumText.copyWith(color: Colors.blue)),
+                      child: Text('Save', style: mediumText),
                       onPressed: () {
                         if (_isValidFileName(_fileNameTextController.text)) {
                           recorderBloc.add(RecorderBlocEvent.saveRecording(
