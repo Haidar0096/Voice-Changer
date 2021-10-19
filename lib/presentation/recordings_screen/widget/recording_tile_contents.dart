@@ -23,25 +23,29 @@ class _RecordingTileContents extends StatelessWidget {
             bool isProcessing = playerBlocState.isProcessing ||
                 recordingsBlocState.isProcessing;
 
-            final recordings = recordingsBlocState.recordings;
-
             bool isPlayingTile = (isPlaying || isPaused) &&
-                recordings[_index] == playerBlocState.recording;
+                recordingsBlocState.recordings[_index] ==
+                    playerBlocState.recording;
 
             return Column(
               children: [
                 ListTile(
                   isThreeLine: isPlaying && isPlayingTile,
                   leading: _micIcon(width),
-                  title: _title(recordings),
-                  subtitle: _subTitle(recordings),
+                  title: _title(recordingsBlocState.recordings),
+                  subtitle: _subTitle(recordingsBlocState.recordings),
                   trailing: GestureDetector(
                     child: _trailingIcon(
                         isPlaying, isPlayingTile, isProcessing, 60),
                     onTap: isProcessing
                         ? null
-                        : _onTap(isStopped, playerBloc, recordings, isPlaying,
-                            isPlayingTile, isPaused),
+                        : _onTap(
+                            isStopped,
+                            playerBloc,
+                            recordingsBlocState.recordings,
+                            isPlaying,
+                            isPlayingTile,
+                            isPaused),
                   ),
                 ),
                 if ((isPlaying || isPaused) && isPlayingTile)
@@ -62,12 +66,7 @@ class _RecordingTileContents extends StatelessWidget {
   ) {
     return () async {
       if (isStopped) {
-        playerBloc.add(
-          PlayerBlocEvent.start(
-            recording: recordings[_index],
-            onDone: () => playerBloc.add(const PlayerBlocEvent.playbackEnded()),
-          ),
-        );
+        playerBloc.add(PlayerBlocEvent.start(recording: recordings[_index]));
       } else if (isPlaying) {
         if (isPlayingTile) {
           playerBloc.add(const PlayerBlocEvent.pause());
@@ -75,12 +74,7 @@ class _RecordingTileContents extends StatelessWidget {
           playerBloc.add(
             PlayerBlocEvent.stop(
               onDone: () => playerBloc.add(
-                PlayerBlocEvent.start(
-                  recording: recordings[_index],
-                  onDone: () => playerBloc.add(
-                    const PlayerBlocEvent.playbackEnded(),
-                  ),
-                ),
+                PlayerBlocEvent.start(recording: recordings[_index]),
               ),
             ),
           );
@@ -92,12 +86,7 @@ class _RecordingTileContents extends StatelessWidget {
           playerBloc.add(
             PlayerBlocEvent.stop(
               onDone: () => playerBloc.add(
-                PlayerBlocEvent.start(
-                  recording: recordings[_index],
-                  onDone: () => playerBloc.add(
-                    const PlayerBlocEvent.playbackEnded(),
-                  ),
-                ),
+                PlayerBlocEvent.start(recording: recordings[_index]),
               ),
             ),
           );

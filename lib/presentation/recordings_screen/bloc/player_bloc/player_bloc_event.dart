@@ -17,8 +17,6 @@ class PlayerBlocEvent with _$PlayerBlocEvent {
     Function? onDone,
   }) = _Stop;
 
-  const factory PlayerBlocEvent.playbackEnded() = _PlaybackEnded;
-
   const factory PlayerBlocEvent.seekToPosition(Duration position) =
       _SeekToPosition;
 

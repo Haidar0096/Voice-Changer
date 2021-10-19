@@ -11,7 +11,9 @@ import 'package:voice_changer/domain/player/player_service.dart';
 import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 part 'player_bloc.freezed.dart';
+
 part 'player_bloc_event.dart';
+
 part 'player_bloc_state.dart';
 
 @Injectable()
@@ -28,8 +30,6 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
           pause: (event) async => await _handlePauseEvent(event, emit),
           resume: (event) async => await _handleResumeEvent(event, emit),
           stop: (event) async => await _handleStopEvent(event, emit),
-          playbackEnded: (event) async =>
-              await _handlePlaybackEndedEvent(event, emit),
           seekToPosition: (event) async =>
               await _handleSeekToPositionEvent(event, emit),
           appGoInactive: (event) async =>
@@ -51,6 +51,7 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
             initStateResult.playerStateStream,
             onData: (playerState) => state.copyWith(
               playerState: playerState,
+              recording: playerState.isStopped ? null : state.recording,
             ),
           ),
           emit.forEach<Duration>(
@@ -67,6 +68,9 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
 
   Future<void> _handleStartEvent(
       _Start event, Emitter<PlayerBlocState> emit) async {
+    if (!state.playerState.isStopped) {
+      return;
+    }
     emit(state.copyWith(isProcessing: true));
     return (await _playerService.startPlayer(
       file: File(event.recording.path),
@@ -85,6 +89,9 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
 
   Future<void> _handlePauseEvent(
       _Pause event, Emitter<PlayerBlocState> emit) async {
+    if (!state.playerState.isPlaying && !state.playerState.isPaused) {
+      return;
+    }
     emit(state.copyWith(isProcessing: true));
     return (await _playerService.pausePlayer()).fold<Future>(
       (f) async => _emitErrorState(emit, f),
@@ -94,6 +101,9 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
 
   Future<void> _handleResumeEvent(
       _Resume event, Emitter<PlayerBlocState> emit) async {
+    if (!state.playerState.isPlaying && !state.playerState.isPaused) {
+      return;
+    }
     emit(state.copyWith(isProcessing: true));
     return (await _playerService.resumePlayer()).fold<Future>(
       (f) async => _emitErrorState(emit, f),
@@ -103,6 +113,9 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
 
   Future<void> _handleStopEvent(
       _Stop event, Emitter<PlayerBlocState> emit) async {
+    if (!state.playerState.isInitialized) {
+      return;
+    }
     emit(state.copyWith(isProcessing: true));
     return (await _playerService.stopPlayer()).fold<Future>(
       (f) async => _emitErrorState(emit, f),
@@ -120,23 +133,12 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
     );
   }
 
-  Future<void> _handlePlaybackEndedEvent(
-      _PlaybackEnded event, Emitter<PlayerBlocState> emit) async {
-    emit(state.copyWith(isProcessing: true));
-    return (await _playerService.stopPlayer()).fold<Future>(
-      (f) async => _emitErrorState(emit, f),
-      (_) async => emit(
-        state.copyWith(
-          isProcessing: false,
-          recording: null,
-        ),
-      ),
-    );
-  }
-
   Future<void> _handleSeekToPositionEvent(
       _SeekToPosition event, Emitter<PlayerBlocState> emit) async {
     // emit(state.copyWith(isProcessing: true));
+    if (!state.playerState.isPlaying && !state.playerState.isPaused) {
+      return;
+    }
     return (await _playerService.seekToPosition(event.position)).fold<Future>(
       (f) async => _emitErrorState(emit, f),
       (_) async {},

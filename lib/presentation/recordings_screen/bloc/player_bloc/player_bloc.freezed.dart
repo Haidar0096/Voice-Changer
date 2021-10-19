@@ -42,10 +42,6 @@ class _$PlayerBlocEventTearOff {
     );
   }
 
-  _PlaybackEnded playbackEnded() {
-    return const _PlaybackEnded();
-  }
-
   _SeekToPosition seekToPosition(Duration position) {
     return _SeekToPosition(
       position,
@@ -70,7 +66,6 @@ mixin _$PlayerBlocEvent {
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
-    required TResult Function() playbackEnded,
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) =>
@@ -82,7 +77,6 @@ mixin _$PlayerBlocEvent {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) =>
@@ -94,7 +88,6 @@ mixin _$PlayerBlocEvent {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
     required TResult orElse(),
@@ -107,7 +100,6 @@ mixin _$PlayerBlocEvent {
     required TResult Function(_Pause value) pause,
     required TResult Function(_Resume value) resume,
     required TResult Function(_Stop value) stop,
-    required TResult Function(_PlaybackEnded value) playbackEnded,
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_AppGoInactiveEvent value) appGoInactive,
   }) =>
@@ -119,7 +111,6 @@ mixin _$PlayerBlocEvent {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
   }) =>
@@ -131,7 +122,6 @@ mixin _$PlayerBlocEvent {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
     required TResult orElse(),
@@ -199,7 +189,6 @@ class _$_Init implements _Init {
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
-    required TResult Function() playbackEnded,
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) {
@@ -214,7 +203,6 @@ class _$_Init implements _Init {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) {
@@ -229,7 +217,6 @@ class _$_Init implements _Init {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
     required TResult orElse(),
@@ -248,7 +235,6 @@ class _$_Init implements _Init {
     required TResult Function(_Pause value) pause,
     required TResult Function(_Resume value) resume,
     required TResult Function(_Stop value) stop,
-    required TResult Function(_PlaybackEnded value) playbackEnded,
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_AppGoInactiveEvent value) appGoInactive,
   }) {
@@ -263,7 +249,6 @@ class _$_Init implements _Init {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
   }) {
@@ -278,7 +263,6 @@ class _$_Init implements _Init {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
     required TResult orElse(),
@@ -374,7 +358,6 @@ class _$_Start implements _Start {
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
-    required TResult Function() playbackEnded,
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) {
@@ -389,7 +372,6 @@ class _$_Start implements _Start {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) {
@@ -404,7 +386,6 @@ class _$_Start implements _Start {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
     required TResult orElse(),
@@ -423,7 +404,6 @@ class _$_Start implements _Start {
     required TResult Function(_Pause value) pause,
     required TResult Function(_Resume value) resume,
     required TResult Function(_Stop value) stop,
-    required TResult Function(_PlaybackEnded value) playbackEnded,
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_AppGoInactiveEvent value) appGoInactive,
   }) {
@@ -438,7 +418,6 @@ class _$_Start implements _Start {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
   }) {
@@ -453,7 +432,6 @@ class _$_Start implements _Start {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
     required TResult orElse(),
@@ -518,7 +496,6 @@ class _$_Pause implements _Pause {
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
-    required TResult Function() playbackEnded,
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) {
@@ -533,7 +510,6 @@ class _$_Pause implements _Pause {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) {
@@ -548,7 +524,6 @@ class _$_Pause implements _Pause {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
     required TResult orElse(),
@@ -567,7 +542,6 @@ class _$_Pause implements _Pause {
     required TResult Function(_Pause value) pause,
     required TResult Function(_Resume value) resume,
     required TResult Function(_Stop value) stop,
-    required TResult Function(_PlaybackEnded value) playbackEnded,
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_AppGoInactiveEvent value) appGoInactive,
   }) {
@@ -582,7 +556,6 @@ class _$_Pause implements _Pause {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
   }) {
@@ -597,7 +570,6 @@ class _$_Pause implements _Pause {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
     required TResult orElse(),
@@ -656,7 +628,6 @@ class _$_Resume implements _Resume {
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
-    required TResult Function() playbackEnded,
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) {
@@ -671,7 +642,6 @@ class _$_Resume implements _Resume {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) {
@@ -686,7 +656,6 @@ class _$_Resume implements _Resume {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
     required TResult orElse(),
@@ -705,7 +674,6 @@ class _$_Resume implements _Resume {
     required TResult Function(_Pause value) pause,
     required TResult Function(_Resume value) resume,
     required TResult Function(_Stop value) stop,
-    required TResult Function(_PlaybackEnded value) playbackEnded,
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_AppGoInactiveEvent value) appGoInactive,
   }) {
@@ -720,7 +688,6 @@ class _$_Resume implements _Resume {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
   }) {
@@ -735,7 +702,6 @@ class _$_Resume implements _Resume {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
     required TResult orElse(),
@@ -819,7 +785,6 @@ class _$_Stop implements _Stop {
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
-    required TResult Function() playbackEnded,
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) {
@@ -834,7 +799,6 @@ class _$_Stop implements _Stop {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) {
@@ -849,7 +813,6 @@ class _$_Stop implements _Stop {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
     required TResult orElse(),
@@ -868,7 +831,6 @@ class _$_Stop implements _Stop {
     required TResult Function(_Pause value) pause,
     required TResult Function(_Resume value) resume,
     required TResult Function(_Stop value) stop,
-    required TResult Function(_PlaybackEnded value) playbackEnded,
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_AppGoInactiveEvent value) appGoInactive,
   }) {
@@ -883,7 +845,6 @@ class _$_Stop implements _Stop {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
   }) {
@@ -898,7 +859,6 @@ class _$_Stop implements _Stop {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
     required TResult orElse(),
@@ -916,147 +876,6 @@ abstract class _Stop implements PlayerBlocEvent {
   Function? get onDone => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$StopCopyWith<_Stop> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$PlaybackEndedCopyWith<$Res> {
-  factory _$PlaybackEndedCopyWith(
-          _PlaybackEnded value, $Res Function(_PlaybackEnded) then) =
-      __$PlaybackEndedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$PlaybackEndedCopyWithImpl<$Res>
-    extends _$PlayerBlocEventCopyWithImpl<$Res>
-    implements _$PlaybackEndedCopyWith<$Res> {
-  __$PlaybackEndedCopyWithImpl(
-      _PlaybackEnded _value, $Res Function(_PlaybackEnded) _then)
-      : super(_value, (v) => _then(v as _PlaybackEnded));
-
-  @override
-  _PlaybackEnded get _value => super._value as _PlaybackEnded;
-}
-
-/// @nodoc
-
-class _$_PlaybackEnded implements _PlaybackEnded {
-  const _$_PlaybackEnded();
-
-  @override
-  String toString() {
-    return 'PlayerBlocEvent.playbackEnded()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PlaybackEnded);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function(RecordingDetails recording, Function? onDone)
-        start,
-    required TResult Function() pause,
-    required TResult Function() resume,
-    required TResult Function(Function? onDone) stop,
-    required TResult Function() playbackEnded,
-    required TResult Function(Duration position) seekToPosition,
-    required TResult Function() appGoInactive,
-  }) {
-    return playbackEnded();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
-    TResult Function()? pause,
-    TResult Function()? resume,
-    TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
-    TResult Function(Duration position)? seekToPosition,
-    TResult Function()? appGoInactive,
-  }) {
-    return playbackEnded?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
-    TResult Function()? pause,
-    TResult Function()? resume,
-    TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
-    TResult Function(Duration position)? seekToPosition,
-    TResult Function()? appGoInactive,
-    required TResult orElse(),
-  }) {
-    if (playbackEnded != null) {
-      return playbackEnded();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Init value) init,
-    required TResult Function(_Start value) start,
-    required TResult Function(_Pause value) pause,
-    required TResult Function(_Resume value) resume,
-    required TResult Function(_Stop value) stop,
-    required TResult Function(_PlaybackEnded value) playbackEnded,
-    required TResult Function(_SeekToPosition value) seekToPosition,
-    required TResult Function(_AppGoInactiveEvent value) appGoInactive,
-  }) {
-    return playbackEnded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Init value)? init,
-    TResult Function(_Start value)? start,
-    TResult Function(_Pause value)? pause,
-    TResult Function(_Resume value)? resume,
-    TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
-    TResult Function(_SeekToPosition value)? seekToPosition,
-    TResult Function(_AppGoInactiveEvent value)? appGoInactive,
-  }) {
-    return playbackEnded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Init value)? init,
-    TResult Function(_Start value)? start,
-    TResult Function(_Pause value)? pause,
-    TResult Function(_Resume value)? resume,
-    TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
-    TResult Function(_SeekToPosition value)? seekToPosition,
-    TResult Function(_AppGoInactiveEvent value)? appGoInactive,
-    required TResult orElse(),
-  }) {
-    if (playbackEnded != null) {
-      return playbackEnded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PlaybackEnded implements PlayerBlocEvent {
-  const factory _PlaybackEnded() = _$_PlaybackEnded;
 }
 
 /// @nodoc
@@ -1131,7 +950,6 @@ class _$_SeekToPosition implements _SeekToPosition {
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
-    required TResult Function() playbackEnded,
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) {
@@ -1146,7 +964,6 @@ class _$_SeekToPosition implements _SeekToPosition {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) {
@@ -1161,7 +978,6 @@ class _$_SeekToPosition implements _SeekToPosition {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
     required TResult orElse(),
@@ -1180,7 +996,6 @@ class _$_SeekToPosition implements _SeekToPosition {
     required TResult Function(_Pause value) pause,
     required TResult Function(_Resume value) resume,
     required TResult Function(_Stop value) stop,
-    required TResult Function(_PlaybackEnded value) playbackEnded,
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_AppGoInactiveEvent value) appGoInactive,
   }) {
@@ -1195,7 +1010,6 @@ class _$_SeekToPosition implements _SeekToPosition {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
   }) {
@@ -1210,7 +1024,6 @@ class _$_SeekToPosition implements _SeekToPosition {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
     required TResult orElse(),
@@ -1277,7 +1090,6 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
-    required TResult Function() playbackEnded,
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) {
@@ -1292,7 +1104,6 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) {
@@ -1307,7 +1118,6 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
-    TResult Function()? playbackEnded,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
     required TResult orElse(),
@@ -1326,7 +1136,6 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
     required TResult Function(_Pause value) pause,
     required TResult Function(_Resume value) resume,
     required TResult Function(_Stop value) stop,
-    required TResult Function(_PlaybackEnded value) playbackEnded,
     required TResult Function(_SeekToPosition value) seekToPosition,
     required TResult Function(_AppGoInactiveEvent value) appGoInactive,
   }) {
@@ -1341,7 +1150,6 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
   }) {
@@ -1356,7 +1164,6 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
     TResult Function(_Pause value)? pause,
     TResult Function(_Resume value)? resume,
     TResult Function(_Stop value)? stop,
-    TResult Function(_PlaybackEnded value)? playbackEnded,
     TResult Function(_SeekToPosition value)? seekToPosition,
     TResult Function(_AppGoInactiveEvent value)? appGoInactive,
     required TResult orElse(),

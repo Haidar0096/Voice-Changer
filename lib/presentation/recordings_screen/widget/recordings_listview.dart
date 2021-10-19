@@ -1,11 +1,6 @@
 part of 'recordings_screen.dart';
 
-class _RecordingsListView extends StatefulWidget {
-  @override
-  State<_RecordingsListView> createState() => _RecordingsListViewState();
-}
-
-class _RecordingsListViewState extends State<_RecordingsListView> {
+class _RecordingsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       BlocBuilder<RecordingsBloc, RecordingsBlocState>(
