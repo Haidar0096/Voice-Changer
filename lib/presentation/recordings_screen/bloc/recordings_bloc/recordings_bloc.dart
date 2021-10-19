@@ -13,9 +13,7 @@ import 'package:voice_changer/domain/recorder/recorder_service.dart';
 import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 part 'recordings_bloc.freezed.dart';
-
 part 'recordings_bloc_event.dart';
-
 part 'recordings_bloc_state.dart';
 
 @Injectable()
@@ -43,14 +41,15 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
   @override
   void onEvent(event) {
     super.onEvent(event);
-    _logger.d('An event has arrived : $event while the state was $state');
+    _logger.d(
+        '[RecordingsBloc] event has arrived: \n$event\nwhile the state was \n$state\n');
   }
 
   @override
   void onTransition(transition) {
     super.onTransition(transition);
     _logger.i(
-        'Emitting a new state: ${transition.nextState} in response to event ${transition.event}');
+        '[RecordingsBloc] emitting a new state: \n${transition.nextState}\nin response to event \n${transition.event}\n');
   }
 
   FutureOr<RecordingsBlocState> _handleInitEvent(_Init value) async =>
@@ -70,7 +69,10 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
           }
           return failure != null
               ? _errorState(failure!)
-              : state.copyWith(recordings: recordings);
+              : state.copyWith(
+                  isInitialized: true,
+                  recordings: recordings,
+                );
         },
       );
 
@@ -79,7 +81,7 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
       (await _fileSystemService.deleteFile(File(event.path))).fold(
         _errorState,
         (_) {
-          state.recordings!.removeWhere((rec) => rec.path == event.path);
+          state.recordings.removeWhere((rec) => rec.path == event.path);
           return state;
         },
       );

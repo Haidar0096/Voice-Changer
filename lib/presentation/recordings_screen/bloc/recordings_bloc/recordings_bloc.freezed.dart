@@ -331,12 +331,14 @@ class _$RecordingsBlocStateTearOff {
   const _$RecordingsBlocStateTearOff();
 
   _RecordingsBlocState call(
-      {List<RecordingDetails>? recordings,
+      {List<RecordingDetails> recordings = const [],
+      bool isInitialized = false,
       bool isProcessing = false,
       bool isError = false,
       String? errorMessage}) {
     return _RecordingsBlocState(
       recordings: recordings,
+      isInitialized: isInitialized,
       isProcessing: isProcessing,
       isError: isError,
       errorMessage: errorMessage,
@@ -349,7 +351,8 @@ const $RecordingsBlocState = _$RecordingsBlocStateTearOff();
 
 /// @nodoc
 mixin _$RecordingsBlocState {
-  List<RecordingDetails>? get recordings => throw _privateConstructorUsedError;
+  List<RecordingDetails> get recordings => throw _privateConstructorUsedError;
+  bool get isInitialized => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
@@ -365,7 +368,8 @@ abstract class $RecordingsBlocStateCopyWith<$Res> {
           RecordingsBlocState value, $Res Function(RecordingsBlocState) then) =
       _$RecordingsBlocStateCopyWithImpl<$Res>;
   $Res call(
-      {List<RecordingDetails>? recordings,
+      {List<RecordingDetails> recordings,
+      bool isInitialized,
       bool isProcessing,
       bool isError,
       String? errorMessage});
@@ -383,6 +387,7 @@ class _$RecordingsBlocStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? recordings = freezed,
+    Object? isInitialized = freezed,
     Object? isProcessing = freezed,
     Object? isError = freezed,
     Object? errorMessage = freezed,
@@ -391,7 +396,11 @@ class _$RecordingsBlocStateCopyWithImpl<$Res>
       recordings: recordings == freezed
           ? _value.recordings
           : recordings // ignore: cast_nullable_to_non_nullable
-              as List<RecordingDetails>?,
+              as List<RecordingDetails>,
+      isInitialized: isInitialized == freezed
+          ? _value.isInitialized
+          : isInitialized // ignore: cast_nullable_to_non_nullable
+              as bool,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -416,7 +425,8 @@ abstract class _$RecordingsBlocStateCopyWith<$Res>
       __$RecordingsBlocStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<RecordingDetails>? recordings,
+      {List<RecordingDetails> recordings,
+      bool isInitialized,
       bool isProcessing,
       bool isError,
       String? errorMessage});
@@ -436,6 +446,7 @@ class __$RecordingsBlocStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? recordings = freezed,
+    Object? isInitialized = freezed,
     Object? isProcessing = freezed,
     Object? isError = freezed,
     Object? errorMessage = freezed,
@@ -444,7 +455,11 @@ class __$RecordingsBlocStateCopyWithImpl<$Res>
       recordings: recordings == freezed
           ? _value.recordings
           : recordings // ignore: cast_nullable_to_non_nullable
-              as List<RecordingDetails>?,
+              as List<RecordingDetails>,
+      isInitialized: isInitialized == freezed
+          ? _value.isInitialized
+          : isInitialized // ignore: cast_nullable_to_non_nullable
+              as bool,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -465,14 +480,19 @@ class __$RecordingsBlocStateCopyWithImpl<$Res>
 
 class _$_RecordingsBlocState extends _RecordingsBlocState {
   const _$_RecordingsBlocState(
-      {this.recordings,
+      {this.recordings = const [],
+      this.isInitialized = false,
       this.isProcessing = false,
       this.isError = false,
       this.errorMessage})
       : super._();
 
+  @JsonKey(defaultValue: const [])
   @override
-  final List<RecordingDetails>? recordings;
+  final List<RecordingDetails> recordings;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool isInitialized;
   @JsonKey(defaultValue: false)
   @override
   final bool isProcessing;
@@ -489,6 +509,9 @@ class _$_RecordingsBlocState extends _RecordingsBlocState {
             (identical(other.recordings, recordings) ||
                 const DeepCollectionEquality()
                     .equals(other.recordings, recordings)) &&
+            (identical(other.isInitialized, isInitialized) ||
+                const DeepCollectionEquality()
+                    .equals(other.isInitialized, isInitialized)) &&
             (identical(other.isProcessing, isProcessing) ||
                 const DeepCollectionEquality()
                     .equals(other.isProcessing, isProcessing)) &&
@@ -504,6 +527,7 @@ class _$_RecordingsBlocState extends _RecordingsBlocState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(recordings) ^
+      const DeepCollectionEquality().hash(isInitialized) ^
       const DeepCollectionEquality().hash(isProcessing) ^
       const DeepCollectionEquality().hash(isError) ^
       const DeepCollectionEquality().hash(errorMessage);
@@ -517,14 +541,17 @@ class _$_RecordingsBlocState extends _RecordingsBlocState {
 
 abstract class _RecordingsBlocState extends RecordingsBlocState {
   const factory _RecordingsBlocState(
-      {List<RecordingDetails>? recordings,
+      {List<RecordingDetails> recordings,
+      bool isInitialized,
       bool isProcessing,
       bool isError,
       String? errorMessage}) = _$_RecordingsBlocState;
   const _RecordingsBlocState._() : super._();
 
   @override
-  List<RecordingDetails>? get recordings => throw _privateConstructorUsedError;
+  List<RecordingDetails> get recordings => throw _privateConstructorUsedError;
+  @override
+  bool get isInitialized => throw _privateConstructorUsedError;
   @override
   bool get isProcessing => throw _privateConstructorUsedError;
   @override
