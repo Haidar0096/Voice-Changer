@@ -13,7 +13,9 @@ class PlayerBlocEvent with _$PlayerBlocEvent {
 
   const factory PlayerBlocEvent.resume() = _Resume;
 
-  const factory PlayerBlocEvent.stop() = _Stop;
+  const factory PlayerBlocEvent.stop({
+    Function? onDone,
+  }) = _Stop;
 
   const factory PlayerBlocEvent.playbackEnded() = _PlaybackEnded;
 

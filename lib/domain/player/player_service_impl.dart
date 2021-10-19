@@ -65,6 +65,7 @@ class PLayerServiceImpl implements PlayerService {
         return const Right(null);
       }
       await _player.dispose();
+      _playerStateSubject.add(const PlayerState.uninitialized());
       await _playerStateSubject.close();
       await _positionSubject.close();
       return const Right(null);

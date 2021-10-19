@@ -6,8 +6,10 @@ class PlayerBlocState with _$PlayerBlocState {
   const PlayerBlocState._();
 
   const factory PlayerBlocState({
-    Stream<PlayerInfo>? playerInfoStream,
+    @Default(PlayerState.uninitialized()) PlayerState playerState,
+    @Default(Duration.zero) Duration position,
     RecordingDetails? recording,
+    @Default(false) bool isProcessing,
     @Default(false) bool isError,
     String? errorMessage,
   }) = _PlayerBlocState;
@@ -15,22 +17,12 @@ class PlayerBlocState with _$PlayerBlocState {
   @override
   String toString() {
     return '\nPlayerBlocState{\n'
-        'playerInfoStream: $playerInfoStream\n'
+        'playerState: $playerState\n'
+        'position: $position\n'
         'recording: $recording,\n'
+        'isProcessing: $isProcessing,\n'
         'isError: $isError,\n'
         'errorMessage: $errorMessage,\n'
         '}\n';
-  }
-}
-
-class PlayerInfo {
-  final PlayerState state;
-  final Duration position;
-
-  PlayerInfo(this.state, this.position);
-
-  @override
-  String toString() {
-    return 'PlayerInfo{playerState: $state, position: $position}';
   }
 }

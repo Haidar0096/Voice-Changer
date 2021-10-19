@@ -10,5 +10,5 @@ void configureDependencies() => $initGetIt(serviceLocator);
 
 @module
 abstract class RegisterModule {
-  Logger logger(@factoryParam Level? logLevel) => Logger(level: logLevel);
+  Logger logger(@factoryParam Level? logLevel,@factoryParam LogPrinter? printer) => Logger(level: logLevel,printer: printer);
 }

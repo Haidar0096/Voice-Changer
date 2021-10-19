@@ -37,8 +37,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final registerModule = _$RegisterModule();
   gh.factory<_i3.FileSystemService>(() => _i3.FileSystemService());
-  gh.factoryParam<_i4.Logger, _i4.Level?, dynamic>(
-      (logLevel, _) => registerModule.logger(logLevel));
+  gh.factoryParam<_i4.Logger, _i4.Level?, _i4.LogPrinter?>(
+      (logLevel, printer) => registerModule.logger(logLevel, printer));
   gh.factory<_i5.PermissionHandlerService>(
       () => _i6.PermissionHandlerServiceImpl());
   gh.factory<_i7.PlayerService>(() => _i8.PLayerServiceImpl());
