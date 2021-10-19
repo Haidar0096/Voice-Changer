@@ -48,14 +48,15 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
   @override
   void onEvent(event) {
     super.onEvent(event);
-    _logger.d('An event has arrived : $event while the state was $state');
+    _logger.d(
+        '[RecorderBloc] event has arrived: \n$event\nwhile the state was \n$state\n');
   }
 
   @override
   void onTransition(transition) {
     super.onTransition(transition);
     _logger.i(
-        'Emitting a new state: ${transition.nextState} in response to event ${transition.event}');
+        '[RecorderBloc] emitting a new state: \n${transition.nextState}\nin response to event \n${transition.event}\n');
   }
 
   FutureOr<RecorderBlocState> _handleInitEvent(_InitEvent _) async =>

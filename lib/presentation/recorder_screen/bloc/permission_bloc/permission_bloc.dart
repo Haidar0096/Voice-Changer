@@ -31,14 +31,15 @@ class PermissionBloc extends Bloc<PermissionBlocEvent, PermissionBlocState> {
   @override
   void onEvent(event) {
     super.onEvent(event);
-    _logger.d('An event has arrived : $event while the state was $state');
+    _logger.d(
+        '[PermissionBloc] event has arrived: \n$event\nwhile the state was \n$state\n');
   }
 
   @override
   void onTransition(transition) {
     super.onTransition(transition);
     _logger.i(
-        'Emitting a new state: ${transition.nextState} in response to event ${transition.event}');
+        '[PermissionBloc] emitting a new state: \n${transition.nextState}\nin response to event \n${transition.event}\n');
   }
 
   FutureOr<PermissionBlocState> _handleCheckMicrophonePermission(
