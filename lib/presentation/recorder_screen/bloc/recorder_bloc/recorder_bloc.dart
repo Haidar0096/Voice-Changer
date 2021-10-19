@@ -6,7 +6,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
 import 'package:meta/meta.dart';
-import 'package:rxdart/rxdart.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
 import 'package:voice_changer/domain/common/exception/failure.dart';
 import 'package:voice_changer/domain/common/extensions/datetime_extensions.dart';
@@ -25,25 +24,134 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
   final FileSystemService _fileSystemService;
   final Logger _logger = serviceLocator.get<Logger>(param1: Level.debug);
 
-  final BehaviorSubject<RecorderInfo> _recordingInfoSubject =
-      BehaviorSubject<RecorderInfo>();
-
-  //the initial state is passed to the super class
   RecorderBloc(this._recorderService, this._fileSystemService)
       : super(const RecorderBlocState()) {
-    on<RecorderBlocEvent>((event, emit) async {
-      emit(
+    on<RecorderBlocEvent>(
+      (event, emit) async {
         await event.map(
-          init: _handleInitEvent,
-          startRecording: _handleStartRecordingEvent,
-          stopRecording: _handleStopRecordingEvent,
-          saveRecording: _handleSaveRecordingEvent,
-          appGoInactive: _handleAppGoInactiveEvent,
-          deleteRecording: _handleDeleteRecordingEvent,
+          init: (event) async => await _handleInitEvent(event, emit),
+          startRecording: (event) async =>
+              await _handleStartRecordingEvent(event, emit),
+          stopRecording: (event) async =>
+              await _handleStopRecordingEvent(event, emit),
+          saveRecording: (event) async =>
+              await _handleSaveRecordingEvent(event, emit),
+          appGoInactive: (event) async =>
+              await _handleAppGoInactiveEvent(event, emit),
+          deleteRecording: (event) async =>
+              await _handleDeleteRecordingEvent(event, emit),
+        );
+      },
+    );
+  }
+
+  Future _handleInitEvent(
+          _InitEvent _, Emitter<RecorderBlocState> emit) async =>
+      (await _recorderService.initRecorder()).fold<Future>(
+        (f) async => _emitErrorState(emit, f),
+        (initRecorderResult) async {
+          final futures = [
+            emit.forEach<RecorderState>(
+              initRecorderResult.recorderStateStream,
+              onData: (recorderState) =>
+                  state.copyWith(recorderState: recorderState),
+            ),
+            emit.forEach<Duration>(
+              initRecorderResult.recordingDurationStream,
+              onData: (duration) => state.copyWith(duration: duration),
+            ),
+            emit.forEach<double>(
+              initRecorderResult.recordingVolumeStream,
+              onData: (volume) => state.copyWith(volume: volume),
+            ),
+          ];
+          return Future.wait(futures);
+        },
+      );
+
+  Future _handleStartRecordingEvent(
+          _StartRecordingEvent event, Emitter<RecorderBlocState> emit) async =>
+      (await _fileSystemService.getDefaultStorageDirectory()).fold<Future>(
+        (f) async => _emitErrorState(emit, f),
+        (directory) async => (await _fileSystemService.createFile(
+          fileName: 'rec_${DateTime.now().toPathSuitableString()}',
+          extension: RecorderService.defaultCodec,
+          path: directory.path,
+        ))
+            .fold<Future>(
+          (f) async => _emitErrorState(emit, f),
+          (file) async {
+            return (await _recorderService.startRecorder(file: file))
+                .fold<Future>(
+              (f) async => _emitErrorState(emit, f),
+              (_) async => emit(
+                state.copyWith(
+                  recording: RecordingDetails(
+                    name: FileExtension.getName(file.path),
+                    path: file.path,
+                    duration: null, //not interested in this field here
+                  ),
+                ),
+              ),
+            );
+          },
         ),
       );
-    });
+
+  Future _handleStopRecordingEvent(
+          _StopRecordingEvent event, Emitter<RecorderBlocState> emit) async =>
+      (await _recorderService.stopRecorder()).fold<Future>(
+        (f) async => _emitErrorState(emit, f), //failure in stopRecorder
+        (_) async {},
+      );
+
+  Future _handleSaveRecordingEvent(
+      _SaveRecordingEvent event, Emitter<RecorderBlocState> emit) async {
+    if (event.newRecordingFileName == state.recording!.name) {
+      emit(state.copyWith(recording: null));
+      return;
+    }
+    return (await _fileSystemService.renameFile(
+      file: File(state.recording!.path),
+      newFileName: event.newRecordingFileName,
+      extension: RecorderService.defaultCodec,
+    ))
+        .fold<Future>(
+      (f) async => _emitErrorState(emit, f),
+      (_) async => emit(state.copyWith(recording: null)),
+    );
   }
+
+  Future _handleDeleteRecordingEvent(
+      _DeleteRecordingEvent event, Emitter<RecorderBlocState> emit) async {
+    return (await _fileSystemService.deleteFile(
+      File(state.recording!.path),
+    ))
+        .fold<Future>(
+      (f) async => _emitErrorState(emit, f),
+      (_) async => emit(state.copyWith(recording: null)),
+    );
+  }
+
+  Future _handleAppGoInactiveEvent(
+      _AppGoInactiveEvent event, Emitter<RecorderBlocState> emit) async {
+    if (state.recorderState.isRecording) {
+      (await _recorderService.stopRecorder()).fold<Future>(
+        (f) async => _emitErrorState(emit, f), //failure in stopRecorder
+        (_) async {
+          return (await _fileSystemService
+                  .deleteFile(File(state.recording!.path)))
+              .fold<Future>(
+            (f) async => _emitErrorState(emit, f),
+            (_) async => emit(state.copyWith(recording: null)),
+          );
+        },
+      );
+    }
+  }
+
+  void _emitErrorState(Emitter<RecorderBlocState> emit, Failure f) =>
+      emit(state.copyWith(isError: true, errorMessage: f.message));
 
   @override
   void onEvent(event) {
@@ -59,129 +167,10 @@ class RecorderBloc extends Bloc<RecorderBlocEvent, RecorderBlocState> {
         '[RecorderBloc] emitting a new state: \n${transition.nextState}\nin response to event \n${transition.event}\n');
   }
 
-  FutureOr<RecorderBlocState> _handleInitEvent(_InitEvent _) async =>
-      (await _recorderService.initRecorder()).fold(
-        _errorState,
-        (initRecorderResult) async {
-          late final StreamSubscription<RecorderInfo> subscription;
-          subscription =
-              Rx.combineLatest3<RecorderState, Duration, double, RecorderInfo>(
-            initRecorderResult.recorderStateStream,
-            initRecorderResult.recordingDurationStream,
-            initRecorderResult.recordingVolumeStream,
-            (s, d, v) => RecorderInfo(s, d, v),
-          ).listen(
-            (event) => _recordingInfoSubject.add(
-              RecorderInfo(
-                event.state,
-                event.duration,
-                event.volume,
-              ),
-            ),
-            onDone: () => subscription.cancel(),
-          );
-          return RecorderBlocState(
-            recorderInfoStream: _recordingInfoSubject.stream,
-          );
-        },
-      );
-
-  FutureOr<RecorderBlocState> _handleStartRecordingEvent(
-          _StartRecordingEvent event) async =>
-      (await _fileSystemService.getDefaultStorageDirectory()).fold(
-        _errorState,
-        (directory) async => (await _fileSystemService.createFile(
-          fileName: 'rec_${DateTime.now().toPathSuitableString()}',
-          extension: RecorderService.defaultCodec,
-          path: directory.path,
-        ))
-            .fold(
-          _errorState,
-          (file) async {
-            return (await _recorderService.startRecorder(file: file)).fold(
-              _errorState,
-              (_) => state.copyWith(
-                recording: RecordingDetails(
-                  name: FileExtension.getName(file.path),
-                  path: file.path,
-                  duration: null,
-                ),
-              ),
-            );
-          },
-        ),
-      );
-
-  Future<RecorderBlocState> _handleStopRecordingEvent(
-          _StopRecordingEvent event) async =>
-      (await _recorderService.stopRecorder()).fold(
-        _errorState, //failure in stopRecorder
-        (_) => state,
-      );
-
-  FutureOr<RecorderBlocState> _handleSaveRecordingEvent(
-      _SaveRecordingEvent event) async {
-    if (event.newRecordingFileName == state.recording!.name) {
-      return state.copyWith(
-        recording: null,
-      );
-    }
-    return (await _fileSystemService.renameFile(
-      file: File(state.recording!.path),
-      newFileName: event.newRecordingFileName,
-      extension: RecorderService.defaultCodec,
-    ))
-        .fold(
-      _errorState,
-      (_) => state.copyWith(
-        recording: null,
-      ),
-    );
-  }
-
-  FutureOr<RecorderBlocState> _handleDeleteRecordingEvent(
-      _DeleteRecordingEvent event) async {
-    return (await _fileSystemService.deleteFile(
-      File(state.recording!.path),
-    ))
-        .fold(
-      _errorState,
-      (_) => state.copyWith(
-        recording: null,
-      ),
-    );
-  }
-
-  FutureOr<RecorderBlocState> _handleAppGoInactiveEvent(
-      _AppGoInactiveEvent event) async {
-    if (_recorderService.recorderState.isRecording) {
-      (await _recorderService.stopRecorder()).fold(
-        _errorState, //failure in stopRecorder
-        (_) async {
-          return (await _fileSystemService
-                  .deleteFile(File(state.recording!.path)))
-              .fold(
-            _errorState,
-            (_) => state.copyWith(
-              recording: null,
-            ),
-          );
-        },
-      );
-    }
-    return state;
-  }
-
   @override
   Future<void> close() async {
     await _recorderService.disposeRecorder();
-    await _recordingInfoSubject.close();
     _logger.i('disposed recorder bloc');
     super.close();
   }
-
-  FutureOr<RecorderBlocState> _errorState(Failure failure) => RecorderBlocState(
-        isError: true,
-        errorMessage: failure.message,
-      );
 }

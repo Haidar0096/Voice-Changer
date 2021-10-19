@@ -90,7 +90,7 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
   }
 
   void _emitErrorState(Emitter<RecordingsBlocState> emit, Failure f) =>
-      emit(RecordingsBlocState(isError: true, errorMessage: f.message));
+      emit(state.copyWith(isError: true, errorMessage: f.message));
 
   @override
   void onEvent(event) {

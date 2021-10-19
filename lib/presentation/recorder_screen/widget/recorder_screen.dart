@@ -11,17 +11,11 @@ import 'package:voice_changer/presentation/recordings_screen/widget/recordings_s
 import 'package:voice_changer/presentation/styles/styles.dart';
 
 part 'error_widget.dart';
-
 part 'loading_widget.dart';
-
 part 'record_button.dart';
-
 part 'recorder_icon_widget.dart';
-
 part 'recorder_screen_components.dart';
-
 part 'recordings_button.dart';
-
 part 'stop_button.dart';
 
 class RecorderScreen extends StatefulWidget {
@@ -85,18 +79,11 @@ class _RecorderScreenState extends State<RecorderScreen>
             builder: (context, recorderBlocState) {
               if (recorderBlocState.isError) {
                 return _ErrorWidget();
-              } else {
-                return StreamBuilder<RecorderInfo>(
-                  stream: recorderBlocState.recorderInfoStream,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData &&
-                        snapshot.data!.state.isInitialized) {
-                      return _RecorderScreenComponents();
-                    }
-                    return const _LoadingWidget();
-                  },
-                );
               }
+              if (recorderBlocState.recorderState.isInitialized) {
+                return _RecorderScreenComponents();
+              }
+              return const _LoadingWidget();
             },
           ),
         ),

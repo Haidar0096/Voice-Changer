@@ -7,15 +7,13 @@ class _RecordingsButton extends StatelessWidget {
     final width = mq.size.width;
     final containerSide = width / 5;
 
-    final recorderBloc = BlocProvider.of<RecorderBloc>(context);
     return SizedBox(
       width: containerSide,
       height: containerSide,
-      child: StreamBuilder<RecorderInfo>(
-        stream: recorderBloc.state.recorderInfoStream,
-        builder: (context, snapshot) {
+      child: BlocBuilder<RecorderBloc, RecorderBlocState>(
+        builder: (context, recorderBlocState) {
           return GestureDetector(
-            onTap: snapshot.hasData && !snapshot.data!.state.isRecording
+            onTap: !recorderBlocState.recorderState.isRecording
                 ? () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => const RecordingsScreen(),
@@ -28,7 +26,7 @@ class _RecordingsButton extends StatelessWidget {
                 Icon(
                   Icons.menu,
                   size: containerSide / 2.2,
-                  color: snapshot.hasData && snapshot.data!.state.isRecording
+                  color: recorderBlocState.recorderState.isRecording
                       ? Theme.of(context).disabledColor
                       : Theme.of(context).colorScheme.secondary,
                 ),

@@ -11,9 +11,7 @@ import 'package:voice_changer/domain/player/player_service.dart';
 import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 part 'player_bloc.freezed.dart';
-
 part 'player_bloc_event.dart';
-
 part 'player_bloc_state.dart';
 
 @Injectable()
@@ -164,7 +162,7 @@ class PlayerBloc extends Bloc<PlayerBlocEvent, PlayerBlocState> {
   }
 
   void _emitErrorState(Emitter<PlayerBlocState> emit, Failure f) =>
-      emit(PlayerBlocState(isError: true, errorMessage: f.message));
+      emit(state.copyWith(isError: true, errorMessage: f.message));
 
   @override
   void onEvent(event) {

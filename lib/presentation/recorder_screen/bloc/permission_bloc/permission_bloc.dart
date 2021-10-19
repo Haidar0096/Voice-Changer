@@ -28,20 +28,6 @@ class PermissionBloc extends Bloc<PermissionBlocEvent, PermissionBlocState> {
     });
   }
 
-  @override
-  void onEvent(event) {
-    super.onEvent(event);
-    _logger.d(
-        '[PermissionBloc] event has arrived: \n$event\nwhile the state was \n$state\n');
-  }
-
-  @override
-  void onTransition(transition) {
-    super.onTransition(transition);
-    _logger.i(
-        '[PermissionBloc] emitting a new state: \n${transition.nextState}\nin response to event \n${transition.event}\n');
-  }
-
   FutureOr<PermissionBlocState> _handleCheckMicrophonePermission(
           _CheckMicrophonePermissionEvent event) async =>
       (await _permissionHandlerService.checkMicrophonePermission()).maybeWhen(
@@ -88,6 +74,20 @@ class PermissionBloc extends Bloc<PermissionBlocEvent, PermissionBlocState> {
       _OpenSettingsAppEvent event) async {
     await _permissionHandlerService.openSettingsApp();
     return state;
+  }
+
+  @override
+  void onEvent(event) {
+    super.onEvent(event);
+    _logger.d(
+        '[PermissionBloc] event has arrived: \n$event\nwhile the state was \n$state\n');
+  }
+
+  @override
+  void onTransition(transition) {
+    super.onTransition(transition);
+    _logger.i(
+        '[PermissionBloc] emitting a new state: \n${transition.nextState}\nin response to event \n${transition.event}\n');
   }
 
   @override
