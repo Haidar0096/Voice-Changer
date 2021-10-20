@@ -29,7 +29,8 @@ class _RecordingsScreenComponentsState
     switch (state) {
       case AppLifecycleState.inactive:
         _logger.d('app inactive');
-        BlocProvider.of<PlayerBloc>(context, listen: false).add(const PlayerBlocEvent.appGoInactive());
+        BlocProvider.of<PlayerBloc>(context, listen: false)
+            .add(const PlayerBlocEvent.appGoInactive());
         break;
       default:
     }
@@ -42,7 +43,27 @@ class _RecordingsScreenComponentsState
             'Recordings',
             style: mediumText,
           ),
+          centerTitle: true,
+          leading: InkWell(
+            child: const Icon(Icons.arrow_back),
+            onTap: () {
+              BlocProvider.of<PlayerBloc>(context)
+                  .add(const PlayerBlocEvent.stop());
+              Navigator.of(context)
+                  .pushReplacementNamed(RecorderScreen.routeName);
+            },
+          ),
         ),
         body: _RecordingsListView(),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {
+            BlocProvider.of<PlayerBloc>(context)
+                .add(const PlayerBlocEvent.stop());
+            Navigator.of(context)
+                .pushReplacementNamed(RecorderScreen.routeName);
+          },
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       );
 }

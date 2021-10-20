@@ -19,6 +19,8 @@ part 'recordings_button.dart';
 part 'stop_button.dart';
 
 class RecorderScreen extends StatelessWidget {
+  static const routeName = '/recorder-screen';
+
   const RecorderScreen({Key? key}) : super(key: key);
 
   @override

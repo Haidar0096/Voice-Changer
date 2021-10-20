@@ -14,11 +14,8 @@ class _RecordingsButton extends StatelessWidget {
         builder: (context, recorderBlocState) {
           return GestureDetector(
             onTap: !recorderBlocState.recorderState.isRecording
-                ? () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const RecordingsScreen(),
-                      ),
-                    )
+                ? () => Navigator.of(context)
+                    .pushReplacementNamed(RecordingsScreen.routeName)
                 : null,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,

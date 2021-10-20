@@ -110,11 +110,8 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
                   playerBloc.add(const PlayerBlocEvent.stop());
                 }
                 _popupMenuController.hideMenu();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const SoundChangerScreen(),
-                  ),
-                );
+                Navigator.of(context)
+                    .pushReplacementNamed(SoundChangerScreen.routeName);
               },
             ),
           ),
@@ -247,7 +244,9 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
             )
           : Icon(
               Icons.play_circle_outline,
-              color: isProcessing ? Colors.grey : Colors.blue,
+              color: isProcessing
+                  ? Colors.grey
+                  : Theme.of(context).colorScheme.primary,
               size: size,
             );
 }

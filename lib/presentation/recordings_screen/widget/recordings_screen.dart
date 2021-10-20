@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
 import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
+import 'package:voice_changer/presentation/recorder_screen/widget/recorder_screen.dart';
 import 'package:voice_changer/presentation/recordings_screen/bloc/player_bloc/player_bloc.dart';
 import 'package:voice_changer/presentation/recordings_screen/bloc/recordings_bloc/recordings_bloc.dart';
 import 'package:voice_changer/presentation/sound_changer_screen/widget/sound_changer_screen.dart';
@@ -20,6 +21,8 @@ part 'recordings_listview.dart';
 part 'recordings_screen_components.dart';
 
 class RecordingsScreen extends StatelessWidget {
+  static const routeName = '/recordings-screen';
+
   const RecordingsScreen({Key? key}) : super(key: key);
 
   @override
