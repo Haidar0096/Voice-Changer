@@ -3,7 +3,45 @@ part of 'recorder_screen.dart';
 ///The widget of the recorder screen to show  if there is no error
 ///Above it in the tree there are bloc builders for recorder and permission blocs
 /// so these two blocs can be queried inside it and it will rebuild when they change.
-class _RecorderScreenComponents extends StatelessWidget {
+class _RecorderScreenComponents extends StatefulWidget {
+  @override
+  State<_RecorderScreenComponents> createState() =>
+      _RecorderScreenComponentsState();
+}
+
+class _RecorderScreenComponentsState extends State<_RecorderScreenComponents>
+    with WidgetsBindingObserver {
+  final Logger _logger = serviceLocator.get<Logger>(param1: Level.nothing);
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance!.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance!.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    switch (state) {
+      case AppLifecycleState.inactive:
+        _logger.d('app inactive');
+        BlocProvider.of<RecorderBloc>(context, listen: false)
+            .add(const RecorderBlocEvent.appGoInactive());
+        break;
+      case AppLifecycleState.resumed:
+        _logger.d('app resumed');
+        BlocProvider.of<PermissionBloc>(context, listen: false)
+            .add(const PermissionBlocEvent.checkMicrophonePermission());
+        break;
+      default:
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);

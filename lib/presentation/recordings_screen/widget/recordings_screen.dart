@@ -10,60 +10,28 @@ import 'package:voice_changer/presentation/sound_changer_screen/widget/sound_cha
 import 'package:voice_changer/presentation/styles/styles.dart';
 
 part 'error_widget.dart';
+
 part 'loading_widget.dart';
+
 part 'recording_tile_contents.dart';
+
 part 'recordings_listview.dart';
+
 part 'recordings_screen_components.dart';
 
-class RecordingsScreen extends StatefulWidget {
+class RecordingsScreen extends StatelessWidget {
   const RecordingsScreen({Key? key}) : super(key: key);
-
-  @override
-  State<RecordingsScreen> createState() => _RecordingsScreenState();
-}
-
-class _RecordingsScreenState extends State<RecordingsScreen>
-    with WidgetsBindingObserver {
-  final Logger _logger = serviceLocator.get<Logger>(param1: Level.nothing);
-
-  late final RecordingsBloc _recordingsBloc;
-  late final PlayerBloc _playerBloc;
-
-  @override
-  initState() {
-    super.initState();
-    _recordingsBloc = serviceLocator.get<RecordingsBloc>()
-      ..add(const RecordingsBlocEvent.init());
-    _playerBloc = serviceLocator.get<PlayerBloc>()
-      ..add(const PlayerBlocEvent.init());
-    WidgetsBinding.instance!.addObserver(this);
-  }
-
-  @override
-  dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    switch (state) {
-      case AppLifecycleState.inactive:
-        _logger.d('app inactive');
-        _playerBloc.add(const PlayerBlocEvent.appGoInactive());
-        break;
-      default:
-    }
-  }
 
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (_) => _recordingsBloc,
+            create: (_) => serviceLocator.get<RecordingsBloc>()
+              ..add(const RecordingsBlocEvent.init()),
           ),
           BlocProvider(
-            create: (_) => _playerBloc,
+            create: (_) => serviceLocator.get<PlayerBloc>()
+              ..add(const PlayerBlocEvent.init()),
           ),
         ],
         child: Builder(

@@ -18,59 +18,18 @@ part 'recorder_screen_components.dart';
 part 'recordings_button.dart';
 part 'stop_button.dart';
 
-class RecorderScreen extends StatefulWidget {
+class RecorderScreen extends StatelessWidget {
   const RecorderScreen({Key? key}) : super(key: key);
-
-  @override
-  _RecorderScreenState createState() => _RecorderScreenState();
-}
-
-class _RecorderScreenState extends State<RecorderScreen>
-    with WidgetsBindingObserver {
-  final Logger _logger = serviceLocator.get<Logger>(param1: Level.nothing);
-
-  late final RecorderBloc _recorderBloc;
-  late final PermissionBloc _permissionBloc;
-
-  @override
-  void initState() {
-    super.initState();
-    _recorderBloc = serviceLocator.get<RecorderBloc>()
-      ..add(const RecorderBlocEvent.init());
-    _permissionBloc = serviceLocator.get<PermissionBloc>();
-    WidgetsBinding.instance!.addObserver(this);
-  }
-
-  @override
-  void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    switch (state) {
-      case AppLifecycleState.inactive:
-        _logger.d('app inactive');
-        _recorderBloc.add(const RecorderBlocEvent.appGoInactive());
-        break;
-      case AppLifecycleState.resumed:
-        _logger.d('app resumed');
-        _permissionBloc
-            .add(const PermissionBlocEvent.checkMicrophonePermission());
-        break;
-      default:
-    }
-  }
 
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
         providers: [
           BlocProvider<RecorderBloc>(
-            create: (context) => _recorderBloc,
+            create: (context) => serviceLocator.get<RecorderBloc>()
+              ..add(const RecorderBlocEvent.init()),
           ),
           BlocProvider<PermissionBloc>(
-            create: (context) => _permissionBloc,
+            create: (context) => serviceLocator.get<PermissionBloc>(),
           )
         ],
         child: Builder(
