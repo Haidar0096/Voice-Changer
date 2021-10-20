@@ -110,8 +110,10 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
                   playerBloc.add(const PlayerBlocEvent.stop());
                 }
                 _popupMenuController.hideMenu();
-                Navigator.of(context)
-                    .pushReplacementNamed(SoundChangerScreen.routeName);
+                Navigator.of(context).pushReplacementNamed(
+                  SoundChangerScreen.routeName,
+                  arguments: recordingsBloc.state.recordings[index],
+                );
               },
             ),
           ),

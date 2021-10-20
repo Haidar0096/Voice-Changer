@@ -32,11 +32,13 @@ class _StopButtonState extends State<_StopButton> {
 
           final recorderBloc = BlocProvider.of<RecorderBloc>(context);
 
+          final currentRecordingDuration = recorderBlocState.duration.inSeconds;
           return SizedBox(
             width: containerSide,
             height: containerSide,
             child: GestureDetector(
-              onTap: recorderBlocState.recorderState.isRecording
+              onTap: recorderBlocState.recorderState.isRecording &&
+                      currentRecordingDuration >= 1
                   ? () async {
                       recorderBloc.add(const RecorderBlocEvent.stopRecording());
                       _fileNameTextController.text =

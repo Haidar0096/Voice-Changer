@@ -28,7 +28,9 @@ import '../presentation/recordings_screen/bloc/player_bloc/player_bloc.dart'
     as _i17;
 import '../presentation/recordings_screen/bloc/recordings_bloc/recordings_bloc.dart'
     as _i13;
-import 'service_locator.dart' as _i19; // ignore_for_file: unnecessary_lambdas
+import '../presentation/sound_changer_screen/bloc/sound_changer_bloc.dart'
+    as _i19;
+import 'service_locator.dart' as _i20; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -53,7 +55,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i17.PlayerBloc>(() => _i17.PlayerBloc(get<_i7.PlayerService>()));
   gh.factory<_i18.RecorderBloc>(() => _i18.RecorderBloc(
       get<_i9.RecorderService>(), get<_i3.FileSystemService>()));
+  gh.factory<_i19.SoundChangerBloc>(() => _i19.SoundChangerBloc(
+      get<_i14.SoundChangerService>(), get<_i3.FileSystemService>()));
   return get;
 }
 
-class _$RegisterModule extends _i19.RegisterModule {}
+class _$RegisterModule extends _i20.RegisterModule {}
