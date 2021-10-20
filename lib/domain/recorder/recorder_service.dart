@@ -47,14 +47,12 @@ abstract class RecorderService {
   ///* [Failure], in case of failure (no change of the state happens in this case)
   Future<Either<Failure, void>> disposeRecorder();
 
-  /// Starts the recorder.
+  /// Starts the recorder. If it was recording or paused, then nothing happens.
   /// The current state will not be changed if a failure happens.
   ///<br></br>
   ///<br></br>
   ///A failure will happen if:
   ///* the recorder was uninitialized
-  ///* the recorder was recording
-  ///* the recorder was  paused
   /// <br></br>
   /// <br></br>
   /// By default the codec will be inferred from the file name extension from the path
@@ -69,14 +67,12 @@ abstract class RecorderService {
   ///* [Failure], in case of failure (no change of the state happens in this case)
   Future<Either<Failure, void>> startRecorder({required File file});
 
-  /// Pauses the recorder.
-  /// It is allowed to call this method if the recorder was paused, in which case the same current state is maintained.
+  /// Pauses the recorder. If the recorder was not recording, then nothing happens.
   /// The current state will not be changed if a failure happens.
   ///<br></br>
   ///<br></br>
   ///A failure will happen if:
   ///* the recorder was uninitialized
-  ///* the recorder was stopped
   /// <br></br>
   /// <br></br>
   /// Returns an [Either] wrapping:
@@ -84,14 +80,12 @@ abstract class RecorderService {
   ///* [Failure], in case of failure (no change of the state happens in this case)
   Future<Either<Failure, void>> pauseRecorder();
 
-  /// Resumes the recorder.
-  /// It is allowed to call this method if the recorder was recording, in which case the same current state is maintained.
+  /// Resumes the recorder. If the recorder was not paused, then nothing happens.
   /// The current state will not be changed if a failure happens.
   /// <br></br>
   /// <br></br>
   ///A failure will happen if:
   ///* the recorder was uninitialized
-  ///* the recorder was stopped
   /// <br></br>
   /// <br></br>
   /// Returns an [Either] wrapping:

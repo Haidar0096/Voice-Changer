@@ -86,7 +86,11 @@ class PLayerServiceImpl implements PlayerService {
     Function? onDone,
   }) async {
     try {
-      if (!_playerStateSubject.value.isStopped) {
+      if (_playerStateSubject.value.isPlaying ||
+          _playerStateSubject.value.isPaused) {
+        return const Right(null);
+      }
+      if (!_playerStateSubject.value.isInitialized) {
         throw Exception(
             'startPlayback() was called from an illegal state: ${_playerStateSubject.value}');
       }
@@ -122,16 +126,16 @@ class PLayerServiceImpl implements PlayerService {
   @override
   Future<Either<Failure, void>> pausePlayer() async {
     try {
-      if (_playerStateSubject.value.isPaused) {
+      if (!_playerStateSubject.value.isInitialized) {
+        throw Exception(
+            'pausePlayback() was called from an illegal state: ${_playerStateSubject.value}');
+      }
+      if (!_playerStateSubject.value.isPlaying) {
         return const Right(null);
       }
-      if (_playerStateSubject.value.isPlaying) {
-        await _player.pause();
-        _playerStateSubject.add(const PlayerState.paused());
-        return const Right(null);
-      }
-      throw Exception(
-          'pausePlayback() was called from an illegal state: ${_playerStateSubject.value}');
+      await _player.pause();
+      _playerStateSubject.add(const PlayerState.paused());
+      return const Right(null);
     } catch (e) {
       _logger.e('error occurred in pausePlayer()', e);
       return Left(
@@ -146,16 +150,16 @@ class PLayerServiceImpl implements PlayerService {
   @override
   Future<Either<Failure, void>> resumePlayer() async {
     try {
-      if (_playerStateSubject.value.isPlaying) {
+      if (!_playerStateSubject.value.isInitialized) {
+        throw Exception(
+            'resumePlayback() was called from an illegal state: ${_playerStateSubject.value}');
+      }
+      if (!_playerStateSubject.value.isPaused) {
         return const Right(null);
       }
-      if (_playerStateSubject.value.isPaused) {
-        _player.play();
-        _playerStateSubject.add(const PlayerState.playing());
-        return const Right(null);
-      }
-      throw Exception(
-          'resumePlayback() was called from an illegal state: ${_playerStateSubject.value}');
+      _player.play();
+      _playerStateSubject.add(const PlayerState.playing());
+      return const Right(null);
     } catch (e) {
       _logger.e('error occurred in resumePlayer()', e);
       return Left(
@@ -174,6 +178,10 @@ class PLayerServiceImpl implements PlayerService {
         throw Exception(
             'stopPlayback() was called from an illegal state: ${_playerStateSubject.value}');
       }
+      if (!_playerStateSubject.value.isPlaying &&
+          !_playerStateSubject.value.isPaused) {
+        return const Right(null);
+      }
       await _player.stop();
       _playerStateSubject.add(const PlayerState.stopped());
       return const Right(null);
@@ -191,10 +199,13 @@ class PLayerServiceImpl implements PlayerService {
   @override
   Future<Either<Failure, void>> seekToPosition(Duration position) async {
     try {
-      if (_playerStateSubject.value.isStopped ||
-          !_playerStateSubject.value.isInitialized) {
+      if (!_playerStateSubject.value.isInitialized) {
         throw Exception(
             'seekToPosition() was called from an illegal state: ${_playerStateSubject.value}');
+      }
+      if (!_playerStateSubject.value.isPlaying &&
+          !_playerStateSubject.value.isPaused) {
+        return const Right(null);
       }
       await _player.seek(position);
       return const Right(null);

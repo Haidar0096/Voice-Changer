@@ -41,14 +41,12 @@ abstract class PlayerService {
   ///* [Failure], in case of failure (no change of the state happens in this case)
   Future<Either<Failure, void>> disposePlayer();
 
-  /// Starts the player.
+  /// Starts the player. If it was already playing or paused then nothing happens.
   /// The current state will not be changed if a failure happens.
   ///<br></br>
   ///<br></br>
   ///A failure will happen if:
   ///* the player was uninitialized
-  ///* the player was already started
-  ///* the player was  paused
   /// <br></br>
   /// <br></br>
   /// - [file] : the file to play
@@ -64,13 +62,12 @@ abstract class PlayerService {
   });
 
   /// Pauses the player.
-  /// It is allowed to call this method if the player was paused, in which case the same current state is maintained.
+  /// If the player was not playing then nothing happens.
   /// The current state will not be changed if a failure happens.
   ///<br></br>
   ///<br></br>
   ///A failure will happen if:
   ///* the player was uninitialized
-  ///* the player was stopped
   /// <br></br>
   /// <br></br>
   /// Returns an [Either] wrapping:
@@ -79,13 +76,12 @@ abstract class PlayerService {
   Future<Either<Failure, void>> pausePlayer();
 
   /// Resumes the player.
-  /// It is allowed to call this method if the player was playing, in which case the same current state is maintained.
+  /// If the player was not paused then nothing happens.
   /// The current state will not be changed if a failure happens.
   /// <br></br>
   /// <br></br>
   ///A failure will happen if:
   ///* the player was uninitialized
-  ///* the player was stopped
   /// <br></br>
   /// <br></br>
   /// Returns an [Either] wrapping:
@@ -93,7 +89,7 @@ abstract class PlayerService {
   ///* [Failure], in case of failure (no change of the state happens in this case)
   Future<Either<Failure, void>> resumePlayer();
 
-  /// Stops the player.
+  /// Stops the player. If it was not playing or paused, then nothing happens.
   /// The current state will not be changed if a failure happens.
   /// <br></br>
   /// <br></br>
@@ -106,8 +102,8 @@ abstract class PlayerService {
   ///* [Failure], in case of failure (no change of the state happens in this case)
   Future<Either<Failure, void>> stopPlayer();
 
-  ///Seeks the player to the desired position.
-  ///A failure will happen if player was stopped or uninitialized.
+  ///Seeks the player to the desired position. If the player was not playing or paused, nothing happens.
+  ///A failure will happen if player was uninitialized.
   Future<Either<Failure, void>> seekToPosition(Duration position);
 }
 

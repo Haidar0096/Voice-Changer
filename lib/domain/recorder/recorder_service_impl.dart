@@ -123,12 +123,17 @@ class RecorderServiceImpl implements RecorderService {
   @override
   Future<Either<Failure, void>> startRecorder({required File file}) async {
     try {
-      if (!_recorderStateSubject.value.isStopped) {
+      if (!_recorderStateSubject.value.isInitialized) {
         throw Exception(
             'startRecorder() was called from an illegal state: ${_recorderStateSubject.value}');
       }
+      if (_recorderStateSubject.value.isRecording ||
+          _recorderStateSubject.value.isPaused) {
+        return const Right(null);
+      }
       // _logger.i('this recording will be saved into $path');
-      await _recorder.startRecorder(toFile: file.path, codec: Codec.aacMP4);
+      await _recorder.startRecorder(
+          toFile: file.path, codec: Codec.defaultCodec);
       _recorderStateSubject.add(const RecorderState.recording());
       return const Right(null);
     } catch (e) {
@@ -145,12 +150,11 @@ class RecorderServiceImpl implements RecorderService {
   @override
   Future<Either<Failure, void>> pauseRecorder() async {
     try {
-      if (!_recorderStateSubject.value.isInitialized ||
-          _recorderStateSubject.value.isStopped) {
+      if (!_recorderStateSubject.value.isInitialized) {
         throw Exception(
             'pauseRecorder() was called from an illegal state: ${_recorderStateSubject.value}');
       }
-      if (_recorderStateSubject.value.isPaused) {
+      if (!_recorderStateSubject.value.isRecording) {
         return const Right(null);
       }
       await _recorder.pauseRecorder();
@@ -171,17 +175,17 @@ class RecorderServiceImpl implements RecorderService {
   @override
   Future<Either<Failure, void>> resumeRecorder() async {
     try {
-      if (_recorderStateSubject.value.isRecording) {
+      if (!_recorderStateSubject.value.isInitialized) {
+        throw Exception(
+            'resumeRecorder() was called from an illegal state: ${_recorderStateSubject.value}');
+      }
+      if (!_recorderStateSubject.value.isPaused) {
         return const Right(null);
       }
-      if (_recorderStateSubject.value.isPaused) {
-        await _recorder.resumeRecorder();
-        _recorderStateSubject.add(const RecorderState.recording());
-        //no change to recording details here
-        return const Right(null);
-      }
-      throw Exception(
-          'resumeRecorder() was called from an illegal state: ${_recorderStateSubject.value}');
+      await _recorder.resumeRecorder();
+      _recorderStateSubject.add(const RecorderState.recording());
+      //no change to recording details here
+      return const Right(null);
     } catch (e) {
       _logger.e('error occurred in resumeRecorder()', e);
       return Left(
@@ -199,6 +203,10 @@ class RecorderServiceImpl implements RecorderService {
       if (!_recorderStateSubject.value.isInitialized) {
         throw Exception(
             'stopRecorder() was called from an illegal state: $_recorderStateSubject.value');
+      }
+      if (!_recorderStateSubject.value.isRecording &&
+          !_recorderStateSubject.value.isPaused) {
+        return const Right(null);
       }
       await _recorder.stopRecorder();
       _recorderStateSubject.add(const RecorderState.stopped());
