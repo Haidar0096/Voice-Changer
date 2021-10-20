@@ -21,10 +21,9 @@ class _$PlayerBlocEventTearOff {
     return const _Init();
   }
 
-  _Start start({required RecordingDetails recording, Function? onDone}) {
+  _Start start({required RecordingDetails recording}) {
     return _Start(
       recording: recording,
-      onDone: onDone,
     );
   }
 
@@ -61,8 +60,7 @@ mixin _$PlayerBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(RecordingDetails recording, Function? onDone)
-        start,
+    required TResult Function(RecordingDetails recording) start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
@@ -73,7 +71,7 @@ mixin _$PlayerBlocEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -84,7 +82,7 @@ mixin _$PlayerBlocEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -184,8 +182,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(RecordingDetails recording, Function? onDone)
-        start,
+    required TResult Function(RecordingDetails recording) start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
@@ -199,7 +196,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -213,7 +210,7 @@ class _$_Init implements _Init {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -282,7 +279,7 @@ abstract class _Init implements PlayerBlocEvent {
 abstract class _$StartCopyWith<$Res> {
   factory _$StartCopyWith(_Start value, $Res Function(_Start) then) =
       __$StartCopyWithImpl<$Res>;
-  $Res call({RecordingDetails recording, Function? onDone});
+  $Res call({RecordingDetails recording});
 }
 
 /// @nodoc
@@ -297,17 +294,12 @@ class __$StartCopyWithImpl<$Res> extends _$PlayerBlocEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? recording = freezed,
-    Object? onDone = freezed,
   }) {
     return _then(_Start(
       recording: recording == freezed
           ? _value.recording
           : recording // ignore: cast_nullable_to_non_nullable
               as RecordingDetails,
-      onDone: onDone == freezed
-          ? _value.onDone
-          : onDone // ignore: cast_nullable_to_non_nullable
-              as Function?,
     ));
   }
 }
@@ -315,16 +307,14 @@ class __$StartCopyWithImpl<$Res> extends _$PlayerBlocEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Start implements _Start {
-  const _$_Start({required this.recording, this.onDone});
+  const _$_Start({required this.recording});
 
   @override
   final RecordingDetails recording;
-  @override
-  final Function? onDone;
 
   @override
   String toString() {
-    return 'PlayerBlocEvent.start(recording: $recording, onDone: $onDone)';
+    return 'PlayerBlocEvent.start(recording: $recording)';
   }
 
   @override
@@ -333,16 +323,12 @@ class _$_Start implements _Start {
         (other is _Start &&
             (identical(other.recording, recording) ||
                 const DeepCollectionEquality()
-                    .equals(other.recording, recording)) &&
-            (identical(other.onDone, onDone) ||
-                const DeepCollectionEquality().equals(other.onDone, onDone)));
+                    .equals(other.recording, recording)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(recording) ^
-      const DeepCollectionEquality().hash(onDone);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(recording);
 
   @JsonKey(ignore: true)
   @override
@@ -353,36 +339,35 @@ class _$_Start implements _Start {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(RecordingDetails recording, Function? onDone)
-        start,
+    required TResult Function(RecordingDetails recording) start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
     required TResult Function(Duration position) seekToPosition,
     required TResult Function() appGoInactive,
   }) {
-    return start(recording, onDone);
+    return start(recording);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
     TResult Function(Duration position)? seekToPosition,
     TResult Function()? appGoInactive,
   }) {
-    return start?.call(recording, onDone);
+    return start?.call(recording);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -391,7 +376,7 @@ class _$_Start implements _Start {
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(recording, onDone);
+      return start(recording);
     }
     return orElse();
   }
@@ -444,11 +429,9 @@ class _$_Start implements _Start {
 }
 
 abstract class _Start implements PlayerBlocEvent {
-  const factory _Start(
-      {required RecordingDetails recording, Function? onDone}) = _$_Start;
+  const factory _Start({required RecordingDetails recording}) = _$_Start;
 
   RecordingDetails get recording => throw _privateConstructorUsedError;
-  Function? get onDone => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$StartCopyWith<_Start> get copyWith => throw _privateConstructorUsedError;
 }
@@ -491,8 +474,7 @@ class _$_Pause implements _Pause {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(RecordingDetails recording, Function? onDone)
-        start,
+    required TResult Function(RecordingDetails recording) start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
@@ -506,7 +488,7 @@ class _$_Pause implements _Pause {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -520,7 +502,7 @@ class _$_Pause implements _Pause {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -623,8 +605,7 @@ class _$_Resume implements _Resume {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(RecordingDetails recording, Function? onDone)
-        start,
+    required TResult Function(RecordingDetails recording) start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
@@ -638,7 +619,7 @@ class _$_Resume implements _Resume {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -652,7 +633,7 @@ class _$_Resume implements _Resume {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -780,8 +761,7 @@ class _$_Stop implements _Stop {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(RecordingDetails recording, Function? onDone)
-        start,
+    required TResult Function(RecordingDetails recording) start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
@@ -795,7 +775,7 @@ class _$_Stop implements _Stop {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -809,7 +789,7 @@ class _$_Stop implements _Stop {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -945,8 +925,7 @@ class _$_SeekToPosition implements _SeekToPosition {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(RecordingDetails recording, Function? onDone)
-        start,
+    required TResult Function(RecordingDetails recording) start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
@@ -960,7 +939,7 @@ class _$_SeekToPosition implements _SeekToPosition {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -974,7 +953,7 @@ class _$_SeekToPosition implements _SeekToPosition {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -1085,8 +1064,7 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
-    required TResult Function(RecordingDetails recording, Function? onDone)
-        start,
+    required TResult Function(RecordingDetails recording) start,
     required TResult Function() pause,
     required TResult Function() resume,
     required TResult Function(Function? onDone) stop,
@@ -1100,7 +1078,7 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,
@@ -1114,7 +1092,7 @@ class _$_AppGoInactiveEvent implements _AppGoInactiveEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
-    TResult Function(RecordingDetails recording, Function? onDone)? start,
+    TResult Function(RecordingDetails recording)? start,
     TResult Function()? pause,
     TResult Function()? resume,
     TResult Function(Function? onDone)? stop,

@@ -6,7 +6,6 @@ class PlayerBlocEvent with _$PlayerBlocEvent {
 
   const factory PlayerBlocEvent.start({
     required RecordingDetails recording,
-    Function? onDone,
   }) = _Start;
 
   const factory PlayerBlocEvent.pause() = _Pause;

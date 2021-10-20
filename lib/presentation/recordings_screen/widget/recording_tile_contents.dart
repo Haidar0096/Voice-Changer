@@ -50,7 +50,7 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
             return Column(
               children: [
                 CustomPopupMenu(
-                  pressType: PressType.singleClick,
+                  pressType: PressType.longPress,
                   controller: _popupMenuController,
                   menuBuilder: () => _popupMenu(context, isPlaying, isPaused,
                       isProcessing, playerBloc, recordingsBloc, widget._index),
