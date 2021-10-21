@@ -71,6 +71,7 @@ class _SoundChangerOptionsState extends State<_SoundChangerOptions> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         _cancelButton(isProcessing, context),
+                        const SizedBox(width:20),
                         _submitButton(isProcessing, soundChangerBloc),
                       ],
                     ),
@@ -174,7 +175,7 @@ class _SoundChangerOptionsState extends State<_SoundChangerOptions> {
   _submitButton(bool isProcessing, SoundChangerBloc soundChangerBloc) =>
       isProcessing
           ? const CircularProgressIndicator()
-          : TextButton(
+          : ElevatedButton(
               child: Text('apply', style: largeText),
               onPressed: () {
                 String? invalidMessage =
@@ -196,8 +197,8 @@ class _SoundChangerOptionsState extends State<_SoundChangerOptions> {
               },
             );
 
-  TextButton _cancelButton(bool isProcessing, BuildContext context) =>
-      TextButton(
+  _cancelButton(bool isProcessing, BuildContext context) =>
+      ElevatedButton(
         child: Text('cancel', style: largeText),
         onPressed: isProcessing
             ? null

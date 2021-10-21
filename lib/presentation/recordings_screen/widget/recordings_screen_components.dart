@@ -72,10 +72,9 @@ class _RecordingsScreenComponentsState
                       Container(
                         width: width,
                         height: height,
-                        color: Colors.black12,
-                        child: const Center(child: CircularProgressIndicator()),
+                        child: const IgnorePointer(),
                       ),
-                    _RecordingsListView(),
+                    const _RecordingsListView(),
                   ],
                 ),
                 floatingActionButton: FloatingActionButton(

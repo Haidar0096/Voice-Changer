@@ -42,10 +42,13 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
               child: CustomPopupMenu(
                 pressType: PressType.longPress,
                 controller: _popupMenuController,
+                position: PreferredPosition.bottom,
                 menuBuilder: () => _popupMenu(context),
-                showArrow: true,
+                showArrow: false,
                 child: ExpansionTile(
-                  key: Key(recordingsBlocState.recordings[widget._index].path),
+                  key: isPlayingTile
+                      ? Key(recordingsBlocState.recordings[widget._index].path)
+                      : UniqueKey(),
                   initiallyExpanded: isPlayingTile,
                   leading: const Icon(Icons.mic),
                   title: _title(context),
