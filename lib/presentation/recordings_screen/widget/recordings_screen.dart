@@ -23,7 +23,7 @@ class RecordingsScreen extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (_) => serviceLocator.get<RecordingsBloc>()
-              ..add(const RecordingsBlocEvent.init()),
+              ..add(const RecordingsBlocEvent.refresh()),
           ),
           BlocProvider(
             create: (_) => serviceLocator.get<PlayerBloc>()

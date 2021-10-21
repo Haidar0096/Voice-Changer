@@ -17,10 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$RecordingsBlocEventTearOff {
   const _$RecordingsBlocEventTearOff();
 
-  _Init init() {
-    return const _Init();
-  }
-
   _Refresh refresh() {
     return const _Refresh();
   }
@@ -39,21 +35,18 @@ const $RecordingsBlocEvent = _$RecordingsBlocEventTearOff();
 mixin _$RecordingsBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function() refresh,
     required TResult Function(String path) deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? refresh,
     TResult Function(String path)? deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? refresh,
     TResult Function(String path)? deleteRecording,
     required TResult orElse(),
@@ -61,21 +54,18 @@ mixin _$RecordingsBlocEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Init value) init,
     required TResult Function(_Refresh value) refresh,
     required TResult Function(_DeleteRecordingEvent value) deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Init value)? init,
     TResult Function(_Refresh value)? refresh,
     TResult Function(_DeleteRecordingEvent value)? deleteRecording,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Init value)? init,
     TResult Function(_Refresh value)? refresh,
     TResult Function(_DeleteRecordingEvent value)? deleteRecording,
     required TResult orElse(),
@@ -98,113 +88,6 @@ class _$RecordingsBlocEventCopyWithImpl<$Res>
   final RecordingsBlocEvent _value;
   // ignore: unused_field
   final $Res Function(RecordingsBlocEvent) _then;
-}
-
-/// @nodoc
-abstract class _$InitCopyWith<$Res> {
-  factory _$InitCopyWith(_Init value, $Res Function(_Init) then) =
-      __$InitCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitCopyWithImpl<$Res> extends _$RecordingsBlocEventCopyWithImpl<$Res>
-    implements _$InitCopyWith<$Res> {
-  __$InitCopyWithImpl(_Init _value, $Res Function(_Init) _then)
-      : super(_value, (v) => _then(v as _Init));
-
-  @override
-  _Init get _value => super._value as _Init;
-}
-
-/// @nodoc
-
-class _$_Init implements _Init {
-  const _$_Init();
-
-  @override
-  String toString() {
-    return 'RecordingsBlocEvent.init()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Init);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() refresh,
-    required TResult Function(String path) deleteRecording,
-  }) {
-    return init();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? refresh,
-    TResult Function(String path)? deleteRecording,
-  }) {
-    return init?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? refresh,
-    TResult Function(String path)? deleteRecording,
-    required TResult orElse(),
-  }) {
-    if (init != null) {
-      return init();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Init value) init,
-    required TResult Function(_Refresh value) refresh,
-    required TResult Function(_DeleteRecordingEvent value) deleteRecording,
-  }) {
-    return init(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Init value)? init,
-    TResult Function(_Refresh value)? refresh,
-    TResult Function(_DeleteRecordingEvent value)? deleteRecording,
-  }) {
-    return init?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Init value)? init,
-    TResult Function(_Refresh value)? refresh,
-    TResult Function(_DeleteRecordingEvent value)? deleteRecording,
-    required TResult orElse(),
-  }) {
-    if (init != null) {
-      return init(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Init implements RecordingsBlocEvent {
-  const factory _Init() = _$_Init;
 }
 
 /// @nodoc
@@ -245,7 +128,6 @@ class _$_Refresh implements _Refresh {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function() refresh,
     required TResult Function(String path) deleteRecording,
   }) {
@@ -255,7 +137,6 @@ class _$_Refresh implements _Refresh {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? refresh,
     TResult Function(String path)? deleteRecording,
   }) {
@@ -265,7 +146,6 @@ class _$_Refresh implements _Refresh {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? refresh,
     TResult Function(String path)? deleteRecording,
     required TResult orElse(),
@@ -279,7 +159,6 @@ class _$_Refresh implements _Refresh {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Init value) init,
     required TResult Function(_Refresh value) refresh,
     required TResult Function(_DeleteRecordingEvent value) deleteRecording,
   }) {
@@ -289,7 +168,6 @@ class _$_Refresh implements _Refresh {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Init value)? init,
     TResult Function(_Refresh value)? refresh,
     TResult Function(_DeleteRecordingEvent value)? deleteRecording,
   }) {
@@ -299,7 +177,6 @@ class _$_Refresh implements _Refresh {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Init value)? init,
     TResult Function(_Refresh value)? refresh,
     TResult Function(_DeleteRecordingEvent value)? deleteRecording,
     required TResult orElse(),
@@ -381,7 +258,6 @@ class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function() refresh,
     required TResult Function(String path) deleteRecording,
   }) {
@@ -391,7 +267,6 @@ class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? refresh,
     TResult Function(String path)? deleteRecording,
   }) {
@@ -401,7 +276,6 @@ class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? refresh,
     TResult Function(String path)? deleteRecording,
     required TResult orElse(),
@@ -415,7 +289,6 @@ class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Init value) init,
     required TResult Function(_Refresh value) refresh,
     required TResult Function(_DeleteRecordingEvent value) deleteRecording,
   }) {
@@ -425,7 +298,6 @@ class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Init value)? init,
     TResult Function(_Refresh value)? refresh,
     TResult Function(_DeleteRecordingEvent value)? deleteRecording,
   }) {
@@ -435,7 +307,6 @@ class _$_DeleteRecordingEvent implements _DeleteRecordingEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Init value)? init,
     TResult Function(_Refresh value)? refresh,
     TResult Function(_DeleteRecordingEvent value)? deleteRecording,
     required TResult orElse(),
