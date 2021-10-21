@@ -70,8 +70,6 @@ class _SoundChangerOptionsState extends State<_SoundChangerOptions> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        _cancelButton(isProcessing, context),
-                        const SizedBox(width:20),
                         _submitButton(isProcessing, soundChangerBloc),
                       ],
                     ),
@@ -196,17 +194,6 @@ class _SoundChangerOptionsState extends State<_SoundChangerOptions> {
                 }
               },
             );
-
-  _cancelButton(bool isProcessing, BuildContext context) =>
-      ElevatedButton(
-        child: Text('cancel', style: largeText),
-        onPressed: isProcessing
-            ? null
-            : () {
-                Navigator.of(context)
-                    .pushReplacementNamed(RecordingsScreen.routeName);
-              },
-      );
 
   InputDecoration _roundTextFieldDecoration(String hint) => InputDecoration(
         constraints: BoxConstraints.tight(Size(

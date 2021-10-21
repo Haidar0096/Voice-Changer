@@ -15,7 +15,21 @@ class _RecordingsScreenComponentsState
   @override
   initState() {
     super.initState();
+    Future.delayed(Duration.zero, () => _showSnackBar());
     WidgetsBinding.instance!.addObserver(this);
+  }
+
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _showSnackBar() {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          'swipe to delete a recording',
+          textAlign: TextAlign.center,
+          style: mediumText,
+        ),
+        duration: Duration(seconds: 2),
+      ),
+    );
   }
 
   @override
@@ -61,15 +75,14 @@ class _RecordingsScreenComponentsState
                         : () {
                             BlocProvider.of<PlayerBloc>(context)
                                 .add(const PlayerBlocEvent.stop());
-                            Navigator.of(context)
-                                .pushReplacementNamed(RecorderScreen.routeName);
+                            Navigator.of(context).pop();
                           },
                   ),
                 ),
                 body: Stack(
                   children: [
                     if (isProcessing)
-                      Container(
+                      SizedBox(
                         width: width,
                         height: height,
                         child: const IgnorePointer(),
@@ -77,19 +90,6 @@ class _RecordingsScreenComponentsState
                     const _RecordingsListView(),
                   ],
                 ),
-                floatingActionButton: FloatingActionButton(
-                  child: const Icon(Icons.add),
-                  onPressed: isProcessing
-                      ? null
-                      : () {
-                          BlocProvider.of<PlayerBloc>(context)
-                              .add(const PlayerBlocEvent.stop());
-                          Navigator.of(context)
-                              .pushReplacementNamed(RecorderScreen.routeName);
-                        },
-                ),
-                floatingActionButtonLocation:
-                    FloatingActionButtonLocation.centerFloat,
               );
             },
           );

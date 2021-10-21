@@ -1,30 +1,11 @@
 part of 'recordings_screen.dart';
 
-class _RecordingTileContents extends StatefulWidget {
+class _RecordingTileContents extends StatelessWidget {
+  final double _iconSize = 40;
+
   final int _index;
 
   const _RecordingTileContents(this._index, {Key? key}) : super(key: key);
-
-  @override
-  State<_RecordingTileContents> createState() => _RecordingTileContentsState();
-}
-
-class _RecordingTileContentsState extends State<_RecordingTileContents> {
-  late final CustomPopupMenuController _popupMenuController;
-
-  final double _iconSize = 40;
-
-  @override
-  void initState() {
-    super.initState();
-    _popupMenuController = CustomPopupMenuController();
-  }
-
-  @override
-  dispose() {
-    _popupMenuController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) =>
@@ -35,120 +16,46 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
             bool isPlaying = playerBlocState.playerState.isPlaying;
             bool isPaused = playerBlocState.playerState.isPaused;
             bool isPlayingTile = (isPlaying || isPaused) &&
-                recordingsBlocState.recordings[widget._index] ==
+                recordingsBlocState.recordings[_index] ==
                     playerBlocState.recording;
             return IgnorePointer(
+              //only the playing tile can be expanded while playing, all other tiles are not tappable
               ignoring: ((isPlaying || isPaused) && !isPlayingTile),
-              child: CustomPopupMenu(
-                pressType: PressType.longPress,
-                controller: _popupMenuController,
-                position: PreferredPosition.bottom,
-                menuBuilder: () => _popupMenu(context),
-                showArrow: false,
-                child: ExpansionTile(
-                  key: isPlayingTile
-                      ? Key(recordingsBlocState.recordings[widget._index].path)
-                      : UniqueKey(),
-                  initiallyExpanded: isPlayingTile,
-                  leading: const Icon(Icons.mic),
-                  title: _title(context),
-                  subtitle: _subTitle(context),
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        _playButton(context),
-                        _pauseButton(context),
-                        _stopButton(context),
-                        if (isPlayingTile) _slider(context),
-                      ],
-                    ),
-                  ],
-                ),
+              child: ExpansionTile(
+                key: isPlayingTile
+                    ? Key(recordingsBlocState.recordings[_index].path)
+                    : UniqueKey(),
+                initiallyExpanded: isPlayingTile,
+                leading: const Icon(Icons.mic),
+                title: _title(context),
+                subtitle: _subTitle(context),
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _playButton(context),
+                      _pauseButton(context),
+                      _stopButton(context),
+                      _editButton(context),
+                      if (isPlayingTile) _slider(context),
+                    ],
+                  ),
+                ],
               ),
             );
           },
         ),
       );
 
-  Widget _popupMenu(BuildContext context) {
-    final mq = MediaQuery.of(context);
-    final width = mq.size.width;
-    final playerBloc = BlocProvider.of<PlayerBloc>(context);
-    final recordingsBloc = BlocProvider.of<RecordingsBloc>(context);
-    bool isPlaying = playerBloc.state.playerState.isPlaying;
-    bool isPaused = playerBloc.state.playerState.isPaused;
-    return Container(
-      width: width / 2,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: Colors.white,
-      ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextButton(
-              child: Text('edit', style: mediumText),
-              onPressed: () {
-                if (isPlaying || isPaused) {
-                  playerBloc.add(const PlayerBlocEvent.stop());
-                }
-                _popupMenuController.hideMenu();
-                Navigator.of(context).pushReplacementNamed(
-                  SoundChangerScreen.routeName,
-                  arguments: recordingsBloc.state.recordings[widget._index],
-                );
-              },
-            ),
-          ),
-          const Divider(
-            thickness: 3.0,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextButton(
-              child:
-                  Text('delete', style: mediumText.copyWith(color: Colors.red)),
-              onPressed: () {
-                if (isPlaying || isPaused) {
-                  playerBloc.add(
-                    PlayerBlocEvent.stop(
-                      onDone: () => recordingsBloc.add(
-                        RecordingsBlocEvent.deleteRecording(
-                          recordingsBloc.state.recordings[widget._index].path,
-                        ),
-                      ),
-                    ),
-                  );
-                  _popupMenuController.hideMenu();
-                  return;
-                }
-                recordingsBloc.add(
-                  RecordingsBlocEvent.deleteRecording(
-                    recordingsBloc.state.recordings[widget._index].path,
-                  ),
-                );
-                _popupMenuController.hideMenu();
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   _title(BuildContext context) {
-    final recording = BlocProvider.of<RecordingsBloc>(context)
-        .state
-        .recordings[widget._index];
+    final recording =
+        BlocProvider.of<RecordingsBloc>(context).state.recordings[_index];
     return Text(recording.name, style: mediumText);
   }
 
   _subTitle(BuildContext context) {
-    final recording = BlocProvider.of<RecordingsBloc>(context)
-        .state
-        .recordings[widget._index];
+    final recording =
+        BlocProvider.of<RecordingsBloc>(context).state.recordings[_index];
     return Text(recording.duration.toString(), style: mediumText);
   }
 
@@ -168,7 +75,7 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
         }
         if (isStopped) {
           playerBloc.add(PlayerBlocEvent.start(
-              recording: recordingsBloc.state.recordings[widget._index]));
+              recording: recordingsBloc.state.recordings[_index]));
         }
       },
     );
@@ -203,6 +110,28 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
         if (isPlaying || isPaused) {
           playerBloc.add(const PlayerBlocEvent.stop());
         }
+      },
+    );
+  }
+
+  _editButton(BuildContext context) {
+    return InkWell(
+      child: Icon(
+        Icons.edit,
+        size: _iconSize - 10,
+      ),
+      onTap: () {
+        final playerBloc = BlocProvider.of<PlayerBloc>(context);
+        final recordingsBloc = BlocProvider.of<RecordingsBloc>(context);
+        bool isPlaying = playerBloc.state.playerState.isPlaying;
+        bool isPaused = playerBloc.state.playerState.isPaused;
+        if (isPlaying || isPaused) {
+          playerBloc.add(const PlayerBlocEvent.stop());
+        }
+        Navigator.of(context).pushNamed(
+          SoundChangerScreen.routeName,
+          arguments: recordingsBloc.state.recordings[_index],
+        );
       },
     );
   }

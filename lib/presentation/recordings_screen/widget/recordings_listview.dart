@@ -25,7 +25,10 @@ class _RecordingsListView extends StatelessWidget {
                 confirmDismiss: (direction) async =>
                     await _confirmDismiss(context),
                 onDismissed: (_) async {
-                  if (isPlaying || isPaused) {
+                  bool isPlayingTile = (isPlaying || isPaused) &&
+                      recordingsBlocState.recordings[index] ==
+                          playerBlocState.recording;
+                  if (isPlayingTile) {
                     playerBloc.add(const PlayerBlocEvent.stop());
                   }
                   recordingsBloc.add(

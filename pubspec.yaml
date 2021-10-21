@@ -59,8 +59,6 @@ dependencies:
   flutter_ffmpeg: ^0.4.2
   #this dependency is for using [BehaviourSubject]s
   rxdart: ^0.27.2
-  #this dependency is for using custom popup menu
-  custom_pop_up_menu: ^1.2.2
 
 dev_dependencies:
   flutter_test:
