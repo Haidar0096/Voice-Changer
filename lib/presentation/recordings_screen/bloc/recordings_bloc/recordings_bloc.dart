@@ -13,9 +13,7 @@ import 'package:voice_changer/domain/recorder/recorder_service.dart';
 import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 part 'recordings_bloc.freezed.dart';
-
 part 'recordings_bloc_event.dart';
-
 part 'recordings_bloc_state.dart';
 
 @Injectable()
@@ -30,6 +28,7 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
       (event, emit) async {
         await event.map(
           init: (event) async => await _handleInitEvent(event, emit),
+          refresh: (event) async => await _handleRefreshEvent(event, emit),
           deleteRecording: (event) async =>
               await _handleDeleteRecordingEvent(event, emit),
         );
@@ -40,11 +39,44 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
   Future _handleInitEvent(
       _Init value, Emitter<RecordingsBlocState> emit) async {
     emit(state.copyWith(isProcessing: true));
-    return (await _fileSystemService.getDefaultStorageDirectory()).fold<Future>(
-      (f) async => _emitErrorState(emit, f),
+    final recordings = <RecordingDetails>[];
+    final result = await _getRecordings(recordings);
+    if (result != null) {
+      _emitErrorState(emit, result);
+    }
+    emit(
+      state.copyWith(
+        isInitialized: true,
+        isProcessing: false,
+        recordings: List.unmodifiable(recordings),
+        // recordings: recordings,
+      ),
+    );
+  }
+
+  Future _handleRefreshEvent(
+      _Refresh value, Emitter<RecordingsBlocState> emit) async {
+    emit(state.copyWith(isProcessing: true));
+    final recordings = <RecordingDetails>[];
+    final result = await _getRecordings(recordings);
+    if (result != null) {
+      _emitErrorState(emit, result);
+    }
+    emit(
+      state.copyWith(
+        isInitialized: true,
+        isProcessing: false,
+        recordings: List.unmodifiable(recordings),
+        // recordings: recordings,
+      ),
+    );
+  }
+
+  Future<Failure?> _getRecordings(List<RecordingDetails> recordings) async {
+    (await _fileSystemService.getDefaultStorageDirectory()).fold<Future>(
+      (f) async => f,
       (defaultStorageDirectory) async {
         Failure? failure;
-        List<RecordingDetails> recordings = [];
         for (final file in defaultStorageDirectory.getFiles(
           extension: RecorderService.defaultCodec,
         )) {
@@ -52,6 +84,7 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
             (f) => failure = f,
             (recording) async {
               if (recording.duration == null) {
+                //delete recordings with unknown duration
                 (await _fileSystemService.deleteFile(file))
                     .fold((f) => failure = f, (_) {});
                 return;
@@ -64,16 +97,9 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
           }
         }
         if (failure != null) {
-          _emitErrorState(emit, failure!);
+          return failure!;
         } else {
-          emit(
-            state.copyWith(
-              isInitialized: true,
-              isProcessing: false,
-              recordings: List.unmodifiable(recordings),
-              // recordings: recordings,
-            ),
-          );
+          return null;
         }
       },
     );

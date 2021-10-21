@@ -170,31 +170,6 @@ class _SoundChangerOptionsState extends State<_SoundChangerOptions> {
         contentPadding: const EdgeInsets.all(8.0),
       );
 
-  _submitButton(bool isProcessing, SoundChangerBloc soundChangerBloc) =>
-      isProcessing
-          ? const CircularProgressIndicator()
-          : ElevatedButton(
-              child: Text('apply', style: largeText),
-              onPressed: () {
-                String? invalidMessage =
-                    FileExtension.isValidFileName(_fileNameController.text);
-                if (invalidMessage == null) {
-                  soundChangerBloc.add(
-                    SoundChangerBlocEvent.applyEffects(
-                      _fileNameController.text,
-                    ),
-                  );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(invalidMessage),
-                      duration: const Duration(seconds: 1),
-                    ),
-                  );
-                }
-              },
-            );
-
   InputDecoration _roundTextFieldDecoration(String hint) => InputDecoration(
         constraints: BoxConstraints.tight(Size(
             MediaQuery.of(context).size.width / 1.5,
@@ -292,5 +267,31 @@ class _SoundChangerOptionsState extends State<_SoundChangerOptions> {
             ),
           ],
         ),
+      );
+
+  _submitButton(bool isProcessing, SoundChangerBloc soundChangerBloc) =>
+      isProcessing
+          ? const CircularProgressIndicator()
+          : ElevatedButton(
+        child: Text('apply', style: largeText),
+        onPressed: () {
+          String? invalidMessage =
+          FileExtension.isValidFileName(_fileNameController.text);
+          if (invalidMessage == null) {
+            soundChangerBloc.add(
+              SoundChangerBlocEvent.applyEffects(
+                _fileNameController.text,
+              ),
+            );
+
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(invalidMessage),
+                duration: const Duration(seconds: 1),
+              ),
+            );
+          }
+        },
       );
 }

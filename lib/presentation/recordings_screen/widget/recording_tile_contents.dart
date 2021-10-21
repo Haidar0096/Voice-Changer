@@ -128,10 +128,16 @@ class _RecordingTileContents extends StatelessWidget {
         if (isPlaying || isPaused) {
           playerBloc.add(const PlayerBlocEvent.stop());
         }
-        Navigator.of(context).pushNamed(
-          SoundChangerScreen.routeName,
-          arguments: recordingsBloc.state.recordings[_index],
-        );
+        Navigator.of(context)
+            .pushNamed(
+              SoundChangerScreen.routeName,
+              arguments: recordingsBloc.state.recordings[_index],
+            )
+            .then(
+              (_) => recordingsBloc.add(
+                const RecordingsBlocEvent.refresh(),
+              ),
+            );
       },
     );
   }
