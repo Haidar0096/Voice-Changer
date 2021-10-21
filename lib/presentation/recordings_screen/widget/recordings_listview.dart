@@ -19,7 +19,7 @@ class _RecordingsListView extends StatelessWidget {
               itemCount: recordingsBlocState.recordings.length,
               itemBuilder: (context, index) => Dismissible(
                 // key: UniqueKey(),
-                key: Key(recordingsBloc.state.recordings[index].name),
+                key: Key(recordingsBloc.state.recordings[index].path),
                 direction: DismissDirection.startToEnd,
                 background: _dismissibleBackground(context),
                 confirmDismiss: (direction) async =>

@@ -45,7 +45,7 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
                 menuBuilder: () => _popupMenu(context),
                 showArrow: true,
                 child: ExpansionTile(
-                  key: UniqueKey(),
+                  key: Key(recordingsBlocState.recordings[widget._index].path),
                   initiallyExpanded: isPlayingTile,
                   leading: const Icon(Icons.mic),
                   title: _title(context),
