@@ -43,6 +43,7 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
     final result = await _getRecordings(recordings);
     if (result != null) {
       _emitErrorState(emit, result);
+      return;
     }
     emit(
       state.copyWith(
