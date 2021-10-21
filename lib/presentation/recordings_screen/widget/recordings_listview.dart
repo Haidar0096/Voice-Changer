@@ -1,44 +1,32 @@
 part of 'recordings_screen.dart';
 
 class _RecordingsListView extends StatelessWidget {
+  const _RecordingsListView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) =>
       BlocBuilder<RecordingsBloc, RecordingsBlocState>(
-        builder: (context, recordingsBlocState) {
-          bool isPlaying = false;
-          bool isPaused = false;
-          bool isProcessing = false;
+        builder: (context, recordingsBlocState) =>
+            BlocBuilder<PlayerBloc, PlayerBlocState>(
+          builder: (context, playerBlocState) {
+            bool isPlaying = playerBlocState.playerState.isPlaying;
+            bool isPaused = playerBlocState.playerState.isPaused;
 
-          final playerBloc = BlocProvider.of<PlayerBloc>(context);
-          final recordingsBloc = BlocProvider.of<RecordingsBloc>(context);
+            final playerBloc = BlocProvider.of<PlayerBloc>(context);
+            final recordingsBloc = BlocProvider.of<RecordingsBloc>(context);
 
-          return BlocListener<PlayerBloc, PlayerBlocState>(
-            listener: (context, playerBlocState) {
-              isPlaying = playerBlocState.playerState.isPlaying;
-              isPaused = playerBlocState.playerState.isPaused;
-              isProcessing = playerBlocState.isProcessing ||
-                  recordingsBlocState.isProcessing;
-            },
-            child: ListView.builder(
+            return ListView.builder(
               itemCount: recordingsBlocState.recordings.length,
               itemBuilder: (context, index) => Dismissible(
-                key: UniqueKey(),
+                // key: UniqueKey(),
+                key: Key(recordingsBloc.state.recordings[index].name),
                 direction: DismissDirection.startToEnd,
                 background: _dismissibleBackground(context),
                 confirmDismiss: (direction) async =>
-                    isProcessing ? false : await _confirmDismiss(context),
+                    await _confirmDismiss(context),
                 onDismissed: (_) async {
                   if (isPlaying || isPaused) {
-                    playerBloc.add(
-                      PlayerBlocEvent.stop(
-                        onDone: () => recordingsBloc.add(
-                          RecordingsBlocEvent.deleteRecording(
-                            recordingsBlocState.recordings[index].path,
-                          ),
-                        ),
-                      ),
-                    );
-                    return;
+                    playerBloc.add(const PlayerBlocEvent.stop());
                   }
                   recordingsBloc.add(
                     RecordingsBlocEvent.deleteRecording(
@@ -48,9 +36,9 @@ class _RecordingsListView extends StatelessWidget {
                 },
                 child: _RecordingTileContents(index),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       );
 
   Future<bool?> _confirmDismiss(BuildContext context) async => await showDialog(

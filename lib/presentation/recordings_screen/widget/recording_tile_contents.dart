@@ -12,6 +12,8 @@ class _RecordingTileContents extends StatefulWidget {
 class _RecordingTileContentsState extends State<_RecordingTileContents> {
   late final CustomPopupMenuController _popupMenuController;
 
+  final double _iconSize = 40;
+
   @override
   void initState() {
     super.initState();
@@ -26,73 +28,53 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
 
   @override
   Widget build(BuildContext context) =>
-      BlocBuilder<PlayerBloc, PlayerBlocState>(
-        builder: (context, playerBlocState) =>
-            BlocBuilder<RecordingsBloc, RecordingsBlocState>(
-          builder: (context, recordingsBlocState) {
-            final playerBloc = BlocProvider.of<PlayerBloc>(context);
-            final recordingsBloc = BlocProvider.of<RecordingsBloc>(context);
-
-            final mq = MediaQuery.of(context);
-            final width = mq.size.width;
-
+      BlocBuilder<RecordingsBloc, RecordingsBlocState>(
+        builder: (context, recordingsBlocState) =>
+            BlocBuilder<PlayerBloc, PlayerBlocState>(
+          builder: (context, playerBlocState) {
             bool isPlaying = playerBlocState.playerState.isPlaying;
             bool isPaused = playerBlocState.playerState.isPaused;
-            bool isStopped = playerBlocState.playerState.isStopped;
-
-            bool isProcessing = playerBlocState.isProcessing ||
-                recordingsBlocState.isProcessing;
-
             bool isPlayingTile = (isPlaying || isPaused) &&
                 recordingsBlocState.recordings[widget._index] ==
                     playerBlocState.recording;
-
-            return Column(
-              children: [
-                CustomPopupMenu(
-                  pressType: PressType.longPress,
-                  controller: _popupMenuController,
-                  menuBuilder: () => _popupMenu(context, isPlaying, isPaused,
-                      isProcessing, playerBloc, recordingsBloc, widget._index),
-                  showArrow: false,
-                  child: ListTile(
-                    isThreeLine: isPlaying && isPlayingTile,
-                    leading: _micIcon(width),
-                    title: _title(recordingsBlocState.recordings),
-                    subtitle: _subTitle(recordingsBlocState.recordings),
-                    trailing: GestureDetector(
-                      child: _trailingIcon(
-                          isPlaying, isPlayingTile, isProcessing, 60),
-                      onTap: isProcessing
-                          ? null
-                          : _onTap(
-                              isStopped,
-                              playerBloc,
-                              recordingsBlocState.recordings,
-                              isPlaying,
-                              isPlayingTile,
-                              isPaused),
+            return IgnorePointer(
+              ignoring: ((isPlaying || isPaused) && !isPlayingTile),
+              child: CustomPopupMenu(
+                pressType: PressType.longPress,
+                controller: _popupMenuController,
+                menuBuilder: () => _popupMenu(context),
+                showArrow: true,
+                child: ExpansionTile(
+                  key: UniqueKey(),
+                  initiallyExpanded: isPlayingTile,
+                  leading: const Icon(Icons.mic),
+                  title: _title(context),
+                  subtitle: _subTitle(context),
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _playButton(context),
+                        _pauseButton(context),
+                        _stopButton(context),
+                        if (isPlayingTile) _slider(context),
+                      ],
                     ),
-                  ),
+                  ],
                 ),
-                if ((isPlaying || isPaused) && isPlayingTile)
-                  _slider(playerBloc, playerBlocState),
-              ],
+              ),
             );
           },
         ),
       );
 
-  Widget _popupMenu(
-      BuildContext context,
-      bool isPlaying,
-      bool isPaused,
-      bool isProcessing,
-      PlayerBloc playerBloc,
-      RecordingsBloc recordingsBloc,
-      int index) {
+  Widget _popupMenu(BuildContext context) {
     final mq = MediaQuery.of(context);
     final width = mq.size.width;
+    final playerBloc = BlocProvider.of<PlayerBloc>(context);
+    final recordingsBloc = BlocProvider.of<RecordingsBloc>(context);
+    bool isPlaying = playerBloc.state.playerState.isPlaying;
+    bool isPaused = playerBloc.state.playerState.isPaused;
     return Container(
       width: width / 2,
       decoration: BoxDecoration(
@@ -112,7 +94,7 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
                 _popupMenuController.hideMenu();
                 Navigator.of(context).pushReplacementNamed(
                   SoundChangerScreen.routeName,
-                  arguments: recordingsBloc.state.recordings[index],
+                  arguments: recordingsBloc.state.recordings[widget._index],
                 );
               },
             ),
@@ -125,29 +107,27 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
             child: TextButton(
               child:
                   Text('delete', style: mediumText.copyWith(color: Colors.red)),
-              onPressed: isProcessing
-                  ? null
-                  : () {
-                      if (isPlaying || isPaused) {
-                        playerBloc.add(
-                          PlayerBlocEvent.stop(
-                            onDone: () => recordingsBloc.add(
-                              RecordingsBlocEvent.deleteRecording(
-                                recordingsBloc.state.recordings[index].path,
-                              ),
-                            ),
-                          ),
-                        );
-                        _popupMenuController.hideMenu();
-                        return;
-                      }
-                      recordingsBloc.add(
+              onPressed: () {
+                if (isPlaying || isPaused) {
+                  playerBloc.add(
+                    PlayerBlocEvent.stop(
+                      onDone: () => recordingsBloc.add(
                         RecordingsBlocEvent.deleteRecording(
-                          recordingsBloc.state.recordings[index].path,
+                          recordingsBloc.state.recordings[widget._index].path,
                         ),
-                      );
-                      _popupMenuController.hideMenu();
-                    },
+                      ),
+                    ),
+                  );
+                  _popupMenuController.hideMenu();
+                  return;
+                }
+                recordingsBloc.add(
+                  RecordingsBlocEvent.deleteRecording(
+                    recordingsBloc.state.recordings[widget._index].path,
+                  ),
+                );
+                _popupMenuController.hideMenu();
+              },
             ),
           ),
         ],
@@ -155,100 +135,89 @@ class _RecordingTileContentsState extends State<_RecordingTileContents> {
     );
   }
 
-  _onTap(
-    bool isStopped,
-    PlayerBloc playerBloc,
-    List<RecordingDetails> recordings,
-    bool isPlaying,
-    bool isPlayingTile,
-    bool isPaused,
-  ) {
-    return () async {
-      if (isStopped) {
-        playerBloc
-            .add(PlayerBlocEvent.start(recording: recordings[widget._index]));
-      } else if (isPlaying) {
-        if (isPlayingTile) {
-          playerBloc.add(const PlayerBlocEvent.pause());
-        } else {
-          playerBloc.add(
-            PlayerBlocEvent.stop(
-              onDone: () => playerBloc.add(
-                PlayerBlocEvent.start(recording: recordings[widget._index]),
-              ),
-            ),
-          );
-        }
-      } else if (isPaused) {
-        if (isPlayingTile) {
+  _title(BuildContext context) {
+    final recording = BlocProvider.of<RecordingsBloc>(context)
+        .state
+        .recordings[widget._index];
+    return Text(recording.name, style: mediumText);
+  }
+
+  _subTitle(BuildContext context) {
+    final recording = BlocProvider.of<RecordingsBloc>(context)
+        .state
+        .recordings[widget._index];
+    return Text(recording.duration.toString(), style: mediumText);
+  }
+
+  _playButton(BuildContext context) {
+    return InkWell(
+      child: Icon(
+        Icons.play_circle_outline,
+        size: _iconSize,
+      ),
+      onTap: () {
+        final playerBloc = BlocProvider.of<PlayerBloc>(context);
+        final recordingsBloc = BlocProvider.of<RecordingsBloc>(context);
+        bool isPaused = playerBloc.state.playerState.isPaused;
+        bool isStopped = playerBloc.state.playerState.isStopped;
+        if (isPaused) {
           playerBloc.add(const PlayerBlocEvent.resume());
-        } else {
-          playerBloc.add(
-            PlayerBlocEvent.stop(
-              onDone: () => playerBloc.add(
-                PlayerBlocEvent.start(recording: recordings[widget._index]),
-              ),
-            ),
-          );
         }
-      }
-    };
-  }
-
-  Text _subTitle(recordings) =>
-      Text(recordings[widget._index].duration.toString());
-
-  Icon _micIcon(double width) {
-    return Icon(
-      Icons.mic_none,
-      size: width / 15,
-    );
-  }
-
-  Text _title(recordings) {
-    return Text(
-      recordings[widget._index].name,
-      style: mediumText,
-    );
-  }
-
-  Widget _slider(PlayerBloc playerBloc, PlayerBlocState playerBlocState) {
-    final max =
-        playerBloc.state.recording?.duration?.inMilliseconds.toDouble() ?? 0.0;
-    const min = 0.0;
-    double value = playerBloc.state.position.inMilliseconds.toDouble();
-    if (value > max) {
-      value = max;
-    }
-    return Slider(
-      value: value,
-      min: min,
-      max: max,
-      onChanged: (value) {
-        playerBloc.add(
-          PlayerBlocEvent.seekToPosition(
-            Duration(
-              milliseconds: value.round(),
-            ),
-          ),
-        );
+        if (isStopped) {
+          playerBloc.add(PlayerBlocEvent.start(
+              recording: recordingsBloc.state.recordings[widget._index]));
+        }
       },
     );
   }
 
-  Icon _trailingIcon(
-          bool isPlaying, bool isPlayingTile, bool isProcessing, double size) =>
-      isPlaying && isPlayingTile
-          ? Icon(
-              Icons.pause_circle_outline,
-              color: isProcessing ? Colors.grey : Colors.red,
-              size: size,
-            )
-          : Icon(
-              Icons.play_circle_outline,
-              color: isProcessing
-                  ? Colors.grey
-                  : Theme.of(context).colorScheme.primary,
-              size: size,
-            );
+  _pauseButton(BuildContext context) {
+    return InkWell(
+      child: Icon(
+        Icons.pause_circle_outline,
+        size: _iconSize,
+      ),
+      onTap: () {
+        final playerBloc = BlocProvider.of<PlayerBloc>(context);
+        bool isPlaying = playerBloc.state.playerState.isPlaying;
+        if (isPlaying) {
+          playerBloc.add(const PlayerBlocEvent.pause());
+        }
+      },
+    );
+  }
+
+  _stopButton(BuildContext context) {
+    return InkWell(
+      child: Icon(
+        Icons.stop_circle_outlined,
+        size: _iconSize,
+      ),
+      onTap: () {
+        final playerBloc = BlocProvider.of<PlayerBloc>(context);
+        bool isPlaying = playerBloc.state.playerState.isPlaying;
+        bool isPaused = playerBloc.state.playerState.isPaused;
+        if (isPlaying || isPaused) {
+          playerBloc.add(const PlayerBlocEvent.stop());
+        }
+      },
+    );
+  }
+
+  _slider(BuildContext context) {
+    final playerBloc = BlocProvider.of<PlayerBloc>(context);
+    final max =
+        playerBloc.state.recording?.duration?.inMilliseconds.toDouble() ?? 0;
+    double value = (playerBloc.state.position.inMilliseconds.toDouble());
+    if (value > max) {
+      value = max;
+    }
+    return Slider(
+      min: 0.0,
+      max: max,
+      value: value,
+      onChanged: (value) => playerBloc.add(PlayerBlocEvent.seekToPosition(
+          Duration(milliseconds: value.round()))),
+    );
+  }
 }

@@ -13,7 +13,9 @@ import 'package:voice_changer/domain/recorder/recorder_service.dart';
 import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 part 'recordings_bloc.freezed.dart';
+
 part 'recordings_bloc_event.dart';
+
 part 'recordings_bloc_state.dart';
 
 @Injectable()
@@ -47,7 +49,16 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
           extension: RecorderService.defaultCodec,
         )) {
           (await _recordingDetailsService.getRecordingDetails(file)).fold(
-              (f) => failure = f, (recording) => recordings.add(recording));
+            (f) => failure = f,
+            (recording) async {
+              if (recording.duration == null) {
+                (await _fileSystemService.deleteFile(file))
+                    .fold((f) => failure = f, (_) {});
+                return;
+              }
+              recordings.add(recording);
+            },
+          );
           if (failure != null) {
             break;
           }

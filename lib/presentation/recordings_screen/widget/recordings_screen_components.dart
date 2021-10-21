@@ -37,33 +37,63 @@ class _RecordingsScreenComponentsState
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Recordings',
-            style: mediumText,
-          ),
-          centerTitle: true,
-          leading: InkWell(
-            child: const Icon(Icons.arrow_back),
-            onTap: () {
-              BlocProvider.of<PlayerBloc>(context)
-                  .add(const PlayerBlocEvent.stop());
-              Navigator.of(context)
-                  .pushReplacementNamed(RecorderScreen.routeName);
+  Widget build(BuildContext context) =>
+      BlocBuilder<PlayerBloc, PlayerBlocState>(
+        builder: (context, playerBlocState) {
+          return BlocBuilder<RecordingsBloc, RecordingsBlocState>(
+            builder: (context, recordingsBlocState) {
+              final mq = MediaQuery.of(context);
+              final width = mq.size.width;
+              final height = mq.size.height;
+              bool isProcessing = playerBlocState.isProcessing ||
+                  recordingsBlocState.isProcessing;
+              return Scaffold(
+                appBar: AppBar(
+                  title: Text(
+                    'Recordings',
+                    style: mediumText,
+                  ),
+                  centerTitle: true,
+                  leading: InkWell(
+                    child: const Icon(Icons.arrow_back),
+                    onTap: isProcessing
+                        ? null
+                        : () {
+                            BlocProvider.of<PlayerBloc>(context)
+                                .add(const PlayerBlocEvent.stop());
+                            Navigator.of(context)
+                                .pushReplacementNamed(RecorderScreen.routeName);
+                          },
+                  ),
+                ),
+                body: Stack(
+                  children: [
+                    if (isProcessing)
+                      Container(
+                        width: width,
+                        height: height,
+                        color: Colors.black12,
+                        child: const Center(child: CircularProgressIndicator()),
+                      ),
+                    _RecordingsListView(),
+                  ],
+                ),
+                floatingActionButton: FloatingActionButton(
+                  child: const Icon(Icons.add),
+                  onPressed: isProcessing
+                      ? null
+                      : () {
+                          BlocProvider.of<PlayerBloc>(context)
+                              .add(const PlayerBlocEvent.stop());
+                          Navigator.of(context)
+                              .pushReplacementNamed(RecorderScreen.routeName);
+                        },
+                ),
+                floatingActionButtonLocation:
+                    FloatingActionButtonLocation.centerFloat,
+              );
             },
-          ),
-        ),
-        body: _RecordingsListView(),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () {
-            BlocProvider.of<PlayerBloc>(context)
-                .add(const PlayerBlocEvent.stop());
-            Navigator.of(context)
-                .pushReplacementNamed(RecorderScreen.routeName);
-          },
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+          );
+        },
       );
 }
