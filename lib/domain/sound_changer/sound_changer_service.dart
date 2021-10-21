@@ -5,6 +5,17 @@ import 'package:voice_changer/domain/common/exception/failure.dart';
 
 ///The contract of sound changer.
 abstract class SoundChangerService {
+  static const double defaultTempo = 0.5;
+
+  static const double defaultEchoInputGain = 1;
+  static const double defaultEchoOutputGain = 1;
+  static const double defaultEchoDelay = 250;
+  static const double defaultEchoDecay = 1;
+
+  static const int defaultSampleRate = 44100;
+
+  static const double defaultVolume = 50;
+
   ///Changes the tempo.
   ///* [tempo] must be between 0.5 and 100.
   ///<br></br>

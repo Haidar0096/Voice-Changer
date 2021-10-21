@@ -2,7 +2,7 @@ import 'package:flutter/material.dart' hide ErrorWidget;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:voice_changer/configuration/service_locator.dart';
-import 'package:voice_changer/domain/common/extensions/string_extensions.dart';
+import 'package:voice_changer/domain/common/extensions/file_extensions.dart';
 import 'package:voice_changer/presentation/common/error_widget.dart';
 import 'package:voice_changer/presentation/common/filled_circle.dart';
 import 'package:voice_changer/presentation/common/filled_rectangle.dart';

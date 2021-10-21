@@ -134,18 +134,18 @@ class _StopButtonState extends State<_StopButton> {
                     TextButton(
                       child: Text('Save', style: mediumText),
                       onPressed: () {
-                        if (_isValidFileName(_fileNameTextController.text)) {
+                        String? invalidMessage = FileExtension.isValidFileName(
+                            _fileNameTextController.text);
+                        if (invalidMessage == null) {
                           recorderBloc.add(RecorderBlocEvent.saveRecording(
                               newRecordingFileName:
                                   _fileNameTextController.text));
                           Navigator.of(context).pop();
                         } else {
                           ScaffoldMessenger.of(ctx).showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                  'file name must contain only alphanumeric/underscore characters'
-                                  ', and must not be empty'),
-                              duration: Duration(seconds: 1),
+                            SnackBar(
+                              content: Text(invalidMessage),
+                              duration: const Duration(seconds: 1),
                             ),
                           );
                         }
@@ -170,7 +170,4 @@ class _StopButtonState extends State<_StopButton> {
       ),
     );
   }
-
-  bool _isValidFileName(String? text) =>
-      text != null && text.isAlphaNumericWithUnderscores() && text.isNotEmpty;
 }
