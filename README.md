@@ -19,8 +19,11 @@ Just clone the repo and run:
 
 Here are some screenshots:
 
-- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-53-27.png?raw=true)
-- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-53-41.png?raw=true)
-- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-53-52.png?raw=true)
-- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-54-20.png?raw=true)
-- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-10-14%2018-54-28.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-11-03%2018-31-43.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-11-03%2018-31-53.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-11-03%2018-32-12.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-11-03%2018-32-32.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-11-03%2018-33-11.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-11-03%2018-33-34.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-11-03%2018-33-57.png?raw=true)
+- ![alt text](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-11-03%2018-34-02.png?raw=true)
