@@ -17,7 +17,7 @@ Just clone the repo and run:
 
 Here is a demonstration:
 
-- [![video]](https://user-images.githubusercontent.com/49842031/140171113-976a0eca-0afe-4b72-9fa6-a3aeeb849471.mp4)
+- [![video](https://github.com/Haidar0096/Voice-Changer/blob/master/screenshots/Screenshot%20from%202021-11-03%2018-31-43.png)](https://user-images.githubusercontent.com/49842031/140171113-976a0eca-0afe-4b72-9fa6-a3aeeb849471.mp4)
 
 
 
