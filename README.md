@@ -17,7 +17,7 @@ Just clone the repo and run:
 
 Here is a demonstration:
 
-- [![video]()](https://user-images.githubusercontent.com/49842031/140171113-976a0eca-0afe-4b72-9fa6-a3aeeb849471.mp4?raw=true)
+- ![2021-11-03 20-21-46](https://user-images.githubusercontent.com/49842031/140172033-4653e456-b016-4f12-a20e-7b3d34b572f5.gif)
 
 
 
