@@ -17,7 +17,7 @@ Just clone the repo and run:
 
 Here is a demonstration:
 
-- https://user-images.githubusercontent.com/49842031/140171113-976a0eca-0afe-4b72-9fa6-a3aeeb849471.mp4
+- ![video](https://user-images.githubusercontent.com/49842031/140171113-976a0eca-0afe-4b72-9fa6-a3aeeb849471.mp4)
 
 
 
