@@ -15,6 +15,10 @@ Just clone the repo and run:
 - flutter pub run build_runner build --delete-conflicting-outputs
 - flutter run
 
+Here is a demonstration:
+
+- https://user-images.githubusercontent.com/49842031/140171113-976a0eca-0afe-4b72-9fa6-a3aeeb849471.mp4
+
 
 
 Here are some screenshots:
