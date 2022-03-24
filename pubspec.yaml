@@ -39,7 +39,7 @@ dependencies:
   #flutter_sound: ^8.3.9
   flutter_sound_lite: ^8.3.12
   #this dependency is for using sound player
-  just_audio: ^0.9.12
+  just_audio: ^0.9.15
   #this dependency is for getting paths in the filesystem
   path_provider: ^2.0.5
   #this dependency is for handling permissions
