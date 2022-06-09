@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
@@ -13,7 +13,9 @@ import 'package:voice_changer/domain/recorder/recorder_service.dart';
 import 'package:voice_changer/domain/recording_details/recording_details_service.dart';
 
 part 'recordings_bloc.freezed.dart';
+
 part 'recordings_bloc_event.dart';
+
 part 'recordings_bloc_state.dart';
 
 @Injectable()
@@ -27,7 +29,7 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
     on<RecordingsBlocEvent>(
       (event, emit) async {
         await event.map(
-          refresh: (event) async=> await _handleRefreshEvent(event,emit),
+          refresh: (event) async => await _handleRefreshEvent(event, emit),
           deleteRecording: (event) async =>
               await _handleDeleteRecordingEvent(event, emit),
         );
@@ -39,16 +41,16 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
       _Refresh value, Emitter<RecordingsBlocState> emit) async {
     emit(state.copyWith(isProcessing: true));
     return (await _fileSystemService.getDefaultStorageDirectory()).fold<Future>(
-          (f) async => _emitErrorState(emit, f),
-          (defaultStorageDirectory) async {
+      (f) async => _emitErrorState(emit, f),
+      (defaultStorageDirectory) async {
         Failure? failure;
         List<RecordingDetails> recordings = [];
         for (final file in defaultStorageDirectory.getFiles(
           extension: RecorderService.defaultCodec,
         )) {
           (await _recordingDetailsService.getRecordingDetails(file)).fold(
-                (f) => failure = f,
-                (recording) async {
+            (f) => failure = f,
+            (recording) async {
               if (recording.duration == null) {
                 (await _fileSystemService.deleteFile(file))
                     .fold((f) => failure = f, (_) {});
@@ -77,11 +79,10 @@ class RecordingsBloc extends Bloc<RecordingsBlocEvent, RecordingsBlocState> {
     );
   }
 
-
   Future _handleDeleteRecordingEvent(
       _DeleteRecordingEvent event, Emitter<RecordingsBlocState> emit) async {
     final tempRecordings =
-        state.recordings.whereNot((rec) => rec.path == event.path).toList();
+        state.recordings.where((rec) => rec.path != event.path).toList();
     //emit a state with the selected recording removed,so that UI doesn't have to wait to update
     //in case of error no need to restore the previous recordings list
     emit(state.copyWith(isProcessing: true, recordings: tempRecordings));

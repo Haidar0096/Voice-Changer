@@ -16,7 +16,7 @@ class _RecordingsScreenComponentsState
   initState() {
     super.initState();
     Future.delayed(Duration.zero, () => _showSnackBar());
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _showSnackBar() {
@@ -34,7 +34,7 @@ class _RecordingsScreenComponentsState
 
   @override
   dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
